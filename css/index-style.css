@@ -568,6 +568,7 @@ main .header-profile .profile-photo {
     position: absolute;
     top: 275px;
     left: 450px;
+    background-color: #ff5e3a;
 }
 
 main .header-profile .open-settings {

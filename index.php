@@ -2,7 +2,6 @@
 <html lang="en">
 
 <?php include "components/head.php";
-
 //require "includes/db.php";
 ?>
 
@@ -13,8 +12,6 @@
 <?php require "controllers/signInController.php";
 include "components/header.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
-require 'controllers/avatarController.php';
-
 ?>
 
 
@@ -33,28 +30,24 @@ require 'controllers/avatarController.php';
                     <nav>
                         <ul>
                             <li class="active tab">Timeline</li>
-                            <li class="tab">About </li>
+                            <li class="tab">About</li>
                             <li class="tab">Friends</li>
                         </ul>
                     </nav>
                 </div>
                 <div class="profile-photo holder">
-
                     <?echo '<img src = "data:image;base64,'.$user->avatar.'" ';?>
                 </div>
+            </div>
 
                 <div class="open-settings">
-                    <form action="#" method="POST" enctype="multipart/form-data">
+                    <form action="#" method="POST">
 
                         <input type="button" name="open_avatar" value="Open photo"><br>
-<<<<<<< HEAD
-                        <input type="file" name="change_avatar" value="Change photo"><br>
-=======
 
                         <label for="changePhoto" id="changeUserPhoto">Change photo</label>
                         <input type="file" name="change_avatar" id="changePhoto"><br>
 
->>>>>>> d832aa107f14be81b41940c4b91bf56d03aed8d7
                         <input type="submit" name="delete_avatar" value="Delete photo"><br>
 
                     </form>
@@ -150,8 +143,7 @@ require 'controllers/avatarController.php';
                         <div class="post-header">
                             <div class="user-info">
                                 <div class="round-user holder">
-
-                                    <?echo '<img height="300" width = "300" src = "data:image;base64,'.$user->avatar.'" ';?>
+                                    <img src="img/new_photo30x30.jpg">
                                 </div>
                                 <div>
                                     <a href="#"><span><? echo $user->name ." " . $user->lastName ?></span></a>
@@ -724,12 +716,10 @@ require 'controllers/avatarController.php';
 </main>
 
 <?php
-
 include "components/modal-windows/video-modal.php";
 include "components/modal-windows/cars-modal.php";
 include "components/modal-windows/read-more-modal.php";
 include "components/modal-windows/report-modal.php"
-
 ?>
 
 <script src="js/modal-image.js"></script>
