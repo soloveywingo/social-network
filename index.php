@@ -13,6 +13,8 @@
 <?php require "controllers/signInController.php";
 include "components/header.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
+require 'controllers/avatarController.php';
+
 ?>
 
 
@@ -31,23 +33,28 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
                     <nav>
                         <ul>
                             <li class="active tab">Timeline</li>
-                            <li class="tab">About</li>
+                            <li class="tab">About </li>
                             <li class="tab">Friends</li>
                         </ul>
                     </nav>
                 </div>
                 <div class="profile-photo holder">
-                    <img src="img/new_photo.jpg" alt="Profile photo">
+
+                    <?echo '<img src = "data:image;base64,'.$user->avatar.'" ';?>
                 </div>
 
                 <div class="open-settings">
-                    <form action="#" method="POST">
+                    <form action="#" method="POST" enctype="multipart/form-data">
 
                         <input type="button" name="open_avatar" value="Open photo"><br>
+<<<<<<< HEAD
+                        <input type="file" name="change_avatar" value="Change photo"><br>
+=======
 
                         <label for="changePhoto" id="changeUserPhoto">Change photo</label>
                         <input type="file" name="change_avatar" id="changePhoto"><br>
 
+>>>>>>> d832aa107f14be81b41940c4b91bf56d03aed8d7
                         <input type="submit" name="delete_avatar" value="Delete photo"><br>
 
                     </form>
@@ -143,7 +150,8 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
                         <div class="post-header">
                             <div class="user-info">
                                 <div class="round-user holder">
-                                    <img src="img/new_photo30x30.jpg">
+
+                                    <?echo '<img height="300" width = "300" src = "data:image;base64,'.$user->avatar.'" ';?>
                                 </div>
                                 <div>
                                     <a href="#"><span><? echo $user->name ." " . $user->lastName ?></span></a>

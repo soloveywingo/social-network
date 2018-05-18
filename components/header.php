@@ -74,7 +74,7 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
             </div>
             <div class="profile-view holder">
                 <div class="user-photo-border">
-                    <img src="../img/new_photo.jpg" align="user's photo">
+                    <?echo '<img height="300" width = "300" src = "data:image;base64,'.$user->avatar.'" ';?>
                 </div>
                 <span class="user-name"><? echo $user->name ." " . $user->lastName  ?></span>
                 <i class="fa fa-caret-down" aria-hidden="true"></i><br>
