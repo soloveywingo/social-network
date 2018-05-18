@@ -37,5 +37,6 @@
     <script src="../js/show-more.js"></script>
     <script src="../js/search-panel.js"></script>
     <script src="../js/tooltip.js"></script>
+    <script src="../js/serach-friends-right-panel.js"></script>
 
 </head>

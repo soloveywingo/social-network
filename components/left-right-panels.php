@@ -64,86 +64,42 @@
 
 <div class="right-panel">
     <div class="icons-groups">
-        <div class="round-group-img">
-            <img src="../img/users/1MA9kvUVdFY.jpg">
-        </div>
-        <div class="round-group-img">
-            <img src="../img/users/BNaB-nWedts.jpg">
-        </div>
-        <div class="round-group-img">
-            <img src="../img/users/bohdan.jpg">
-        </div>
-        <div class="round-group-img">
-            <img src="../img/users/j_WY_ZBs5FM.jpg">
-        </div>
-        <div class="round-group-img">
-            <img src="../img/users/Lv1CepMuOtw.jpg">
-        </div>
-        <div class="round-group-img">
-            <img src="../img/users/ZJbW_nE15WY.jpg">
+        <div class="around-user-photo">
+            <img src="../img/users/1MA9kvUVdFY.jpg" alt="User photo">
         </div>
     </div>
-    <div class="bottom-btn-menu">
-        <span class="ti-menu open-bottom-menu"></span>
+    <div class="right-panel-footer">
+        <span class="fas fa-bars open-bottom-menu"></span>
     </div>
-    <h2 class="bottom-logo">
-        <a href="#"><i class="ti-comments"></i></a>
-    </h2>
 </div>
 
 <div class="full-right-panel holder">
     <div class="icons-groups holder">
         <div class="setting-group">
-            <div class="round-group-img">
-                <img src="../img/users/1MA9kvUVdFY.jpg">
-            </div>
-            <a href="#">Vasilenko Sergey</a><br>
-        </div>
-        <div class="setting-group">
-            <div class="round-group-img">
-                <img src="../img/users/BNaB-nWedts.jpg">
-            </div>
-            <a href="#">Nepochatov Vadim</a><br>
-        </div>
-        <div class="setting-group">
-            <div class="round-group-img">
-                <img src="../img/users/bohdan.jpg">
-            </div>
-            <a href="#">Soloviyv Bohdan</a><br>
-        </div>
-        <div class="setting-group">
-            <div class="round-group-img">
-                <img src="../img/users/j_WY_ZBs5FM.jpg">
-            </div>
-            <a href="#">Radchenko Vladimir</a><br>
-        </div>
-        <div class="setting-group">
-            <div class="round-group-img">
-                <img src="../img/users/Lv1CepMuOtw.jpg">
-            </div>
-            <a href="#">Stetsenko Leonid</a><br>
-        </div>
-        <div class="setting-group">
-            <div class="round-group-img">
-                <img src="../img/users/ZJbW_nE15WY.jpg">
-            </div>
-            <a href="#">Rolenko Anastasia</a><br>
+            <a href="#">
+                <div class="around-user-photo">
+                    <img src="../img/users/1MA9kvUVdFY.jpg" alt="User photo">
+                </div>
+                <div class="info-user">
+                    <span>Sergey Vasilenko</span><br>
+                    <i>Online</i>
+                </div>
+            </a>
         </div>
     </div>
     <div class="setting">
         <div class="flex-container">
             <form action="#" method="POST">
-                <input type="text" placeholder="Search groups...">
+                <input type="text" placeholder="Search friends..." class="search-friends-right-panel">
             </form>
             <div class="buttons">
-                <i class="ti-settings"></i>
-                <i class="ti-close close-bottom-menu"></i>
+                <i class="fas fa-times close-bottom-menu"></i>
             </div>
         </div>
     </div>
     <h2 class="bottom-logo">
-        <span>Groups</span>
-        <a href="#"><i class="ti-comments"></i></a>
+        <span>Friends list</span>
+        <i class="fas fa-user-friends"></i>
     </h2>
 </div>
 

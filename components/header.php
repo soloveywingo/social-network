@@ -246,7 +246,7 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
         <div class="custom-status">
             <form action="#" method="POST">
                 <input type="text" value="SPACE COWBOY">
-                <button><i class="ti-pencil"></i></button>
+                <button type="submit" name="user_status"><i class="ti-pencil"></i></button>
             </form>
         </div>
         <h3>About AvtoNet</h3>

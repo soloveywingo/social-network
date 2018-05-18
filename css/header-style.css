@@ -510,6 +510,11 @@ header .profile-view .user-status {
     border-radius: 0 5px 5px 0;
     background-color: #7c5ac2;
     cursor: pointer;
+    outline: none;
+}
+
+.user-box .custom-status form button:hover {
+    opacity: .7;
 }
 
 .user-box .custom-status form button i {

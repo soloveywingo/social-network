@@ -162,6 +162,7 @@ main .full-left-panel {
 }
 
 main .right-panel {
+    position: relative;
     z-index: 29;
     padding-top: 85px;
     position: fixed;
@@ -175,7 +176,45 @@ main .right-panel {
 main .right-panel .icons-groups {
     overflow-y: scroll;
     width: 70px;
-    height: 415px;
+    height: 500px;
+}
+
+main .right-panel .icons-groups .around-user-photo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+main .right-panel .icons-groups .around-user-photo img {
+    width: 100%;
+}
+
+main .right-panel .icons-groups .around-user-photo img:hover {
+    opacity: .7;
+}
+
+main .right-panel .right-panel-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    background-color: #7c5ac2;
+    padding-top: 22px;
+}
+
+main .right-panel .right-panel-footer span {
+    font-size: 27px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+main .right-panel .right-panel-footer span:hover {
+    color: #ff5e3a;
 }
 
 main .bottom-logo {
@@ -217,6 +256,46 @@ main .full-right-panel {
     height: 100%;
     background-color: #ffffff;
 }
+
+main .full-right-panel .setting-group {
+    padding-top: 18px;
+    padding-left: 25px;
+}
+main .full-right-panel .setting-group:hover {
+    color: #ff5e3a;
+    opacity: .7;
+}
+
+
+main .full-right-panel .setting-group .around-user-photo {
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+
+main .full-right-panel .setting-group .around-user-photo img {
+    width: 100%;
+}
+
+main .full-right-panel .setting-group .info-user i {
+    display: block;
+    margin-top: -25px;
+    font-style: normal;
+    font-family: RobotoReg, sans-serif;
+
+}
+main .full-right-panel .setting {
+    padding-left: 20px;
+    padding-right: 35px;
+}
+
+main .full-right-panel .setting .close-bottom-menu {
+    font-size: 30px;
+}
+
 
 main .round-group-img {
     cursor: pointer;
@@ -391,6 +470,7 @@ main .header-profile .open-settings label {
     cursor: pointer;
     font-size: 13px;
     font-family: Oswald-Medium, sans-serif;
+    margin-left: 7px;
 }
 
 main .header-profile .open-settings label:hover {
@@ -416,7 +496,6 @@ main .header-profile .open-settings-bg label {
 main .header-profile .open-settings-bg label:hover {
     color: #ffffff;
 }
-
 
 main .header-profile .users-buttons form input[type="submit"] {
     border: none;
