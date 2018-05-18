@@ -13,6 +13,30 @@
 <?php require "controllers/signInController.php";
 include "components/header.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
+$data = $_POST;
+
+if (isset($data['delete_avatar']))
+{
+    if (getimagesize($_FILES['change_avatar']["tmp_name"]) == false) {
+        $errors[] = "IT IS NOT A FUCKING IMAGE";
+    } else
+        {
+        $avatar = addslashes($_FILES['change_avatar']['tmp_name']);
+        $avatar = file_get_contents($avatar);
+        $avatar = base64_encode($avatar);
+        saveAvatar($avatar);
+
+    }
+}
+function saveAvatar($avatar)
+{
+
+    $user = R::load('users2', $_SESSION['logged_user']->id);
+    $user->avatar = $avatar;
+    R::store($user);
+
+}
+
 ?>
 
 
@@ -31,20 +55,21 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
                     <nav>
                         <ul>
                             <li class="active tab">Timeline</li>
-                            <li class="tab">About</li>
+                            <li class="tab">About </li>
                             <li class="tab">Friends</li>
                         </ul>
                     </nav>
                 </div>
                 <div class="profile-photo holder">
-                    <img src="img/new_photo.jpg" alt="Profile photo">
+
+                    <?echo '<img height="300" width = "300" src = "data:image;base64,'.$user->avatar.'" ';?>
                 </div>
 
                 <div class="open-settings">
-                    <form action="#" method="POST">
+                    <form action="#" method="POST" enctype="multipart/form-data">
 
                         <input type="button" name="open_avatar" value="Open photo"><br>
-                        <input type="submit" name="change_avatar" value="Change photo"><br>
+                        <input type="file" name="change_avatar" value="Change photo"><br>
                         <input type="submit" name="delete_avatar" value="Delete photo"><br>
 
                     </form>
@@ -138,7 +163,8 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
                         <div class="post-header">
                             <div class="user-info">
                                 <div class="round-user holder">
-                                    <img src="img/new_photo30x30.jpg">
+
+                                    <?echo '<img height="300" width = "300" src = "data:image;base64,'.$user->avatar.'" ';?>
                                 </div>
                                 <div>
                                     <a href="#"><span><? echo $user->name ." " . $user->lastName ?></span></a>
