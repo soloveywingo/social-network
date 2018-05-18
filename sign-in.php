@@ -18,11 +18,11 @@ require "controllers/signInController.php";
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/modal-windows.css">
 
-    <script src="js/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <script src="js/jquery/jquery-ui.js" type="text/javascript"></script>
-    <script src="js/datepicker.js" type="text/javascript"></script>
-    <script src="js/change-forms.js" type="text/javascript"></script>
-    <script src="js/active-class.js" type="text/javascript"></script>
+    <script src="js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery/jquery-ui.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="js/change-forms.js"></script>
+    <script src="js/active-class.js"></script>
 
     <title>Sign in</title>
 </head>

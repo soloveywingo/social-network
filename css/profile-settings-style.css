@@ -1,28 +1,69 @@
 main .setting-content {
     width: 100%;
     height: auto;
-    border-radius: 5px;
+    background: none;
+}
+
+main .setting-content .navigation-panel {
+    text-align: left;
+    float: left;
+    width: 275px;
+    height: auto;
     background-color: #ffffff;
-    padding: 10px 25px 10px 25px;
+    border: 1px solid #e6ecf5;
+    border-radius: 5px;
+}
+
+main .setting-content .navigation-panel ul {
+    margin: 0;
+    padding: 0;
+}
+
+main .setting-content .navigation-panel ul li {
+    list-style-type: none;
+    cursor: pointer;
+    padding: 10px 20px 10px 25px;
+    font-family: Oswald-Medium, sans-serif;
+}
+
+main .setting-content .navigation-panel .active {
+    background-color: #cccccc;
+
+    -webkit-transition: background-color .5s;
+    -moz-transition: background-color .5s;
+    -ms-transition: background-color .5s;
+    -o-transition: background-color .5s;
+    transition: background-color .5s;
+}
+
+main .setting-content .right-box {
+    float: right;
+    width: 715px;
+    height: 600px;
+    background-color: #ffffff;
+    border: 1px solid #e6ecf5;
+    border-radius: 5px;
     text-align: center;
 }
 
-main .setting-content .grid-content {
-    grid-template-columns: 3fr 3fr 3fr;
-    grid-row-gap: 10px;
-    grid-column-gap: 10px;
+main .setting-content form {
+    position: relative;
 }
 
 main .setting-content form input[type="text"],
 main .setting-content form input[type="email"],
-main .setting-content form input[type="password"] {
-    height: 45px;
-    font-size: 17px;
+main .setting-content form input[type="password"],
+main .setting-content form input[type="date"] {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-family: Oswald-Medium, sans-serif;
+    transition: .5s;
+    width: 500px;
+    height: 40px;
+    margin-bottom: 15px;
     padding-left: 5px;
     outline: none;
-    color: #212121;
-    text-transform: capitalize;
-    border: 1px solid #212121;
 }
 
 main .setting-content form input[type="text"]:focus,
@@ -34,15 +75,20 @@ main .setting-content form input[type="password"]:focus {
 main .setting-content form h2 {
     font-family: Oswald-Medium, sans-serif;
     color: #515365;
-    text-align: left;
+    text-transform: uppercase;
 }
 
 main .setting-content form select {
-    background: none;
-    border: 1px solid #212121;
-    color: #212121;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-family: Oswald-Medium, sans-serif;
+    transition: .5s;
+    width: 500px;
+    height: 40px;
+    margin-bottom: 15px;
+    padding-left: 5px;
     outline: none;
-    font-size: 17px;
 }
 
 main .setting-content input[type="submit"] {
@@ -72,20 +118,203 @@ main .setting-content form select:focus {
 
 main .setting-content form ::-webkit-input-placeholder {
     color: #212121;
+    font-family: Oswald-Medium, sans-serif;
 
 }
 
 main .setting-content form :-ms-input-placeholder {
     color: #212121;
+    font-family: Oswald-Medium, sans-serif;
 
 }
 
 main .setting-content form ::-moz-placeholder {
     color: #212121;
+    font-family: Oswald-Medium, sans-serif;
     opacity: 1;
 }
 
 main .setting-content form :-moz-placeholder {
     color: #212121;
+    font-family: Oswald-Medium, sans-serif;
     opacity: 1;
 }
+
+main .setting-header {
+    width: 100%;
+    height: 400px;
+    background: url("../img/setting-pattern-city.jpg") repeat-x center;
+    padding-top: 135px;
+    padding-right: 80px;
+    margin-bottom: 10px;
+}
+
+main .setting-header span {
+    font-size: 85px;
+    color: #ffffff;
+    font-family: Oswald-Medium, sans-serif;
+    text-transform: uppercase;
+}
+
+main .setting-header .dropping-texts {
+    display: inline-block;
+    width: 180px;
+    text-align: left;
+    height: 53px;
+    vertical-align: -2px;
+    font-size: 85px;
+    text-transform: uppercase;
+}
+
+main .setting-header .dropping-texts > div {
+    font-size: 0px;
+    opacity: 0;
+    margin-left: -30px;
+    position: absolute;
+    font-weight: 300;
+    box-shadow: 0px 60px 25px -20px rgba(0, 0, 0, 0.5);
+    font-family: Oswald-Medium, sans-serif;
+}
+
+main .setting-header .dropping-texts > div:nth-child(1) {
+    animation: roll 5s linear infinite 0s;
+    color: #ff5e3a;
+}
+
+main .setting-header .dropping-texts > div:nth-child(2) {
+    animation: roll 5s linear infinite 1s;
+    color: #7c5ac2;
+}
+
+main .setting-header .dropping-texts > div:nth-child(3) {
+    animation: roll 5s linear infinite 2s;
+    color: #007fff;
+}
+
+/* Animation */
+
+@keyframes roll {
+    0% {
+        font-size: 0px;
+        opacity: 0;
+        margin-left: -30px;
+        margin-top: 0px;
+        transform: rotate(-25deg);
+    }
+    3% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    5% {
+        font-size: inherit;
+        opacity: 1;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    20% {
+        font-size: inherit;
+        opacity: 1;
+        margin-left: 0px;
+        margin-top: 0px;
+        transform: rotate(0deg);
+    }
+    27% {
+        font-size: 0px;
+        opacity: 0.5;
+        margin-left: 20px;
+        margin-top: 100px;
+    }
+    100% {
+        font-size: 0px;
+        opacity: 0;
+        margin-left: -30px;
+        margin-top: 0px;
+        transform: rotate(15deg);
+    }
+}
+
+@keyframes roll2 {
+    0% {
+        font-size: 0px;
+        opacity: 0;
+        margin-left: -30px;
+        margin-top: 0px;
+        transform: rotate(-25deg);
+    }
+    3% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    5% {
+        font-size: inherit;
+        opacity: 1;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    30% {
+        font-size: inherit;
+        opacity: 1;
+        margin-left: 0px;
+        margin-top: 0px;
+        transform: rotate(0deg);
+    }
+    37% {
+        font-size: 1500px;
+        opacity: 0;
+        margin-left: -1000px;
+        margin-top: -800px;
+    }
+    100% {
+        font-size: 0px;
+        opacity: 0;
+        margin-left: -30px;
+        margin-top: 0px;
+        transform: rotate(15deg);
+    }
+}
+
+/***************** DATEPICKER STYLE *****************/
+
+.ui-datepicker {
+    background-color: #ffffff;
+    width: 165px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+}
+
+.ui-datepicker span {
+    display: none;
+}
+
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+    font-family: Oswald-Medium, sans-serif;
+    outline: none;
+    font-weight: lighter;
+}
+
+.ui-datepicker th {
+    font-family: Oswald-Medium, sans-serif;
+}
+
+.ui-datepicker .ui-datepicker-header {
+    background-color: #7c5ac2 !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    background: none !important;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    background-color: #ff5e3a !important;
+    border: 2px solid #ff5e3a !important;
+    color: #000000 !important;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    color: #000000 !important;
+    border: 2px solid #7c5ac2 !important;
+}
+
+/***************** DATEPICKER STYLE END *****************/

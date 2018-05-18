@@ -36,6 +36,5 @@ function showTabsContent(m) {
         tab[m].classList.add('active');
         tabContent[m].classList.remove('hide');
         tabContent[m].classList.add('show');
-
     }
 }
