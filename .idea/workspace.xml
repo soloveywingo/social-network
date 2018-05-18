@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3ab2e6f3-96cb-4e92-8a32-64fb4ee0960f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/signUpController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/signUpController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index-style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/file-input.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/file-input.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +19,7 @@
       <file leaf-file-name="profile-settings.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/profile-settings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="859">
+            <state relative-caret-position="1853">
               <caret line="109" column="86" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="86" />
             </state>
           </provider>
@@ -28,26 +28,35 @@
       <file leaf-file-name="profile-settings-style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/profile-settings-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="493">
               <caret line="29" column="29" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="166" column="124" lean-forward="true" selection-start-line="166" selection-start-column="36" selection-end-line="166" selection-end-column="124" />
+            <state relative-caret-position="656">
+              <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="avatarController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/avatarController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+            <state relative-caret-position="1326">
+              <caret line="78" column="92" selection-start-line="78" selection-start-column="92" selection-end-line="78" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -65,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/controllers/signUpController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="833">
-              <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+              <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -83,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/css/index-style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23103">
-              <caret line="1359" column="19" selection-start-line="1359" selection-start-column="19" selection-end-line="1359" selection-end-column="19" />
+              <caret line="1398" column="19" selection-start-line="1398" selection-start-column="19" selection-end-line="1398" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -101,7 +110,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>friends-content</find>
-      <find />
+      <find>friends-content .friend-box</find>
       <find>friends-con</find>
       <find>header</find>
       <find>sele</find>
@@ -110,16 +119,16 @@
       <find>wall</find>
       <find>left-panel</find>
       <find>full-left-panel</find>
-      <find />
+      <find>main .full-left-panel ul li a</find>
       <find>social</find>
       <find>tools</find>
-      <find />
-      <find />
+      <find>header .tools</find>
+      <find>main .content .tiny-information</find>
       <find>profile-photo</find>
       <find>bg-header-profile</find>
       <find>light</find>
-      <find />
-      <find />
+      <find>header .profile-view .user-photo-border</find>
+      <find>.search-panel .user span</find>
       <find>user-photo</find>
       <find>h2</find>
       <find>su</find>
@@ -138,7 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/no-submit.js" />
         <option value="$PROJECT_DIR$/css/playlist.css" />
         <option value="$PROJECT_DIR$/js/todo.js" />
         <option value="$PROJECT_DIR$/js/typing-text.js" />
@@ -187,8 +195,9 @@
         <option value="$PROJECT_DIR$/profile-settings.php" />
         <option value="$PROJECT_DIR$/css/profile-settings-style.css" />
         <option value="$PROJECT_DIR$/controllers/signUpController.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/components/header.php" />
+        <option value="$PROJECT_DIR$/controllers/avatarController.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -222,6 +231,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,11 +244,15 @@
               <item name="social-network" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="social-network" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social-network" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -297,12 +311,13 @@
       <workItem from="1526580694269" duration="4606000" />
       <workItem from="1526639610247" duration="31000" />
       <workItem from="1526640681872" duration="5998000" />
-      <workItem from="1526651392054" duration="3069000" />
+      <workItem from="1526651392054" duration="3262000" />
+      <workItem from="1526654716494" duration="128000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110639000" />
+    <option name="totallyTimeSpent" value="110960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -310,10 +325,10 @@
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947916" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -346,20 +361,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/modal-image.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/typing-text.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="453" column="3" lean-forward="true" selection-start-line="453" selection-start-column="3" selection-end-line="453" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/todo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -614,13 +615,13 @@
     <entry file="file://$PROJECT_DIR$/css/index-style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23103">
-          <caret line="1359" column="19" selection-start-line="1359" selection-start-column="19" selection-end-line="1359" selection-end-column="19" />
+          <caret line="1398" column="19" selection-start-line="1398" selection-start-column="19" selection-end-line="1398" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/profile-settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="859">
+        <state relative-caret-position="1853">
           <caret line="109" column="86" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="86" />
         </state>
       </provider>
@@ -642,28 +643,38 @@
     <entry file="file://$PROJECT_DIR$/controllers/signUpController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
-          <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+          <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/profile-settings-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="493">
           <caret line="29" column="29" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="166" column="124" lean-forward="true" selection-start-line="166" selection-start-column="36" selection-end-line="166" selection-end-column="124" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+        <state relative-caret-position="1326">
+          <caret line="78" column="92" selection-start-line="78" selection-start-column="92" selection-end-line="78" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/profileSettingsController — копия.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/avatarController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
         </state>
       </provider>
     </entry>

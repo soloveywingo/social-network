@@ -13,29 +13,7 @@
 <?php require "controllers/signInController.php";
 include "components/header.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
-$data = $_POST;
-
-if (isset($data['delete_avatar']))
-{
-    if (getimagesize($_FILES['change_avatar']["tmp_name"]) == false) {
-        $errors[] = "IT IS NOT A FUCKING IMAGE";
-    } else
-        {
-        $avatar = addslashes($_FILES['change_avatar']['tmp_name']);
-        $avatar = file_get_contents($avatar);
-        $avatar = base64_encode($avatar);
-        saveAvatar($avatar);
-
-    }
-}
-function saveAvatar($avatar)
-{
-
-    $user = R::load('users2', $_SESSION['logged_user']->id);
-    $user->avatar = $avatar;
-    R::store($user);
-
-}
+require 'controllers/avatarController.php';
 
 ?>
 
@@ -62,14 +40,21 @@ function saveAvatar($avatar)
                 </div>
                 <div class="profile-photo holder">
 
-                    <?echo '<img height="300" width = "300" src = "data:image;base64,'.$user->avatar.'" ';?>
+                    <?echo '<img src = "data:image;base64,'.$user->avatar.'" ';?>
                 </div>
 
                 <div class="open-settings">
                     <form action="#" method="POST" enctype="multipart/form-data">
 
                         <input type="button" name="open_avatar" value="Open photo"><br>
+<<<<<<< HEAD
                         <input type="file" name="change_avatar" value="Change photo"><br>
+=======
+
+                        <label for="changePhoto" id="changeUserPhoto">Change photo</label>
+                        <input type="file" name="change_avatar" id="changePhoto"><br>
+
+>>>>>>> d832aa107f14be81b41940c4b91bf56d03aed8d7
                         <input type="submit" name="delete_avatar" value="Delete photo"><br>
 
                     </form>
@@ -78,7 +63,9 @@ function saveAvatar($avatar)
                 <div class="open-settings-bg">
                     <form action="#" method="POST">
 
-                        <input type="submit" name="change_bg_photo" value="Change background"><br>
+                        <label for="changePhotoBg" id="changeUserPhotoBg">Change background</label>
+                        <input type="file" name="change_avatar" id="changePhotoBg"><br>
+
                         <input type="submit" name="delete_bg_photo" value="Delete background"><br>
 
                     </form>
