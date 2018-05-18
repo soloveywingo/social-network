@@ -1,0 +1,338 @@
+/***************** GENERAL STYLES *****************/
+
+body {
+    background: url("../img/pattern.jpg");
+
+    -webkit-animation: AnimationName 15s ease infinite;
+    -moz-animation: AnimationName 15s ease infinite;
+    -o-animation: AnimationName 15s ease infinite;
+    animation: AnimationName 15s ease infinite;
+
+
+    font-size: 14px;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    font-family: RobotoReg, sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
+}
+
+a {
+    color: #848484;
+    text-decoration: none;
+}
+
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.holder::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.active-class {
+    color: #ff5e3a !important;
+}
+
+.terms-clicker:hover {
+    opacity: .7;
+}
+
+/***************** GENERAL STYLES END *****************/
+
+/***************** MAIN STYLES *****************/
+main.sign-in .left-block {
+    float: left;
+    width: 50%;
+    text-align: left;
+    padding-top: 100px;
+    padding-right: 50px;
+}
+
+main.sign-in .left-block h2 {
+    color: #ffffff;
+    font-family: Oswald-Medium, sans-serif;
+    font-weight: lighter;
+    font-size: 35px;
+    line-height: 48px;
+
+}
+
+main.sign-in .left-block p {
+    color: #ffffff;
+    line-height: 23px;
+}
+
+main.sign-in .left-block button {
+    margin: 0 auto;
+    width: 155px;
+    height: 40px;
+    background: none;
+    border: 2px solid #ffffff;
+    border-radius: 3px;
+    font-family: Oswald-Medium, sans-serif;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+
+}
+
+main.sign-in .left-block button:hover {
+    border: 2px solid #dcdcdc;
+    color: #dcdcdc;
+}
+
+main.sign-in .right-block {
+    float: right;
+    width: 50%;
+}
+
+main.sign-in .right-block .change-form {
+    width: 410px;
+    height: 560px;
+    background-color: #ffffff;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #e6ecf5;
+
+    -webkit-box-shadow: 18px 23px 54px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 18px 23px 54px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 18px 23px 54px -10px rgba(0, 0, 0, 0.75);
+}
+
+main.sign-in .right-block .change-buttons {
+    width: 55px;
+    height: 560px;
+    float: left;
+    border-right: 1px solid #e6ecf5;
+}
+
+main.sign-in .right-block .change-buttons span {
+    display: block;
+    cursor: pointer;
+    font-family: PT-Regular, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    border-bottom: 1px solid #e6ecf5;
+    height: 50%;
+    padding-top: 120px;
+    color: #cbcedf;
+}
+
+main.sign-in .right-block .change-buttons span + span {
+    border: none;
+}
+
+main.sign-in .right-block .change-buttons span:hover {
+    background-color: #edeeef;
+}
+
+main.sign-in .right-block .change-form form input[type="text"]:focus,
+main.sign-in .right-block .change-form form input[type="email"]:focus,
+main.sign-in .right-block .change-form form input[type="password"]:focus {
+    border: 1px solid #ff5e3a;
+}
+
+main.sign-in .right-block .change-form .second-form {
+    text-align: left;
+    float: right;
+    margin-right: 20px;
+    display: none;
+}
+
+main.sign-in .right-block .change-form .second-form h3 {
+    color: #6c6e7d;
+    font-size: 14px;
+    font-family: Jaapokki-Regular, sans-serif;
+    padding: 10px 0 10px 10px;
+}
+
+main.sign-in .right-block .change-form .second-form form input {
+    width: 310px;
+    height: 40px;
+    border-radius: 2px;
+    border: 1px solid #e6ecf5;
+    outline: none;
+    padding-left: 7px;
+    font-family: PT-Regular, sans-serif;
+    margin-bottom: 20px;
+}
+
+main.sign-in .right-block .change-form .second-form form input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+}
+
+main.sign-in .right-block .change-form .second-form span {
+    display: inline-block;
+    font-family: PT-Regular, sans-serif;
+    font-size: 15px;
+}
+
+main.sign-in .right-block .change-form .second-form span a {
+    color: #ff5e3a;
+}
+
+main.sign-in .right-block .change-form .second-form form .short-input {
+    width: 145px;
+}
+
+main.sign-in .right-block .change-form .second-form form .short-input:first-child {
+    margin-right: 16px;
+}
+
+main.sign-in .right-block .change-form .second-form form select {
+    width: 310px;
+    height: 40px;
+    border-radius: 2px;
+    border: 1px solid #e6ecf5;
+    outline: none;
+    padding-left: 7px;
+    font-family: PT-Regular, sans-serif;
+    margin-bottom: 20px;
+    color: #9ea2b8;
+}
+
+main.sign-in .right-block .change-form .second-form form input[type="submit"] {
+    margin-bottom: 0;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #7c5ac2;
+}
+
+main.sign-in .right-block .change-form .second-form form input[type="submit"]:hover {
+    opacity: .7;
+}
+
+main.sign-in .right-block .change-form .first-form {
+    text-align: left;
+    float: right;
+    margin-right: 20px;
+}
+
+main.sign-in .right-block .change-form .first-form h3 {
+    color: #6c6e7d;
+    font-size: 14px;
+    font-family: Jaapokki-Regular, sans-serif;
+    padding: 10px 0 10px 10px;
+}
+
+main.sign-in .right-block .change-form .first-form form input {
+    width: 310px;
+    height: 40px;
+    border-radius: 2px;
+    border: 1px solid #e6ecf5;
+    outline: none;
+    padding-left: 7px;
+    font-family: PT-Regular, sans-serif;
+    margin-bottom: 20px;
+}
+
+main.sign-in .right-block .change-form .first-form form input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+}
+
+main.sign-in .right-block .change-form .first-form span {
+    display: inline-block;
+    font-family: PT-Regular, sans-serif;
+    font-size: 15px;
+}
+
+main.sign-in .right-block .change-form .first-form form input[type="submit"] {
+    margin-bottom: 0;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff5e3a;
+}
+
+main.sign-in .right-block .change-form .first-form form input[type="submit"]:hover {
+    opacity: .7;
+}
+
+form ::-webkit-input-placeholder {
+    color: #9ea2b8;
+
+}
+
+form :-ms-input-placeholder {
+    color: #9ea2b8;
+
+}
+
+form ::-moz-placeholder {
+    color: #9ea2b8;
+    opacity: 1;
+}
+
+form :-moz-placeholder {
+    color: #9ea2b8;
+    opacity: 1;
+}
+
+/***************** DATEPICKER STYLE *****************/
+
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+    font-family: Oswald-Medium, sans-serif;
+    outline: none;
+    font-weight: lighter;
+}
+
+.ui-datepicker th {
+    font-family: Oswald-Medium, sans-serif;
+}
+
+.ui-datepicker .ui-datepicker-header {
+    background-color: #7c5ac2 !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    background: none !important;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    background-color: #ff5e3a !important;
+    border: 2px solid #ff5e3a !important;
+    color: #000000 !important;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    color: #000000 !important;
+    border: 2px solid #7c5ac2 !important;
+}
+
+/***************** DATEPICKER STYLE END *****************/
+
+/***************** MAIN STYLES END *****************/

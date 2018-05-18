@@ -1,0 +1,91 @@
+main .setting-content {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 10px 25px 10px 25px;
+    text-align: center;
+}
+
+main .setting-content .grid-content {
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+
+main .setting-content form input[type="text"],
+main .setting-content form input[type="email"],
+main .setting-content form input[type="password"] {
+    height: 45px;
+    font-size: 17px;
+    padding-left: 5px;
+    outline: none;
+    color: #212121;
+    text-transform: capitalize;
+    border: 1px solid #212121;
+}
+
+main .setting-content form input[type="text"]:focus,
+main .setting-content form input[type="email"]:focus,
+main .setting-content form input[type="password"]:focus {
+    border: 1px solid #ff5e3a;
+}
+
+main .setting-content form h2 {
+    font-family: Oswald-Medium, sans-serif;
+    color: #515365;
+    text-align: left;
+}
+
+main .setting-content form select {
+    background: none;
+    border: 1px solid #212121;
+    color: #212121;
+    outline: none;
+    font-size: 17px;
+}
+
+main .setting-content input[type="submit"] {
+    width: 300px;
+    height: 45px;
+    background-color: #ff5e3a;
+    border: navajowhite;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: PT-Regular, sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+main .setting-content input[type="submit"]:hover {
+    opacity: .7;
+}
+
+main .setting-content form select:focus {
+    border: 1px solid #ff5e3a;
+}
+
+main .setting-content form ::-webkit-input-placeholder {
+    color: #212121;
+
+}
+
+main .setting-content form :-ms-input-placeholder {
+    color: #212121;
+
+}
+
+main .setting-content form ::-moz-placeholder {
+    color: #212121;
+    opacity: 1;
+}
+
+main .setting-content form :-moz-placeholder {
+    color: #212121;
+    opacity: 1;
+}

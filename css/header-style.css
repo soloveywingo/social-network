@@ -1,0 +1,587 @@
+/***************** GENERAL STYLES *****************/
+
+body {
+    background-color: #edf2f6;
+    font-size: 14px;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    font-family: RobotoReg, sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+a {
+    color: #848484;
+    text-decoration: none;
+}
+
+.wrapper {
+    margin-left: 120px;
+    margin-right: 30px;
+}
+
+.holder::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tooltip {
+    z-index: 100;
+    position: fixed;
+    padding: 5px 10px;
+    border: 1px solid #b3c9ce;
+    border-radius: 4px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Jaapokki-Regular, sans-serif;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+/***************** GENERAL STYLES END *****************/
+
+/***************** HEADER *****************/
+
+header {
+    z-index: 30;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #3f4257;
+}
+
+header .page-name {
+    font-family: Jaapokki-Regular, sans-serif;
+    font-weight: lighter;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 17px;
+    padding-top: 20px;
+}
+
+header form {
+    position: relative;
+}
+
+header form input {
+    width: 460px;
+    height: 70px;
+    padding: 10px 15px;
+    float: left;
+    border: 0;
+    background-color: #494c62;
+    font-size: 15px;
+    outline: none;
+    color: #ffffff;
+}
+
+header form button.submit {
+    overflow: visible;
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 70px;
+    width: 70px;
+    color: #696d87;
+    background-color: #494c62;
+    outline: none;
+}
+
+header form button.submit i {
+    font-size: 25px;
+}
+
+header form ::-webkit-input-placeholder {
+    color: #71756f;
+    font-family: Jaapokki-Regular, sans-serif;
+}
+
+header form :-ms-input-placeholder {
+    color: #71756f;
+    font-family: Jaapokki-Regular, sans-serif;
+}
+
+header form ::-moz-placeholder {
+    color: #71756f;
+    font-family: Jaapokki-Regular, sans-serif;
+    opacity: 1;
+}
+
+header form :-moz-placeholder {
+    color: #71756f;
+    font-family: Jaapokki-Regular, sans-serif;
+    opacity: 1;
+}
+
+header .tools {
+    padding-top: 20px;
+}
+
+header .tools img {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+header .profile-view {
+    padding-top: 10px;
+    text-align: left;
+    margin-bottom: 30px;
+    width: 220px;
+}
+
+header .profile-view span {
+    font-family: RobotoReg, sans-serif;
+    color: #ffffff;
+    padding-top: 7px;
+    font-size: 12px;
+}
+
+header .profile-view i {
+    color: #ffffff;
+}
+
+header .profile-view .user-photo-border {
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    margin-right: 10px;
+    float: left;
+}
+
+header .profile-view .user-photo-border img {
+    width: 100%;
+}
+
+header .profile-view .user-status {
+    display: block;
+    padding-top: -25px;
+    font-family: Jaapokki-Regular, sans-serif;
+    color: #8c94a3;
+    text-transform: uppercase;
+    line-height: 6px;
+    font-size: 11px;
+}
+
+/***************** BOX SHOWER *****************/
+
+.first-box {
+    border-radius: 5px;
+    position: absolute;
+    top: 60px;
+    right: 270px;
+    display: none;
+    height: 400px;
+    width: 375px;
+    background-color: #ffffff;
+}
+
+.box-footer {
+    padding-top: 15px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 5px 5px;
+    height: 60px;
+    width: 100%;
+    background-color: #38a9ff;
+}
+
+.second-box {
+    border-radius: 5px;
+    position: absolute;
+    display: none;
+    top: 60px;
+    right: 270px;
+    height: 400px;
+    width: 375px;
+    background-color: #ffffff;
+}
+
+.second-box .box-footer {
+    background-color: #7c5ac2;
+}
+
+.second-box .box-main .message {
+    padding-top: 10px;
+    height: 130px;
+    border-bottom: 1px solid #e6ecf5;
+    border-top: 1px solid #e6ecf5;
+}
+
+.second-box .box-main .message:hover {
+    background-color: #f7f9fc;
+}
+
+.second-box .box-main .message .this-message {
+    height: 60px;
+    overflow: hidden;
+}
+
+.second-box .box-main p {
+    color: #979bc7;
+    font-family: PT-Regular, sans-serif;
+    font-size: 14px;
+    margin-top: 0;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.second-box .box-main .message i {
+    display: block;
+    font-family: PT-Regular, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    color: #979bc7;
+    font-weight: bold;
+    margin-left: 70px;
+}
+
+.third-box {
+    border-radius: 5px;
+    position: absolute;
+    top: 60px;
+    right: 270px;
+    display: none;
+    height: 400px;
+    width: 375px;
+    background-color: #ffffff;
+}
+
+.third-box .box-footer {
+    background-color: #ff5e3a;
+}
+
+.boxes h3 {
+    margin-bottom: 0;
+    text-align: left;
+    padding-left: 15px;
+    font-family: PT-Regular, sans-serif;
+    font-size: 11px;
+    color: #9ab9e0;
+    border-bottom: 1px solid #e6ecf5;
+}
+
+.box-footer span {
+    color: #ffffff;
+    font-family: PT-Regular, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+
+.box-footer span:hover {
+    text-decoration: underline;
+}
+
+.box-main {
+    height: 320px;
+    text-align: left;
+    overflow-y: scroll;
+    padding-bottom: 40px;
+}
+
+.box-main img {
+    float: left;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.box-main .person {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e6ecf5;
+    border-top: 1px solid #e6ecf5;
+}
+
+.box-main .person-name {
+    margin-right: 60px;
+}
+
+.box-main span {
+    color: #515365;
+    font-family: PT-Regular, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.box-main span:hover {
+    color: #ff5e3a;
+    cursor: pointer;
+}
+
+.box-main span.person-status {
+    margin-top: -10px;
+    display: block;
+    color: #979bc7;
+    font-size: 10px;
+    font-family: PT-Regular, sans-serif;
+}
+
+.box-main .friends-buttons {
+    margin-right: 15px;
+}
+
+.box-main .accept {
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #38a9ff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.box-main .reject {
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #9a9fbf;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.box-main button:hover {
+    opacity: .7;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #cccccc;
+}
+
+.user-box {
+    text-align: left;
+    overflow-y: scroll;
+    display: none;
+    width: 230px;
+    height: 530px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    position: absolute;
+    top: 60px;
+    right: 40px;
+}
+
+.user-box h3 {
+    margin-bottom: 0;
+    text-align: left;
+    padding-left: 15px;
+    font-family: PT-Regular, sans-serif;
+    font-size: 11px;
+    color: #9ab9e0;
+    border-bottom: 1px solid #e6ecf5;
+}
+
+.user-box .items-box {
+    margin-top: 15px;
+    padding-left: 15px;
+    border-bottom: 1px solid #e6ecf5;
+}
+
+.user-box ul {
+    margin: 0;
+    padding: 0;
+}
+
+.user-box ul li {
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+.user-box i {
+    color: #9a9fbf;
+    font-size: 20px;
+}
+
+.user-box a {
+    margin-left: 5px;
+    color: #515365;
+    font-size: 15px;
+    font-family: Oswald-Medium, sans-serif;
+}
+
+.user-box a:hover {
+    color: #ff5e3a;
+}
+
+.user-box .chat-setting {
+    margin-top: 15px;
+    padding-left: 15px;
+    border-bottom: 1px solid #e6ecf5;
+}
+
+.user-box .chat-setting .online {
+    margin-right: 10px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #32e4cd;
+}
+
+.user-box .chat-setting .away {
+    margin-right: 10px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ffd52f;
+}
+
+.user-box .chat-setting .disconnected {
+    margin-right: 10px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ff4f60;
+}
+
+.user-box .chat-setting .invisible {
+    margin-right: 10px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #cbdfee;
+}
+
+.user-box .chat-setting span {
+    cursor: pointer;
+    font-size: 13px;
+    color: #888da8;
+    font-family: Oswald-Medium, sans-serif;
+}
+
+.user-box .chat-setting span:hover {
+    color: #515365;
+}
+
+.user-box .custom-status {
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    border-bottom: 1px solid #e6ecf5;
+}
+
+.user-box .custom-status form input {
+    width: 145px;
+    height: 35px;
+    border: 1px solid #e6ecf5;
+    background: none;
+    color: #515365;
+    border-radius: 5px 0 0 5px;
+    font-size: 13px;
+    font-family: Oswald-Medium, sans-serif;
+    text-transform: uppercase;
+}
+
+.user-box .custom-status form button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #7c5ac2;
+    cursor: pointer;
+}
+
+.user-box .custom-status form button i {
+    color: #ffffff;
+}
+
+.user-box .about-us {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+
+/***************** BOX SHOWER END *****************/
+
+/***************** SEARCH PANEL *****************/
+
+.search-panel {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: #ffffff;
+    width: 530px;
+    height: 400px;
+    border-left: 1px solid #e6ecf5;
+    border-right: 1px solid #e6ecf5;
+    border-bottom: 1px solid #e6ecf5;
+    border-radius: 0 0 5px 5px;
+    text-align: left;
+    overflow-y: scroll;
+}
+
+.search-panel .user {
+    border-bottom: 1px solid #e6ecf5;
+    width: 100%;
+    height: 85px;
+    padding: 10px 15px 0 15px;
+    cursor: pointer;
+}
+
+.search-panel .user:hover {
+    background-color: #e6ecf5;
+}
+
+.search-panel .user a {
+    font-family: Oswald-Medium, sans-serif;
+    color: #000000;
+    font-size: 18px;
+}
+
+.search-panel .user a:hover {
+    color: #ff5e3a;
+}
+
+.search-panel .user span {
+    text-transform: uppercase;
+    font-family: RobotoReg, sans-serif;
+    color: #494c62;
+    font-size: 13px;
+}
+
+.search-panel .user .around-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    margin-right: 20px;
+}
+
+.search-panel .user .around-img img {
+    width: 100%;
+}
+
+/***************** HEADER END *****************/

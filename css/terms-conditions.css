@@ -1,0 +1,33 @@
+main .terms-content .rules {
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    border: 1px solid #e6ecf5;
+}
+
+main .terms-content .rules h2 {
+    text-align: left;
+    font-family: Oswald-Medium, sans-serif;
+    color: #212121;
+}
+
+main .terms-content .rules p {
+    text-align: left;
+    font-family: PT-Regular, sans-serif;
+    color: #212121;
+}
+
+main .terms-content .rules span {
+    display: block;
+    text-align: right;
+    font-family: PT-Regular, sans-serif;
+    color: #212121;
+}
+main .terms-content .rules span i {
+    font-style: normal;
+    font-family: Jaapokki-Regular, sans-serif;
+    text-transform: uppercase;
+    color: #ff5e3a;
+}

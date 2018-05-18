@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Jaapokki-Regular;
+    src: url("../fonts/Jaapokki-Regular.otf");
+}
+
+@font-face {
+    font-family: PT-Regular;
+    src: url("../fonts/PT_Sans-Web-Regular.ttf");
+}
+
+@font-face {
+    font-family: RobotoMono-Regular;
+    src: url("../fonts/RobotoMono-Regular.ttf");
+}
+
+@font-face {
+    font-family: Oswald-Medium;
+    src: url("../fonts/Oswald-Medium.ttf");
+}
