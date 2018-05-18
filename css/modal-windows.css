@@ -527,3 +527,192 @@
     float: right;
     margin-right: 50px;
 }
+
+.upload-photo-modal-bg {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    padding-top: 150px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, .9);
+}
+
+.upload-photo-modal-bg .modal {
+    width: 610px;
+    height: 280px;
+    background-color: #ffffff;
+    border: 1px solid #e6ecf5;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.upload-photo-modal-bg .modal h2 {
+    font-family: Jaapokki-Regular, sans-serif;
+    color: #51537e;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.upload-photo-modal-bg .modal #changePhoto {
+    display: none;
+}
+
+.upload-photo-modal-bg .modal label {
+    display: block;
+    background: none;
+    border: 1px solid #e6ecf5;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Oswald-Medium, sans-serif;
+    transition: .5s;
+    width: 400px;
+    height: 50px;
+    padding-top: 10px;
+    margin: 0 auto;
+    color: #51537e;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.upload-photo-modal-bg .modal label:hover {
+    border: 1px solid #ff5e3a;
+}
+
+.upload-photo-modal-bg .modal input[type="submit"] {
+    width: 190px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7c5ac2;
+    font-size: 16px;
+    font-family: Oswald-Medium, sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+}
+
+.upload-photo-modal-bg .modal input[type="submit"]:hover {
+    opacity: .7;
+}
+
+.upload-photo-modal-bg .modal input[type="button"] {
+    width: 190px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff5e3a;
+    font-size: 16px;
+    font-family: Oswald-Medium, sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.upload-photo-modal-bg .modal input[type="button"]:hover {
+    opacity: .7;
+}
+
+
+.upload-photo-modal-bg .modal .buttons {
+    margin: 0 auto;
+}
+
+.bg-modal-background {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    padding-top: 150px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, .9);
+}
+
+.bg-modal-background .modal {
+    width: 610px;
+    height: 280px;
+    background-color: #ffffff;
+    border: 1px solid #e6ecf5;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.bg-modal-background .modal h2 {
+    font-family: Jaapokki-Regular, sans-serif;
+    color: #51537e;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.bg-modal-background .modal #changePhotoBg {
+    display: none;
+}
+
+.bg-modal-background .modal label {
+    display: block;
+    background: none;
+    border: 1px solid #e6ecf5;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Oswald-Medium, sans-serif;
+    transition: .5s;
+    width: 400px;
+    height: 50px;
+    padding-top: 10px;
+    margin: 0 auto;
+    color: #51537e;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.bg-modal-background .modal label:hover {
+    border: 1px solid #ff5e3a;
+}
+
+.bg-modal-background .modal input[type="submit"] {
+    width: 190px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7c5ac2;
+    font-size: 16px;
+    font-family: Oswald-Medium, sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+}
+
+.bg-modal-background .modal input[type="submit"]:hover {
+    opacity: .7;
+}
+
+.bg-modal-background .modal input[type="button"] {
+    width: 190px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff5e3a;
+    font-size: 16px;
+    font-family: Oswald-Medium, sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.bg-modal-background .modal input[type="button"]:hover {
+    opacity: .7;
+}
+
+

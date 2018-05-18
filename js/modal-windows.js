@@ -59,3 +59,27 @@ readMore.click(function () {
 closeButtonReadMore.click(function () {
     bgModalReadMore.hide();
 })
+
+var changeAvatar = $(".change-avatar");
+var bgModalAvatar = $(".upload-photo-modal-bg");
+var closeAvatarModal = $(".close-avatar-user-modal");
+
+changeAvatar.click(function () {
+    bgModalAvatar.show();
+})
+
+closeAvatarModal.click(function () {
+    bgModalAvatar.hide();
+})
+
+var changeBg = $(".change-bg");
+var modalBg = $(".bg-modal-background");
+var closeBackground = $(".close-background");
+
+changeBg.click(function () {
+    modalBg.show();
+})
+
+closeBackground.click(function () {
+    modalBg.hide();
+})

@@ -477,26 +477,6 @@ main .header-profile .open-settings label:hover {
     color: #ffffff;
 }
 
-main .header-profile .open-settings-bg #changePhotoBg {
-    display: none;
-}
-
-main .header-profile .open-settings-bg label {
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    color: #cccccc;
-    font-family: Oswald-Medium, sans-serif;
-    font-size: 18px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-}
-
-main .header-profile .open-settings-bg label:hover {
-    color: #ffffff;
-}
-
 main .header-profile .users-buttons form input[type="submit"] {
     border: none;
     background: none;
@@ -547,7 +527,22 @@ main .header-profile .open-settings-bg form input[type="submit"] {
     margin-bottom: 10px;
 }
 
+main .header-profile .open-settings-bg form input[type="button"] {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #cccccc;
+    font-family: Oswald-Medium, sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
 main .header-profile .open-settings-bg form input[type="submit"]:hover {
+    color: #ffffff;
+}
+
+main .header-profile .open-settings-bg form input[type="button"]:hover {
     color: #ffffff;
 }
 
@@ -606,6 +601,7 @@ main .header-profile .open-settings form input[type="button"]:hover {
 }
 
 main .header-profile .short-info {
+    padding-top: 3px;
     margin: 0 auto;
     width: 250px;
 }
