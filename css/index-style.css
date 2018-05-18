@@ -379,6 +379,45 @@ main .header-profile .users-buttons {
     padding: 5px;
 }
 
+main .header-profile .open-settings #changePhoto {
+    display: none;
+}
+
+main .header-profile .open-settings label {
+    background: none;
+    border: none;
+    outline: none;
+    color: #cccccc;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: Oswald-Medium, sans-serif;
+}
+
+main .header-profile .open-settings label:hover {
+    color: #ffffff;
+}
+
+main .header-profile .open-settings-bg #changePhotoBg {
+    display: none;
+}
+
+main .header-profile .open-settings-bg label {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #cccccc;
+    font-family: Oswald-Medium, sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+main .header-profile .open-settings-bg label:hover {
+    color: #ffffff;
+}
+
+
 main .header-profile .users-buttons form input[type="submit"] {
     border: none;
     background: none;

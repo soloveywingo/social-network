@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ab2e6f3-96cb-4e92-8a32-64fb4ee0960f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index-style.css" afterPath="$PROJECT_DIR$/css/index-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/profile-settings-style.css" afterPath="$PROJECT_DIR$/css/profile-settings-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/datepicker.js" afterPath="$PROJECT_DIR$/js/datepicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tabs.js" afterPath="$PROJECT_DIR$/js/tabs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile-settings.php" afterPath="$PROJECT_DIR$/profile-settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sign-in.php" afterPath="$PROJECT_DIR$/sign-in.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/file-input.js" afterPath="$PROJECT_DIR$/js/file-input.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,31 +15,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="profile-settings.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/profile-settings.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="865">
-              <caret line="109" column="86" lean-forward="true" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="86" />
+            <state relative-caret-position="442">
+              <caret line="58" column="91" lean-forward="false" selection-start-line="58" selection-start-column="91" selection-end-line="58" selection-end-column="91" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile-settings-style.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/profile-settings-style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index-style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/index-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="1359" column="19" lean-forward="false" selection-start-line="1359" selection-start-column="19" selection-end-line="1359" selection-end-column="19" />
+            <state relative-caret-position="222">
+              <caret line="412" column="21" lean-forward="false" selection-start-line="412" selection-start-column="21" selection-end-line="412" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="file-input.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/file-input.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -61,11 +57,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>about</find>
-      <find>users-b</find>
-      <find>friends-content</find>
-      <find>friends-content .friend-box</find>
-      <find>friends-con</find>
       <find>header</find>
       <find>sele</find>
       <find>post</find>
@@ -91,6 +82,11 @@
       <find>b</find>
       <find>date</find>
       <find>show</find>
+      <find>labe;</find>
+      <find>head</find>
+      <find>open-se</find>
+      <find>labe</find>
+      <find>.open-settings-bg</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,7 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/file-input.js" />
         <option value="$PROJECT_DIR$/js/no-submit.js" />
         <option value="$PROJECT_DIR$/css/playlist.css" />
         <option value="$PROJECT_DIR$/js/todo.js" />
@@ -140,16 +135,17 @@
         <option value="$PROJECT_DIR$/components/head.php" />
         <option value="$PROJECT_DIR$/components/left-right-panels.php" />
         <option value="$PROJECT_DIR$/css/header-style.css" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/components/header.php" />
         <option value="$PROJECT_DIR$/controllers/profileSettingsController.php" />
         <option value="$PROJECT_DIR$/js/tabs.js" />
         <option value="$PROJECT_DIR$/sign-in.php" />
         <option value="$PROJECT_DIR$/js/datepicker-settings.js" />
         <option value="$PROJECT_DIR$/js/datepicker.js" />
-        <option value="$PROJECT_DIR$/css/index-style.css" />
         <option value="$PROJECT_DIR$/profile-settings.php" />
         <option value="$PROJECT_DIR$/css/profile-settings-style.css" />
+        <option value="$PROJECT_DIR$/js/file-input.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/css/index-style.css" />
       </list>
     </option>
   </component>
@@ -206,11 +202,6 @@
               <item name="avto.net" type="b2602c69:ProjectViewProjectNode" />
               <item name="avto.net" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="avto.net" type="b2602c69:ProjectViewProjectNode" />
-              <item name="avto.net" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -276,12 +267,12 @@
       <workItem from="1526580567713" duration="125000" />
       <workItem from="1526580694269" duration="4606000" />
       <workItem from="1526639610247" duration="31000" />
-      <workItem from="1526640681872" duration="5998000" />
+      <workItem from="1526640681872" duration="7903000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107570000" />
+    <option name="totallyTimeSpent" value="109475000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -381,13 +372,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/modal-window-video.js" />
-    <entry file="file://$PROJECT_DIR$/js/file-input.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="7" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/modal-windows.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="474">
@@ -574,14 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="45" column="36" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/tabs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -602,14 +578,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
           <caret line="285" column="17" lean-forward="true" selection-start-line="279" selection-start-column="3" selection-end-line="285" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/playlist.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="75" column="3" lean-forward="true" selection-start-line="75" selection-start-column="3" selection-end-line="75" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -646,17 +614,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/index-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="1359" column="19" lean-forward="false" selection-start-line="1359" selection-start-column="19" selection-end-line="1359" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/profile-settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="865">
+        <state relative-caret-position="1528">
           <caret line="109" column="86" lean-forward="true" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="86" />
           <folding />
         </state>
@@ -666,6 +626,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/playlist.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="214" column="17" lean-forward="true" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/file-input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="58" column="91" lean-forward="false" selection-start-line="58" selection-start-column="91" selection-end-line="58" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/index-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="412" column="21" lean-forward="false" selection-start-line="412" selection-start-column="21" selection-end-line="412" selection-end-column="21" />
           <folding />
         </state>
       </provider>

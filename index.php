@@ -44,7 +44,10 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
                     <form action="#" method="POST">
 
                         <input type="button" name="open_avatar" value="Open photo"><br>
-                        <input type="submit" name="change_avatar" value="Change photo"><br>
+
+                        <label for="changePhoto" id="changeUserPhoto">Change photo</label>
+                        <input type="file" name="change_avatar" id="changePhoto"><br>
+
                         <input type="submit" name="delete_avatar" value="Delete photo"><br>
 
                     </form>
@@ -53,7 +56,9 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
                 <div class="open-settings-bg">
                     <form action="#" method="POST">
 
-                        <input type="submit" name="change_bg_photo" value="Change background"><br>
+                        <label for="changePhotoBg" id="changeUserPhotoBg">Change background</label>
+                        <input type="file" name="change_avatar" id="changePhotoBg"><br>
+
                         <input type="submit" name="delete_bg_photo" value="Delete background"><br>
 
                     </form>
