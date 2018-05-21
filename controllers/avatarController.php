@@ -8,7 +8,6 @@ if (isset($data['submit_ph'])) {
 if (getimagesize($_FILES['change_ava']["tmp_name"]) == false) {
 $errors[] = "IT IS NOT A FUCKING IMAGE";
 } else {
-$user->name = "worked";
 $avatar = addslashes($_FILES['change_ava']['tmp_name']);
 $avatar = file_get_contents($avatar);
 $avatar = base64_encode($avatar);

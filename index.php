@@ -16,6 +16,7 @@ include "components/header.php";
 <?php require "controllers/signInController.php";
 
 require "controllers/avatarController.php";
+require "controllers/backgroundController.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
 ?>
 
@@ -28,7 +29,7 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
         <!-- Now content !-->
         <div class="header-profile holder">
             <div class="bg-header-profile">
-                <img src="img/twenty-one-pilots-music-muzyka-1.jpg" alt="Background header">
+                <? echo '<img src = "data:image;base64,' . $user->background . '" '; ?>
             </div>
             <div class="flex-container">
                 <div class="left-navigation holder">
