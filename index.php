@@ -102,7 +102,7 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
     <div class="content tab-content show">
         <div class="wrapper holder">
             <div class="tiny-information holder">
-                <h2>цр</h2>
+                <h2>Profile info</h2>
                 <div class="content-info">
                     <div class="about-me">
                         <h4>About me:</h4>
