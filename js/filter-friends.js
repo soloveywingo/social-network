@@ -1,8 +1,12 @@
-
-$(".input-filter-friends").keyup(function() {
+$(".input-filter-friends").keyup(function () {
     var value = $(this).val().toLowerCase();
-    $(".friend-box .user").filter(function() {
+    $(".left-box-body .user").filter(function () {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
 });
 
+
+$('.user ul li a').click(function () {
+    $('.user li a').removeClass("active");
+    $(this).addClass("active");
+});

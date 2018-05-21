@@ -18,129 +18,145 @@
 
 <?php include "components/header.php" ?>
 
-<main class="none-margin">
+<main>
 
     <?php include "components/left-right-panels.php" ?>
 
-    <div class="message-header">
-        <div class="typing-animation">
-            <span id="quote"></span>
-        </div>
-    </div>
-
     <div class="message-content">
         <div class="wrapper holder">
-            <div class="left-box">
-                <div class="search-box">
-                    <h4>Friends list</h4>
-                    <input type="text" placeholder="Filter friends" class="input-filter-friends">
-                </div>
-                <div class="friend-box">
 
-                    <div class="user">
-                        <div class="around-img">
-                            <img src="img/users/1MA9kvUVdFY.jpg">
-                        </div>
-                        <div class="user-name">
-                            <span>Vasilenko</span><br>
-                            <span>Sergey</span>
+            <div class="message-box">
+
+                <div class="left-box">
+                    <div class="left-box-header">
+                        <form>
+
+                            <input type="text" placeholder="Search..." class="input-filter-friends">
+
+                        </form>
+                    </div>
+
+                    <div class="left-box-body">
+
+                        <div class="user">
+
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <div class="flex-container">
+                                            <div class="around-user-img">
+                                                <img src="img/users/1MA9kvUVdFY.jpg" alt="User photo">
+                                            </div>
+                                            <div class="user-info">
+                                                <span>Sergey Vasilenko</span>
+                                                <span class="status-span">Space cowboy</span>
+                                            </div>
+                                            <div class="time-visit">
+                                                <span>14:20</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+
                         </div>
                     </div>
                 </div>
 
-            </div>
+                <div class="right-box">
 
-            <div class="right-box">
-                <div class="right-box-header">
-                    <div class="user holder">
-                        <div class="around-img">
-                            <img src="img/users/1MA9kvUVdFY.jpg">
-                        </div>
+                    <div class="right-box-header">
                         <div class="user-name">
-                            <span>Vasilenko </span>
-                            <span>Sergey</span>
+                            <span>Sergey Vasilenko</span><br>
                         </div>
                     </div>
 
-                    <div class="message-box">
-                        <div class="fix-size">
-                            <div class="inbox-message holder">
-                                <div class="around-img">
-                                    <img src="img/users/1MA9kvUVdFY.jpg">
-                                </div>
-                                <div class="message">
-                                    <p>Hello. How are you? How is your car?</p>
-                                </div>
-                                <br>
-                                <div class="message">
-                                    <p>Hello. How are you? How is your car?</p>
-                                </div>
-                                <br>
-                                <div class="message">
-                                    <p>Hello. How are you? How is your car?</p>
-                                </div>
-                                <br>
-                                <div class="message">
-                                    <p>Hello. How are you? How is your car?</p>
-                                </div>
-                                <br>
-                                <div class="message">
-                                    <p>Hello. How are you? How is your car?</p>
-                                </div>
-                                <br>
-                                <div class="message">
-                                    <p>Hello. How are you? How is your car?</p>
-                                </div>
-                                <br>
-                                <div class="message">
-                                    <p>Hello. How are you? How is your car?</p>
-                                </div>
-                                <br>
-                                <div class="message">
-                                    <p>Hello. How are you? How is your car?</p>
-                                </div>
-                                <br>
+                    <div class="right-box-body">
+                        <div class="inbox-message">
+
+                            <div class="around-user-img holder">
+                                <img src="img/users/1MA9kvUVdFY.jpg" alt="User photo">
+                            </div>
+
+                            <div class="message">
+                                <p>
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd</p>
+                            </div>
+
+                            <div class="message">
+                                <p>
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd</p>
+                            </div>
+
+                            <div class="message">
+                                <p>
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd</p>
+                            </div>
+
+                            <div class="message">
+                                <p>
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd</p>
                             </div>
                         </div>
 
                         <div class="outbox-message">
-                            <div class="around-img">
-                                <img src="img/new_photo.jpg">
+                            <div class="around-user-img holder">
+                                <img src="img/new_photo.jpg" alt="User photo">
+                            </div>
+
+                            <div class="message">
+                                <p>
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd</p>
+                            </div>
+
+                            <div class="message">
+                                <p>
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd</p>
+                            </div>
+
+                            <div class="message">
+                                <p>
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd</p>
                             </div>
                             <div class="message">
-                                <p>I'm fine. And you? Car is good also. How is your car, dude?</p>
-                            </div><br>
-
-                            <div class="message">
-                                <p>I'm fine. And you? Car is good also. How is your car, dude?</p>
-                            </div><br>
-
-                            <div class="message">
-                                <p>I'm fine. And you? Car is good also. How is your car, dude?</p>
-                            </div><br>
-
-                            <div class="message">
-                                <p>I'm fine. And you? Car is good also. How is your car, dude?</p>
-                            </div><br>
-
-                            <div class="message">
-                                <p>I'm fine. And you? Car is good also. How is your car, dude?</p>
-                            </div><br>
-
-                            <div class="message">
-                                <p>I'm fine. And you? Car is good also. How is your car, dude?</p>
-                            </div><br>
-
-                            <div class="message">
-                                <p>I'm fine. And you? Car is good also. How is your car, dude?</p>
-                            </div><br>
+                                <p>
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd</p>
+                            </div>
 
                         </div>
                     </div>
-                </div>
 
-                <div class="type-message">
-                    <textarea placeholder="Type..."></textarea>
+                    <div class="right-box-footer">
+                        <form action="#" method="POST">
+
+                            <input type="text" placeholder="type here..." name="typing">
+                            <button type="submit"><i class="fab fa-telegram-plane"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -148,7 +164,6 @@
 
 </main>
 
-<script src="js/message-page-header.js"></script>
 <script src="js/filter-friends.js"></script>
 
 </body>
