@@ -41,6 +41,18 @@ if (isset($data['do_signup']))
     {
         //submit registration
         $user = R::dispense('users2');
+        $hobbies = R::dispense('hobbies');
+
+        $hobbies->hobbies = "this is my hobby";
+        $hobbies->music = "my music";
+        $hobbies->shows = "my shows";
+        $hobbies->games = "my games";
+        $hobbies->movies = "my movies";
+        $hobbies->books = "my books";
+        $hobbies->writers = "my writers";
+        $hobbies->games = "my games";
+        $hobbies->cars = "my cars";
+        R::store($hobbies);
         $user->name = $data['name'];
         $user->lastName = $data['lastName'];
         $user->password = password_hash($data['password'], PASSWORD_DEFAULT);
@@ -50,7 +62,7 @@ if (isset($data['do_signup']))
         $user->avatar = "";
         $user->background = "";
         $user->status = "hi, my name is " . $user->name;
-        $user->id_hobbies = $user->id;
+        $user->id_hobbies = $hobbies->id;
         R::store($user);
         echo 'YES , INDEED';
 
