@@ -5,7 +5,6 @@ $(".input-filter-friends").keyup(function () {
     });
 });
 
-
 $('.user ul li a').click(function () {
     $('.user li a').removeClass("active");
     $(this).addClass("active");

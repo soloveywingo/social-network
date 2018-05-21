@@ -10,6 +10,7 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/message.css">
     <link rel="stylesheet" type="text/css" href="../css/header-style.css">
     <link rel="stylesheet" type="text/css" href="../css/index-style.css">
     <link rel="stylesheet" type="text/css" href="../css/fonts.css">
@@ -22,7 +23,6 @@
     <link rel="stylesheet" type="text/css" href="../css/developers.css">
     <link rel="stylesheet" type="text/css" href="../css/playlist.css">
     <link rel="stylesheet" type="text/css" href="../css/notes.css">
-    <link rel="stylesheet" type="text/css" href="../css/message.css">
     <link rel="stylesheet" type="text/css" href="../css/modal-windows.css">
 
     <script src="../js/jquery/jquery-3.2.1.min.js"></script>

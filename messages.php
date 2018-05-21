@@ -69,6 +69,20 @@
                         <div class="user-name">
                             <span>Sergey Vasilenko</span><br>
                         </div>
+
+                        <div class="events-panel holder">
+                            <form action="#" method="POST">
+
+                                <button type="submit" title="Delete message" name="delete_message"><i
+                                            class="fas fa-trash"></i></button>
+                                <button class="copy-text" title="Copy text" name="copy_text" type="button"><i class="fas fa-copy"></i>
+                                </button>
+
+                                <button class="cancel" title="Cancel events" name="cancel" type="button"><i class="fas fa-window-close"></i></button>
+
+                            </form>
+                        </div>
+
                     </div>
 
                     <div class="right-box-body">
@@ -148,6 +162,45 @@
                             </div>
 
                         </div>
+
+                        <div class="inbox-message">
+
+                            <div class="around-user-img holder">
+                                <img src="img/users/1MA9kvUVdFY.jpg" alt="User photo">
+                            </div>
+
+                            <div class="message">
+                                <p>
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd</p>
+                            </div>
+
+                            <div class="message">
+                                <p>
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd</p>
+                            </div>
+
+                            <div class="message">
+                                <p>
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd</p>
+                            </div>
+
+                            <div class="message">
+                                <p>
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
+                                    asdasdasdasdasdasasdasdasdasd</p>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="right-box-footer">
@@ -165,6 +218,7 @@
 </main>
 
 <script src="js/filter-friends.js"></script>
+<script src="js/message-events.js"></script>
 
 </body>
 </html>

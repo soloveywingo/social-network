@@ -6,6 +6,11 @@ main .message-box {
     border-radius: 5px;
 }
 
+main .message-box .active-message {
+    background-color: #007fff !important;
+}
+
+
 main .message-box .left-box {
     border-right: 1px solid #e6ecf5;
     float: left;
@@ -130,6 +135,12 @@ main .message-box .right-box .right-box-header {
     border-bottom: 1px solid #e6ecf5;
     text-align: left;
     padding: 20px 25px 15px 25px;
+}
+
+main .message-box .right-box .right-box-header .events-panel {
+    text-align: right;
+    padding-bottom: 10px;
+    display: none;
 }
 
 main .message-box .right-box .right-box-header .user-name span {
