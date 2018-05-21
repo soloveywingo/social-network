@@ -1,12 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: LETO
- * Date: 18.05.2018
- * Time: 19:43
- */
 
-?>
 
 
 <div class="bg-modal-background">
@@ -19,7 +11,7 @@
             <input type="file" name="change_avatar" id="changePhotoBg"><br>
 
             <div class="buttons">
-                <input type="submit" name="submit_photo" value="Okay">
+                <input type="submit" name="submit_photos" value="Okay">
                 <input type="button" name="close_modal_photo" value="Close" class="close-background">
             </div>
 

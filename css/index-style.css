@@ -565,6 +565,10 @@ main .header-profile .profile-photo {
     left: 450px;
     background-color: #ff5e3a;
 }
+main .header-profile .profile-photo img {
+    width: 100%;
+}
+
 
 main .header-profile .open-settings {
     z-index: 20;

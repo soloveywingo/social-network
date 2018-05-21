@@ -2,7 +2,10 @@
 <html lang="en">
 
 <?php include "components/head.php";
-//require "includes/db.php";
+
+include "components/header.php";
+
+
 ?>
 
 <title>Profile page</title>
@@ -10,7 +13,6 @@
 <body>
 
 <?php require "controllers/signInController.php";
-include "components/header.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
 ?>
 
