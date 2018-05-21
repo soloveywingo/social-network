@@ -22,49 +22,11 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
                         <div class="around-img">
                             <img src="../img/users/bohdan.jpg">
                         </div>
-                        <a href="#">Soloviyv Bohdan</a><br>
+                        <a href="#"> <? echo $allUsers->name?></a><br>
                         <span class="user-status">Space cowboy</span>
                     </div>
 
-                    <div class="user">
-                        <div class="around-img">
-                            <img src="../img/users/1MA9kvUVdFY.jpg">
-                        </div>
-                        <a href="#">Vasilenko Sergey</a><br>
-                        <span class="user-status">Space cowboy</span>
-                    </div>
 
-                    <div class="user">
-                        <div class="around-img">
-                            <img src="../img/users/BNaB-nWedts.jpg">
-                        </div>
-                        <a href="#">Nepochatov Vadim</a><br>
-                        <span class="user-status">Space cowboy</span>
-                    </div>
-
-                    <div class="user">
-                        <div class="around-img">
-                            <img src="../img/users/j_WY_ZBs5FM.jpg">
-                        </div>
-                        <a href="#">Radchenko Vladimir</a><br>
-                        <span class="user-status">Space cowboy</span>
-                    </div>
-
-                    <div class="user">
-                        <div class="around-img">
-                            <img src="../img/users/Lv1CepMuOtw.jpg">
-                        </div>
-                        <a href="#">Stetsenko Leonid</a><br>
-                        <span class="user-status">Space cowboy</span>
-                    </div>
-
-                    <div class="user">
-                        <div class="around-img">
-                            <img src="../img/users/ZJbW_nE15WY.jpg">
-                        </div>
-                        <a href="#">Rolenko Anastasia</a><br>
-                        <span class="user-status">Space cowboy</span>
-                    </div>
                 </div>
             </form>
             <div class="tools">

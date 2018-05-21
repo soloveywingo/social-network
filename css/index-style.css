@@ -295,6 +295,11 @@ main .full-right-panel .setting-group .info-user i {
 main .full-right-panel .setting {
     padding-left: 20px;
     padding-right: 35px;
+    width: 100%;
+    height: 65px;
+    position: absolute;
+    bottom: 100px;
+    right: 0;
 }
 
 main .full-right-panel .setting .close-bottom-menu {

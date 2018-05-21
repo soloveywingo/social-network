@@ -18,6 +18,8 @@ include "components/header.php";
 require "controllers/avatarController.php";
 require "controllers/backgroundController.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
+
+$allUsers = R::loadAll('users2');
 ?>
 
 
@@ -103,7 +105,7 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
     <div class="content tab-content show">
         <div class="wrapper holder">
             <div class="tiny-information holder">
-                <h2>Profile Info</h2>
+                <h2>цр</h2>
                 <div class="content-info">
                     <div class="about-me">
                         <h4>About me:</h4>
