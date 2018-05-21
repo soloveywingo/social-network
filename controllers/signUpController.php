@@ -49,6 +49,8 @@ if (isset($data['do_signup']))
         $user->gender = $data['gender'];
         $user->avatar = "";
         $user->background = "";
+        $user->status = "hi, my name is " . $user->name;
+        $user->id_hobbies = $user->id;
         R::store($user);
         echo 'YES , INDEED';
 

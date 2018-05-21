@@ -16,5 +16,5 @@ $user->lastName = $data['lastName_textbox'];
 R::store($user);
 }
 
-
 }
+

@@ -1,9 +1,8 @@
 <?php
 error_reporting(E_ERROR);
-
 require "controllers/signInController.php";
 require "includes/db.php";
-
+require "controllers/statusController.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
 
 ?>
@@ -22,8 +21,8 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
                         <div class="around-img">
                             <img src="../img/users/bohdan.jpg">
                         </div>
-                        <a href="#"> <? echo $allUsers->name?></a><br>
-                        <span class="user-status">Space cowboy</span>
+                        <a href="#"> <? //echo $user->name?></a><br>
+                        <span class="user-status"><?echo $user->status ?></span>
                     </div>
 
 
@@ -41,7 +40,7 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
             </div>
             <span class="user-name"><? echo $user->name . " " . $user->lastName ?></span>
             <i class="fa fa-caret-down" aria-hidden="true"></i><br>
-            <span class="user-status">Space Cowboy</span>
+            <span class="user-status"><?echo $user->status ?></span>
         </div>
     </div>
     </div>
@@ -56,7 +55,7 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
                         <img src="../img/user-photo.jpg">
                         <div class="person-name">
                             <span>Sergey Vasilenko</span><br>
-                            <span class="person-status">Space Cowboy</span>
+                            <span class="person-status"></span>
                         </div>
                         <div class="friends-buttons">
                             <button class="accept"><i class="ti-face-smile"></i></button>
@@ -208,8 +207,8 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
         <h3>Custom Status</h3>
         <div class="custom-status">
             <form action="#" method="POST">
-                <input type="text" value="SPACE COWBOY">
-                <button type="submit" name="user_status"><i class="ti-pencil"></i></button>
+                <input type="text" value=<?echo $user->status ?> name = "status_textbox">
+                <button type="submit" name="change_status"><i class="ti-pencil"></i></button>
             </form>
         </div>
         <h3>About AvtoNet</h3>

@@ -1,13 +1,11 @@
+<?php require "components/head.php";
+include "components/header.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include "components/head.php";
 
-include "components/header.php";
-
-
-
-?>
 
 <title>Profile page</title>
 
@@ -19,7 +17,6 @@ require "controllers/avatarController.php";
 require "controllers/backgroundController.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
 
-$allUsers = R::loadAll('users2');
 ?>
 
 
@@ -71,7 +68,7 @@ $allUsers = R::loadAll('users2');
 
             <div class="short-info">
                 <span><? echo $user->name . " " . $user->lastName ?></span><br>
-                <span class="under-span">SPACE COWBOY</span>
+                <span class="under-span"><?echo $user->status ?></span>
             </div>
             <div class="right-navigation holder">
                 <nav>
