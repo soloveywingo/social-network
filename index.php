@@ -6,6 +6,7 @@
 include "components/header.php";
 
 
+
 ?>
 
 <title>Profile page</title>
@@ -13,6 +14,8 @@ include "components/header.php";
 <body>
 
 <?php require "controllers/signInController.php";
+
+require "controllers/avatarController.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
 ?>
 

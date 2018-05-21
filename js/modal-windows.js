@@ -66,6 +66,7 @@ var closeAvatarModal = $(".close-avatar-user-modal");
 
 changeAvatar.click(function () {
     bgModalAvatar.show();
+    console.log("clicked")
 })
 
 closeAvatarModal.click(function () {
