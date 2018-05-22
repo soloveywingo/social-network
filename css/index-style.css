@@ -8,6 +8,12 @@ main .margin-yes {
     margin-top: 100px;
 }
 
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
 .active-post {
     display: block;
 }

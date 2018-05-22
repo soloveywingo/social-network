@@ -1,5 +1,5 @@
 <?php
-//error_reporting(E_ERROR);
+error_reporting(E_ERROR);
 require "controllers/signInController.php";
 require "includes/db.php";
 require "controllers/statusController.php";
@@ -13,53 +13,55 @@ if (isset($data['log_out'])) {
     <div class="wrapper holder">
         <div class="flex-container">
             <span class="page-name">Profile settings</span>
-            <form action="#" method="POST">
-                <input type="text" placeholder="Search friends..." class="input-search-panel">
-                <button class="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            <div class="fix-class">
+                <form action="#" method="POST">
+                    <input type="text" placeholder="Search friends..." class="input-search-panel">
+                    <button class="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 
-                <!-- SEARCH PANEL-->
-                <div class="search-panel">
-                <?
-                $ids = [];
-                $s = 0;
-                while ($s < 100) {
-                    $ids[$s] = $s;
-                    $s++;
-                }
-                $users = R::loadAll('users2', $ids);
-                foreach ($users as $person) {
-                    if (isset($person->name)) { ?>
-                        <div class="user">
-                            <div class="around-img">
-                                <img src="../img/users/bohdan.jpg">
-                            </div>
-                            <a href="#"> <? echo $person->name . " " . $person->lastName?></a><br>
-                            <span class="user-status"><?
-                                echo $user->status ?></span>
-                        </div>
-                    <?
-                    }
-                }
-                ?>
-                </div>
-        </div>
-        </form>
-        <div class="tools">
-            <img class="hand-panel" src="../img/icons/icons8-hand-peace-32.png">
-            <img class="comments-panel" src="../img/icons/icons8-comments-32.png">
-            <img class="idea-panel" src="../img/icons/icons8-idea-32.png">
-        </div>
-        <div class="profile-view holder">
-            <div class="user-photo-border">
-                <? echo '<img src = "data:image;base64,' . $user->avatar . '" '; ?>
+                    <!-- SEARCH PANEL-->
+                    <div class="search-panel">
+                        <?
+                        $ids = [];
+                        $s = 0;
+                        while ($s < 100) {
+                            $ids[$s] = $s;
+                            $s++;
+                        }
+                        $users = R::loadAll('users2', $ids);
+                        foreach ($users as $person) {
+                            if (isset($person->name)) { ?>
+
+                                <div class="user">
+                                    <div class="around-img holder">
+                                        <? echo '<img src = "data:image;base64,' . $person->background . '"> '; ?>
+                                    </div>
+                                    <a href="#"> <? echo $person->name . " " . $person->lastName ?></a><br>
+                                    <span class="user-status"><?
+                                        echo $person->status ?></span>
+                                </div>
+                                <?
+                            }
+                        }
+                        ?>
+                    </div>
+                </form>
             </div>
+            <div class="tools">
+                <img class="hand-panel" src="../img/icons/icons8-hand-peace-32.png">
+                <img class="comments-panel" src="../img/icons/icons8-comments-32.png">
+                <img class="idea-panel" src="../img/icons/icons8-idea-32.png">
+            </div>
+            <div class="profile-view holder">
+                <div class="user-photo-border">
+                    <? echo '<img src = "data:image;base64,' . $user->avatar . '" '; ?>
+                </div>
+            </div>
+            <span class="user-name"><? echo $user->name . " " . $user->lastName ?></span>
+            <i class="fa fa-caret-down" aria-hidden="true"></i><br>
+            <span class="user-status"><? echo $user->status ?></span>
         </div>
-        <span class="user-name"><? echo $user->name . " " . $user->lastName ?></span>
-        <i class="fa fa-caret-down" aria-hidden="true"></i><br>
-        <span class="user-status"><? echo $user->status ?></span>
     </div>
-    </div>
-    </div>
+
 
     <!-- BOX SHOWER !-->
     <div class="boxes">
