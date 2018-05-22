@@ -39,9 +39,28 @@ if (isset($data['do_signup']))
     }
     if (empty($errors))
     {
+
         //submit registration
         $user = R::dispense('users2');
         $hobbies = R::dispense('hobbies');
+
+
+        $user->name = $data['name'];
+        $user->lastName = $data['lastName'];
+        $user->password = password_hash($data['password'], PASSWORD_DEFAULT);
+        $user->email = $data['email'];
+        $user->birthday = $data['birthday'];
+        $user->gender = $data['gender'];
+        $user->avatar = "";
+        $user->background = "";
+        $user->status = "hi, my name is " . $user->name;
+        $user->id_hobbies = $hobbies->id;
+
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $locationData = get_meta_tags('http://www.geobytes.com/IpLocator.htm?GetLocation&template=php3.txt&IpAddress=' . $ip);
+        $user->location = $locationData['country'] ." " . $locationData['city'];
+
+        R::store($user);
 
         $hobbies->hobbies = "this is my hobby";
         $hobbies->music = "my music";
@@ -53,17 +72,8 @@ if (isset($data['do_signup']))
         $hobbies->games = "my games";
         $hobbies->cars = "my cars";
         R::store($hobbies);
-        $user->name = $data['name'];
-        $user->lastName = $data['lastName'];
-        $user->password = password_hash($data['password'], PASSWORD_DEFAULT);
-        $user->email = $data['email'];
-        $user->birthday = $data['birthday'];
-        $user->gender = $data['gender'];
-        $user->avatar = "";
-        $user->background = "";
-        $user->status = "hi, my name is " . $user->name;
-        $user->id_hobbies = $hobbies->id;
-        R::store($user);
+
+
         echo 'YES , INDEED';
 
     }else
