@@ -16,7 +16,15 @@ include "components/header.php";
 require "controllers/avatarController.php";
 require "controllers/backgroundController.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
+if (!isset($_SESSION['logged_user']))
+{
+    ?>
+    <script>
+        document.location.href = "sign-in.php";
+    </script>
 
+    <?
+}
 ?>
 
 

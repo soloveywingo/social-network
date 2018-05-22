@@ -2,17 +2,12 @@
   error_reporting(E_ERROR);
 require "controllers/signInController.php";
 require "includes/db.php";
-$user = R::load('users2', $_SESSION['logged_user']->id);
+require "controllers/statusController.php";
 
-$data = $_POST;
-if (isset($data['change_status']))
-{
 
-if (!empty($data['status_textbox']))
+if (isset($data['log_out']))
 {
-$user->status = $data['status_textbox'];
-R::store($user);
-}
+    unset($_SESSION['logged_user']);
 }
 ?>
 <header>
@@ -199,7 +194,10 @@ R::store($user);
                 <li><i class="ti-settings"></i>
                     <a href="../profile-settings.php"><span>Profile Setting</span></a></li>
                 <li><i class="ti-arrow-circle-left"></i>
-                    <a href="../sign-in.php">Log Out</a></li>
+                    <form action="#" method="POST">
+                        <input type="submit" name="log_out" value="Log out">
+                    </form>
+
             </ul>
         </div>
         <h3>Chat Settings</h3>

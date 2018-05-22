@@ -10,3 +10,4 @@ $user->status = $data['status_textbox'];
 R::store($user);
 }
 }
+
