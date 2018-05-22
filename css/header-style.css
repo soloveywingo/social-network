@@ -139,7 +139,7 @@ header .tools {
     padding-top: 20px;
     position: absolute;
     top: 0;
-    right: 300px;
+    right: 275px;
 }
 
 header .tools img {
@@ -150,7 +150,7 @@ header .tools img {
 header .profile-view {
     position: absolute;
     top: 0;
-    right: 35px;
+    right: 0;
     padding-top: 10px;
     text-align: left;
     margin-bottom: 30px;
