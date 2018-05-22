@@ -116,7 +116,7 @@ if (!isset($_SESSION['logged_user']))
                 <div class="content-info">
                     <div class="about-me">
                         <h4>About me:</h4>
-                        <p><? echo $user->info ?></p>
+                        <p> <? echo $user->info ?></p>
                     </div>
                     <div class="favorite-cars">
                         <h4>Favorite Cars:</h4>
@@ -279,7 +279,7 @@ if (!isset($_SESSION['logged_user']))
                 <div class="about-inside-content">
                     <div>
                         <h4>About me</h4>
-                        <p>><? echo $user->info?></p>
+                        <p><? echo $user->info?></p>
                     </div>
                     <div>
                         <h4>Birthday</h4>
@@ -287,7 +287,7 @@ if (!isset($_SESSION['logged_user']))
                     </div>
                     <div>
                         <h4>Birthplace</h4>
-                        <p>><? echo $user->location ?></p>
+                        <p><? echo $user->location ?></p>
                     </div>
                     <div>
                         <h4>Occupation</h4>
@@ -307,7 +307,7 @@ if (!isset($_SESSION['logged_user']))
                     </div>
                     <div>
                         <h4>Phone Number</h4>
-                        <p>+380990136661</p>
+                        <p><? echo $user->number ?></p>
                     </div>
                 </div>
             </div>

@@ -1,12 +1,11 @@
 <?php
-//error_reporting(E_ERROR);
+error_reporting(E_ERROR);
 require "controllers/signInController.php";
 require "includes/db.php";
 require "controllers/statusController.php";
 
 
-if (isset($data['log_out']))
-{
+if (isset($data['log_out'])) {
     unset($_SESSION['logged_user']);
 }
 ?>
@@ -19,33 +18,46 @@ if (isset($data['log_out']))
                 <button class="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 
                 <!-- SEARCH PANEL-->
+                <?
+                $ids = [];
+                $s = 0;
+                while ($s < 100)
+                {
+                    $ids[$s] = $s;
+                    $s++;
+                }
+                $users = R::loadAll('users2' ,$ids);
 
-                <div class="search-panel">
-                    <div class="user">
-                        <div class="around-img">
-                            <img src="../img/users/bohdan.jpg">
-                        </div>
-                        <a href="#"> <? //echo $user->name?></a><br>
-                        <span class="user-status"><?echo $user->status ?></span>
-                    </div>
+                foreach ($users as $person) {
+                    if (isset($person->name)) {
+                        echo "<div class='search-panel'>";
+                        echo "<div class='user''>";
+                        echo "<div class='around-img'>";
+                        echo '<img src = "data:image;base64,' . $person->avatar . '" ';
+                        echo "</div>";
+                        echo "   $person->name";
+                        echo "<span class='user-status'> $person->status </span>";
+                        echo "</div>";
+                    }
+                }
+                ?>
 
-
-                </div>
-            </form>
-            <div class="tools">
-                <img class="hand-panel" src="../img/icons/icons8-hand-peace-32.png">
-                <img class="comments-panel" src="../img/icons/icons8-comments-32.png">
-                <img class="idea-panel" src="../img/icons/icons8-idea-32.png">
-            </div>
-            <div class="profile-view holder">
-                <div class="user-photo-border">
-                    <? echo '<img src = "data:image;base64,' . $user->avatar . '" '; ?>
-                </div>
-            </div>
-            <span class="user-name"><? echo $user->name . " " . $user->lastName ?></span>
-            <i class="fa fa-caret-down" aria-hidden="true"></i><br>
-            <span class="user-status"><?echo $user->status ?></span>
         </div>
+        </form>
+        <div class="tools">
+            <img class="hand-panel" src="../img/icons/icons8-hand-peace-32.png">
+            <img class="comments-panel" src="../img/icons/icons8-comments-32.png">
+            <img class="idea-panel" src="../img/icons/icons8-idea-32.png">
+        </div>
+        <div class="profile-view holder">
+            <div class="user-photo-border">
+                <? echo '<img src = "data:image;base64,' . $user->avatar . '" '; ?>
+            </div>
+        </div>
+        <span class="user-name"><? echo $user->name . " " . $user->lastName ?></span>
+        <i class="fa fa-caret-down" aria-hidden="true"></i><br>
+        <span class="user-status"><? echo $user->status ?></span>
+    </div>
     </div>
     </div>
 
@@ -214,7 +226,7 @@ if (isset($data['log_out']))
         <h3>Custom Status</h3>
         <div class="custom-status">
             <form action="#" method="POST">
-                <input type="text" value="" name = "status_textbox">
+                <input type="text" value="" name="status_textbox">
                 <button type="submit" name="change_status"><i class="ti-pencil"></i></button>
             </form>
         </div>
