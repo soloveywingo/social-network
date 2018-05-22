@@ -55,6 +55,9 @@ if (isset($data['do_signup']))
         $user->background = "";
         $user->status = "hi, my name is " . $user->name;
         $user->id_hobbies = $hobbies->id;
+        $user->isMerried = "";
+        $user->info = "";
+        $user->occupation = "";
 
         $ip = $_SERVER['REMOTE_ADDR'];
         $locationData = get_meta_tags('http://www.geobytes.com/IpLocator.htm?GetLocation&template=php3.txt&IpAddress=' . $ip);

@@ -47,22 +47,22 @@ require "controllers/profileSettingsController.php";
 
                         <input type="text" placeholder="First name" name="name_textbox"><br>
                         <input type="text" placeholder="Second name" name="lastName_textbox"><br>
-                        <input type="text" placeholder="Country and city"><br>
+                        <input type="text" placeholder="Country and city" name="location_textbox"><br>
 
-                        <input type="text" placeholder="Info about me"><br>
-                        <input type="text" placeholder="Your Birthday" id="datepickerSettings" name = "birthday"><br>
-                        <select>
+                        <input type="text" placeholder="Info about me" name = "info_textbox"><br>
+                        <input type="text" placeholder="Your Birthday" id="datepickerSettings" name = "birthday_textbox"><br>
+                        <select name="gender">
                             <option value="" disabled selected hidden>Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select><br>
 
-                        <select>
-                            <option value="" disabled selected hidden>Status</option>
+                        <select name="isMerried">
+                            <option value=""  disabled selected hidden>Status</option>
                             <option value="male">Married</option>
                             <option value="female">No married</option>
                         </select><br>
-                        <input type="text" placeholder="Occupation"><br>
+                        <input type="text" placeholder="Occupation" name ="occupation_textbox"><br>
 
                     </div>
 
