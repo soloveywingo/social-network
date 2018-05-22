@@ -1,10 +1,19 @@
 <?php
-error_reporting(E_ERROR);
+  error_reporting(E_ERROR);
 require "controllers/signInController.php";
 require "includes/db.php";
-require "controllers/statusController.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
 
+$data = $_POST;
+if (isset($data['change_status']))
+{
+
+if (!empty($data['status_textbox']))
+{
+$user->status = $data['status_textbox'];
+R::store($user);
+}
+}
 ?>
 <header>
     <div class="wrapper holder">
@@ -207,7 +216,7 @@ $user = R::load('users2', $_SESSION['logged_user']->id);
         <h3>Custom Status</h3>
         <div class="custom-status">
             <form action="#" method="POST">
-                <input type="text" value=<?echo $user->status ?> name = "status_textbox">
+                <input type="text" value="" name = "status_textbox">
                 <button type="submit" name="change_status"><i class="ti-pencil"></i></button>
             </form>
         </div>

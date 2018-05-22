@@ -23,4 +23,9 @@ $user->avatar = $avatar;
 R::store($user);
 
 }
+if (isset($_POST['delete_avatar']))
+{
+    $user->avatar = "";
+    R::store($user);
+}
 ?>

@@ -23,4 +23,10 @@ function saveBack($background)
     R::store($user);
 
 }
+
+if (isset($data['delete_bg_photo']))
+{
+    $user->background = "";
+    R::store($user);
+}
 ?>
