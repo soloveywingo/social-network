@@ -43,6 +43,25 @@ if (isset($data['do_signup']))
         //submit registration
         $user = R::dispense('users2');
         $hobbies = R::dispense('hobbies');
+        $education = R::dispense('education');
+
+        $education->school = "";
+        $education->university = "";
+        $education->courses = "";
+        $education->college = "";
+        R::store($education);
+
+
+        $hobbies->hobbies = "this is my hobby";
+        $hobbies->music = "my music";
+        $hobbies->shows = "my shows";
+        $hobbies->games = "my games";
+        $hobbies->movies = "my movies";
+        $hobbies->books = "my books";
+        $hobbies->writers = "my writers";
+        $hobbies->games = "my games";
+        $hobbies->cars = "my cars";
+        R::store($hobbies);
 
 
         $user->name = $data['name'];
@@ -58,23 +77,13 @@ if (isset($data['do_signup']))
         $user->isMerried = "";
         $user->info = "";
         $user->occupation = "";
+        $user->id_education = $education->id;
 
         $ip = $_SERVER['REMOTE_ADDR'];
         $locationData = get_meta_tags('http://www.geobytes.com/IpLocator.htm?GetLocation&template=php3.txt&IpAddress=' . $ip);
         $user->location = $locationData['country'] ." " . $locationData['city'];
 
         R::store($user);
-
-        $hobbies->hobbies = "this is my hobby";
-        $hobbies->music = "my music";
-        $hobbies->shows = "my shows";
-        $hobbies->games = "my games";
-        $hobbies->movies = "my movies";
-        $hobbies->books = "my books";
-        $hobbies->writers = "my writers";
-        $hobbies->games = "my games";
-        $hobbies->cars = "my cars";
-        R::store($hobbies);
 
 
         echo 'YES , INDEED';

@@ -58,9 +58,9 @@ require "controllers/profileSettingsController.php";
                         </select><br>
 
                         <select name="isMerried">
-                            <option value=""  disabled selected hidden>Status</option>
-                            <option value="male">Married</option>
-                            <option value="female">No married</option>
+                            <option  value=""  disabled selected hidden>Status</option>
+                            <option value="Married">Married</option>
+                            <option value="No married">No married</option>
                         </select><br>
                         <input type="text" placeholder="Occupation" name ="occupation_textbox"><br>
 
@@ -70,27 +70,27 @@ require "controllers/profileSettingsController.php";
 
                         <h2>Hobbies and Interests</h2>
 
-                        <input type="text" placeholder="Hobbies"><br>
-                        <input type="text" placeholder="Favourite music bands/artists"><br>
-                        <input type="text" placeholder="Favourite TV shows"><br>
+                        <input type="text" placeholder="Hobbies" name="hobbies"><br>
+                        <input type="text" placeholder="Favourite music bands/artists" name="music"><br>
+                        <input type="text" placeholder="Favourite TV shows" name="shows"><br>
 
-                        <input type="text" placeholder="Favourite movies"><br>
-                        <input type="text" placeholder="Favourite books"><br>
-                        <input type="text" placeholder="Favourite writers"><br>
+                        <input type="text" placeholder="Favourite movies" name="movies"><br>
+                        <input type="text" placeholder="Favourite books" name="books"><br>
+                        <input type="text" placeholder="Favourite writers" name="writers"><br>
 
-                        <input type="text" placeholder="Favourite games"><br>
-                        <input type="text" placeholder="Favourite cars"><br>
+                        <input type="text" placeholder="Favourite games" name="games"><br>
+                        <input type="text" placeholder="Favourite cars" name="cars"><br>
                     </div>
 
                     <div class="tab-content">
 
                         <h2>Education And Employement</h2>
 
-                        <input type="text" placeholder="School"><br>
-                        <input type="text" placeholder="University"><br>
-                        <input type="text" placeholder="Courses"><br>
+                        <input type="text" placeholder="School" name="school"><br>
+                        <input type="text" placeholder="University" name="university"><br>
+                        <input type="text" placeholder="Courses" name="courses"><br>
 
-                        <input type="text" placeholder="Collage"><br>
+                        <input type="text" placeholder="College" name="college"><br>
                     </div>
 
 

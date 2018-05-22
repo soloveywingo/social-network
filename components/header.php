@@ -1,5 +1,5 @@
 <?php
-  error_reporting(E_ERROR);
+//error_reporting(E_ERROR);
 require "controllers/signInController.php";
 require "includes/db.php";
 require "controllers/statusController.php";
@@ -194,7 +194,7 @@ if (isset($data['log_out']))
                 <li><i class="ti-settings"></i>
                     <a href="../profile-settings.php"><span>Profile Setting</span></a></li>
                 <li><i class="ti-arrow-circle-left"></i>
-                    <form action="#" method="POST">
+                    <form action="../sign-in.php" method="POST">
                         <input type="submit" name="log_out" value="Log out">
                     </form>
 

@@ -16,6 +16,8 @@ include "components/header.php";
 require "controllers/avatarController.php";
 require "controllers/backgroundController.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
+$hobbies = R::load('hobbies', $_SESSION['logged_user']->id_hobbies);
+$education = R::load('education', $_SESSION['logged_user']->id_education);
 if (!isset($_SESSION['logged_user']))
 {
     ?>
@@ -118,11 +120,11 @@ if (!isset($_SESSION['logged_user']))
                     </div>
                     <div class="favorite-cars">
                         <h4>Favorite Cars:</h4>
-                        <p>BMW, Citroen, Lambo ...</p>
+                        <p><? echo $hobbies->cars; ?></p>
                     </div>
                     <div class="favorite-music">
                         <h4>Favorite Music:</h4>
-                        <p>Thirty Seconds To Mars, 21pilots ... </p>
+                        <p><?echo $hobbies->music;?> </p>
                     </div>
 
                 </div>
@@ -277,7 +279,7 @@ if (!isset($_SESSION['logged_user']))
                 <div class="about-inside-content">
                     <div>
                         <h4>About me</h4>
-                        <p><? echo $user->info?></p>
+                        <p>><? echo $user->info?></p>
                     </div>
                     <div>
                         <h4>Birthday</h4>
@@ -289,7 +291,7 @@ if (!isset($_SESSION['logged_user']))
                     </div>
                     <div>
                         <h4>Occupation</h4>
-                        <p>UI/UX Designer</p>
+                        <p><? echo $user->occupation ?> </p>
                     </div>
                     <div>
                         <h4>Gender</h4>
@@ -318,37 +320,39 @@ if (!isset($_SESSION['logged_user']))
                     <div class="left-subbox">
                         <div>
                             <h4>Hobbies</h4>
-                            <p>Football, Music, Films, Internet, Girls, Parties, Beer...</p>
+                            <p>
+                                <?echo $hobbies->hobbies;?>
+                            </p>
                         </div>
                         <div>
                             <h4>Favourite TV shows</h4>
-                            <p>Friends, MisFits, Game of Thrones</p>
+                            <p><?echo $hobbies->shows;?></p>
                         </div>
                         <div>
                             <h4>Favourite Movies</h4>
-                            <p>Matrix, Ugy Eight</p>
+                            <p><?echo $hobbies->movies;?></p>
                         </div>
                         <div>
                             <h4>Favourite Games</h4>
-                            <p>DOTA 2</p>
+                            <p><?echo $hobbies->games;?></p>
                         </div>
                     </div>
                     <div class="right-subbox">
                         <div>
                             <h4>Favourite Music Bands/ Artists</h4>
-                            <p>Twenty one Pilots, 30 seconds to Mars, NWA, Bruno Mars...</p>
+                            <p><?echo $hobbies->music;?></p>
                         </div>
                         <div>
                             <h4>Favourite Books</h4>
-                            <p>Everything.</p>
+                            <p><?echo $hobbies->books;?>.</p>
                         </div>
                         <div>
                             <h4>Favourite Writers</h4>
-                            <p>Alex Gun, Dostoevskiy, Esenin.</p>
+                            <p><?echo $hobbies->writers;?></p>
                         </div>
                         <div>
                             <h4>Favourite Cars</h4>
-                            <p>Audi, BMW, Seat, Suzuki, Citroen.</p>
+                            <p><?echo $hobbies->cars;?></p>
                         </div>
                     </div>
                 </div>
@@ -359,21 +363,21 @@ if (!isset($_SESSION['logged_user']))
                     <div class="left-subbox">
                         <div>
                             <h4>School</h4>
-                            <p>School #2 of Chervoniy Donec.</p>
+                            <p><? echo $education->school;  ?></p>
                         </div>
                         <div>
                             <h4>University</h4>
-                            <p>National University of Radio Electronics</p>
+                            <p><? echo $education->education;  ?></p>
                         </div>
                     </div>
                     <div class="right-subbox">
                         <div>
                             <h4>Courses</h4>
-                            <p>Inter of Design School</p>
+                            <p><? echo $education->courses;  ?></p>
                         </div>
                         <div>
                             <h4>Collage</h4>
-                            <p>Kharkiv's Radiotechnical Collage</p>
+                            <p><? echo $education->college;  ?></p>
                         </div>
                     </div>
                 </div>
