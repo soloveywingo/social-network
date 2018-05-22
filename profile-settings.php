@@ -97,12 +97,12 @@ require "controllers/profileSettingsController.php";
                     <div class="tab-content">
                         <h2>Security Settings</h2>
 
-                        <input type="password" placeholder="Old password"><br>
-                        <input type="password" placeholder="New password"><br>
-                        <input type="password" placeholder="Repeat new password"><br>
+                        <input type="password" placeholder="Old password" name ="old_password"><br>
+                        <input type="password" placeholder="New password" name = "new_password"><br>
+              <!--          <input type="password" placeholder="Repeat new password" name ="new_password_rep"><br>-->
 
-                        <input type="text" placeholder="Phone number"><br>
-                        <input type="email" placeholder="New email"><br>
+                        <input type="text" placeholder="Phone number" name = "number"><br>
+                        <input type="email" placeholder="New email" name = "email_textbox"><br>
 
 
                     </div>

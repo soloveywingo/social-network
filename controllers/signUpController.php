@@ -78,6 +78,7 @@ if (isset($data['do_signup']))
         $user->info = "";
         $user->occupation = "";
         $user->id_education = $education->id;
+        $user->number = "00000000";
 
         $ip = $_SERVER['REMOTE_ADDR'];
         $locationData = get_meta_tags('http://www.geobytes.com/IpLocator.htm?GetLocation&template=php3.txt&IpAddress=' . $ip);

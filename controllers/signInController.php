@@ -1,14 +1,11 @@
 <?php
 $data = $_POST;
-if (isset($data['do_login']))
-{
+if (isset($data['do_login'])) {
     $errors = array();
     $user = R::findOne('users2', 'email = ?', array($data['emailIn']));
-    if ($user)
-    {
+    if ($user) {
         //email exist
-        if ( password_verify($data['passwordIn'], $user->password))
-        {
+        if (password_verify($data['passwordIn'], $user->password)) {
             ?>
             <script>
                 document.location.href = "index.php";
@@ -17,21 +14,16 @@ if (isset($data['do_login']))
             <?
 
             $_SESSION['logged_user'] = $user;
-        }
-        else
-        {
+        } else {
             $errors[] = "Uncorrect password";
         }
 
-    }
-    //if (array)
-    else
-    {
+    } //if (array)
+    else {
         $errors[] = 'We don`t have any users with email like this.';
     }
-    if (! empty($errors))
-    {
-        echo  array_shift($errors);
+    if (!empty($errors)) {
+        echo array_shift($errors);
     }
 }
 

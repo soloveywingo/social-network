@@ -78,6 +78,18 @@ if (isset($data["submit_changes"])) {
     if (!empty($data['college'])) {
         $education->college = $data['college'];
     }
+    if (!empty($data['old_password']) && !empty($data['new_password'])) {
+        if (password_verify($data['old_password'], $user->password)) {
+            $user->password = password_hash($data['new_password'], PASSWORD_DEFAULT);
+        }
+        //}
+    }
+    if (!empty($data['email_textbox'])) {
+        $user->email = $data['email_textbox'];
+    }
+    if (!empty($data['number'])) {
+        $user->number = $data['number'];
+    }
 
     R::store($hobbies);
     R::store($user);
