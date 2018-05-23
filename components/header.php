@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ERROR);
+//error_reporting(E_ERROR);
 require "controllers/signInController.php";
 require "includes/db.php";
 require "controllers/statusController.php";
@@ -18,30 +18,30 @@ if (isset($data['log_out'])) {
                 <button class="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 
                 <!-- SEARCH PANEL-->
+                <div class="search-panel">
                 <?
                 $ids = [];
                 $s = 0;
-                while ($s < 100)
-                {
+                while ($s < 100) {
                     $ids[$s] = $s;
                     $s++;
                 }
-                $users = R::loadAll('users2' ,$ids);
-
+                $users = R::loadAll('users2', $ids);
                 foreach ($users as $person) {
-                    if (isset($person->name)) {
-                        echo "<div class='search-panel'>";
-                        echo "<div class='user''>";
-                        echo "<div class='around-img'>";
-                        echo '<img src = "data:image;base64,' . $person->avatar . '" ';
-                        echo "</div>";
-                        echo "   $person->name";
-                        echo "<span class='user-status'> $person->status </span>";
-                        echo "</div>";
+                    if (isset($person->name)) { ?>
+                        <div class="user">
+                            <div class="around-img">
+                                <img src="../img/users/bohdan.jpg">
+                            </div>
+                            <a href="#"> <? echo $person->name . " " . $person->lastName?></a><br>
+                            <span class="user-status"><?
+                                echo $user->status ?></span>
+                        </div>
+                    <?
                     }
                 }
                 ?>
-
+                </div>
         </div>
         </form>
         <div class="tools">
