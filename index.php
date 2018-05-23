@@ -153,7 +153,7 @@ if (!isset($_SESSION['logged_user']))
                     <div class="post-header">
                         <div class="user-info">
                             <div class="round-user holder">
-                                <img src="img/new_photo30x30.jpg">
+                                <? echo '<img src = "data:image;base64,' . $user->avatar . '"> '; ?>
                             </div>
                             <div>
                                 <a href="#"><span><? echo $user->name . " " . $user->lastName ?></span></a>

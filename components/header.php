@@ -8,6 +8,7 @@ require "controllers/statusController.php";
 if (isset($data['log_out'])) {
     unset($_SESSION['logged_user']);
 }
+
 ?>
 <header>
     <div class="wrapper holder">
@@ -33,11 +34,12 @@ if (isset($data['log_out'])) {
 
                                 <div class="user">
                                     <div class="around-img holder">
-                                        <? echo '<img src = "data:image;base64,' . $person->background . '"> '; ?>
+                                        <? echo '<img src = "data:image;base64,' . $person->avatar . '"> '; ?>
                                     </div>
+                                    <form>
                                     <a href="#"> <? echo $person->name . " " . $person->lastName ?></a><br>
                                     <span class="user-status"><?
-                                        echo $person->status ?></span>
+                                        echo $person->status ?></span></form>
                                 </div>
                                 <?
                             }
