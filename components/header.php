@@ -204,15 +204,13 @@ if (isset($data['log_out'])) {
     <div class="user-box">
         <h3>Your account</h3>
         <div class="items-box">
-            <ul>
-                <li><i class="ti-settings"></i>
-                    <a href="../profile-settings.php"><span>Profile Setting</span></a></li>
-                <li><i class="ti-arrow-circle-left"></i>
-                    <form action="../sign-in.php" method="POST">
-                        <input type="submit" name="log_out" value="Log out">
-                    </form>
 
-            </ul>
+            <a href="../profile-settings.php"><span>Profile Setting</span></a></li>
+            <form action="../sign-in.php" method="POST" class="log-out">
+
+                <input type="submit" name="log_out" value="Log out" class="log-out">
+            </form>
+
         </div>
         <h3>Chat Settings</h3>
         <div class="chat-setting">

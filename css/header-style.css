@@ -95,6 +95,26 @@ header form input {
     color: #ffffff;
 }
 
+header .log-out {
+    height: 50px;
+    position: static;
+}
+
+header .log-out input{
+    background: none;
+    border: none;
+    font-size: 17px;
+    color: #515365;
+    font-family: Oswald-Medium, sans-serif;
+    width: 80px;
+    height: 50px;
+    padding: 0 20px 0 0 ;
+    cursor: pointer;
+}
+header .log-out input:hover {
+    color: #ff5e3a;
+}
+
 header form button.submit {
     overflow: visible;
     position: relative;
@@ -416,6 +436,7 @@ header .profile-view .user-status {
     margin-top: 15px;
     padding-left: 15px;
     border-bottom: 1px solid #e6ecf5;
+    height: auto;
 }
 
 .user-box ul {
