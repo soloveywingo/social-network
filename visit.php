@@ -404,7 +404,7 @@ if (isset($data['add_friend']))
     <div class="people-content tab-content">
         <div class="wrapper holder">
             <div class="title-list">
-                <h2><? echo $user->name . "'s " ?>Friends (6)</h2>
+                <h2><? echo $visitUser->name . "'s " ?>Friends (6)</h2>
             </div>
             <div class="friends-content">
                 <div class="grid-content">
@@ -434,10 +434,10 @@ if (isset($data['add_friend']))
                                 <div class="buttons">
                                     <form action="#" method="POST">
 
-                                        <!--<input type="submit" name="delete_friend_from_friends" value="Delete"
+                                        <input type="submit" name="delete_friend_from_friends" value="Delete"
                                                class="delete-button">
                                         <input type="submit" name="add_friend_to_friends" value="Add" class="add-button">
-                                        <input type="submit" name="block_friend" value="Block" class="block-button">-->
+                                        <input type="submit" name="block_friend" value="Block" class="block-button">
 
                                     </form>
                                 </div>
