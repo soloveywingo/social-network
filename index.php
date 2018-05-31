@@ -392,7 +392,9 @@ if (!isset($_SESSION['logged_user']))
     <div class="people-content tab-content">
         <div class="wrapper holder">
             <div class="title-list">
-                <h2><? echo $user->name . "'s " ?>Friends (6)</h2>
+                <?php
+                    $countFriends = 0; ?>
+                <h2><? echo $user->name . "'s " ?>Friends </h2>
             </div>
             <div class="friends-content">
                 <div class="grid-content">
@@ -410,7 +412,8 @@ if (!isset($_SESSION['logged_user']))
                     {
                         if ($_SESSION['logged_user']->id == $friend->id_user)
                         {
-                            $buddy = R::load('users2', $friend->id_friend)
+                            $buddy = R::load('users2', $friend->id_friend);
+                            $countFriends++;
                     ?>
                     <div class="friend-box">
                         <div class="avatar-box">
