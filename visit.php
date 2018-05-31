@@ -28,7 +28,18 @@ if (!isset($_SESSION['logged_user']))
 
     <?
 }
+$data = $_POST;
+if (isset($data['add_friend']))
+{
+    $friends = R::dispense('friends');
+    $friends->id_user = $_SESSION['logged_user']->id;
+    $friends->id_friend = $visitUser->id;
+    $friends->status = 1;
+    R::store($friends);
+}
+
 ?>
+
 
 
 <main>
@@ -93,7 +104,7 @@ if (!isset($_SESSION['logged_user']))
                 <div class="ti-more more-right events-call" title="Events with friend"></div>
 
                 <div class="users-buttons">
-                    <form action="#" method="POST">
+                    <form action="" method="POST">
 
                         <input type="submit" name="add_friend" value="Add friend"><br>
                         <input type="submit" name="delete_friend" value="Delete friend"><br>

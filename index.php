@@ -397,119 +397,41 @@ if (!isset($_SESSION['logged_user']))
             <div class="friends-content">
                 <div class="grid-content">
 
+                    <?php
+                    $ids = [];
+                    $s = 0;
+                    while ($s < 100)
+                    {
+                        $ids[$s] = $s;
+                        $s++;
+                    }
+                    $friends = R::loadAll('friends', $ids);
+                    foreach ($friends as $friend)
+                    {
+                        if ($_SESSION['logged_user']->id == $friend->id_user)
+                        {
+                            $buddy = R::load('users2', $friend->id_friend)
+                    ?>
                     <div class="friend-box">
                         <div class="avatar-box">
-                            <img src="img/users/1MA9kvUVdFY.jpg">
+                            <? echo '<img src = "data:image;base64,' . $buddy->avatar . '"> '; ?>
                         </div>
-                        <h4>Sergey Vasilenko<br>
+                        <h4><?echo $buddy->name . $buddy->lastName;  ?><br>
                             <span>Kharkiv, Ukraine</span>
                         </h4>
                         <div class="buttons">
                             <form action="#" method="POST">
 
-                                <input type="submit" name="delete_friend_from_friends" value="Delete"
+                                <!--<input type="submit" name="delete_friend_from_friends" value="Delete"
                                        class="delete-button">
                                 <input type="submit" name="add_friend_to_friends" value="Add" class="add-button">
-                                <input type="submit" name="block_friend" value="Block" class="block-button">
+                                <input type="submit" name="block_friend" value="Block" class="block-button">-->
 
                             </form>
                         </div>
                     </div>
+                <? } }?>
 
-                    <div class="friend-box">
-                        <div class="avatar-box">
-                            <img src="img/users/j_WY_ZBs5FM.jpg">
-                        </div>
-                        <h4>Vladimir Radchenko<br>
-                            <span>Kharkiv, Ukraine</span>
-                        </h4>
-                        <div class="buttons">
-                            <form action="#" method="POST">
-
-                                <input type="submit" name="delete_friend_from_friends" value="Delete"
-                                       class="delete-button">
-                                <input type="submit" name="add_friend_to_friends" value="Add" class="add-button">
-                                <input type="submit" name="block_friend" value="Block" class="block-button">
-
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="friend-box">
-                        <div class="avatar-box">
-                            <img src="img/users/ZJbW_nE15WY.jpg">
-                        </div>
-                        <h4>Anastasia Rolenko<br>
-                            <span>Kharkiv, Ukraine</span>
-                        </h4>
-                        <div class="buttons">
-                            <form action="#" method="POST">
-
-                                <input type="submit" name="delete_friend_from_friends" value="Delete"
-                                       class="delete-button">
-                                <input type="submit" name="add_friend_to_friends" value="Add" class="add-button">
-                                <input type="submit" name="block_friend" value="Block" class="block-button">
-
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="friend-box">
-                        <div class="avatar-box">
-                            <img src="img/users/BNaB-nWedts.jpg">
-                        </div>
-                        <h4>Vadim Nepochatov<br>
-                            <span>Kharkiv, Ukraine</span>
-                        </h4>
-                        <div class="buttons">
-                            <form action="#" method="POST">
-
-                                <input type="submit" name="delete_friend_from_friends" value="Delete"
-                                       class="delete-button">
-                                <input type="submit" name="add_friend_to_friends" value="Add" class="add-button">
-                                <input type="submit" name="block_friend" value="Block" class="block-button">
-
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="friend-box">
-                        <div class="avatar-box">
-                            <img src="img/users/bohdan.jpg">
-                        </div>
-                        <h4>Bohdan Soloviyv<br>
-                            <span>Kharkiv, Ukraine</span>
-                        </h4>
-                        <div class="buttons">
-                            <form action="#" method="POST">
-
-                                <input type="submit" name="delete_friend_from_friends" value="Delete"
-                                       class="delete-button">
-                                <input type="submit" name="add_friend_to_friends" value="Add" class="add-button">
-                                <input type="submit" name="block_friend" value="Block" class="block-button">
-
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="friend-box">
-                        <div class="avatar-box">
-                            <img src="img/users/Lv1CepMuOtw.jpg">
-                        </div>
-                        <h4>Leonid Stetsenko<br>
-                            <span>Kharkiv, Ukraine</span>
-                        </h4>
-                        <div class="buttons">
-                            <form action="#" method="POST">
-
-                                <input type="submit" name="delete_friend_from_friends" value="Delete"
-                                       class="delete-button">
-                                <input type="submit" name="add_friend_to_friends" value="Add" class="add-button">
-                                <input type="submit" name="block_friend" value="Block" class="block-button">
-
-                            </form>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
