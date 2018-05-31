@@ -6,7 +6,6 @@ include "components/header.php";
 <html lang="en">
 
 
-
 <title>Profile page</title>
 
 <body>
@@ -19,8 +18,7 @@ require "controllers/backgroundController.php";
 $visitUser = R::load('users2', $visitId);
 $hobbies = R::load('hobbies', $visitUser->id_hobbies);
 $education = R::load('education', $visitUser->id_education);
-if (!isset($_SESSION['logged_user']))
-{
+if (!isset($_SESSION['logged_user'])) {
     ?>
     <script>
         document.location.href = "sign-in.php";
@@ -28,18 +26,9 @@ if (!isset($_SESSION['logged_user']))
 
     <?
 }
-$data = $_POST;
-if (isset($data['add_friend']))
-{
-    $friends = R::dispense('friends');
-    $friends->id_user = $_SESSION['logged_user']->id;
-    $friends->id_friend = $visitUser->id;
-    $friends->status = 1;
-    R::store($friends);
-}
+require "controllers/addingFriendController.php";
 
 ?>
-
 
 
 <main>
@@ -69,10 +58,10 @@ if (isset($data['add_friend']))
 
             <div class="open-settings">
                 <form action="#" method="POST">
-<!--
-                    <input type="button" name="open_avatar" value="Open photo"><br>
-                    <input type="button" name="change_avatar" value="Change photo" class="change-avatar"><br>
-                    <input type="submit" name="delete_avatar" value="Delete photo"><br>-->
+                    <!--
+                                        <input type="button" name="open_avatar" value="Open photo"><br>
+                                        <input type="button" name="change_avatar" value="Change photo" class="change-avatar"><br>
+                                        <input type="submit" name="delete_avatar" value="Delete photo"><br>-->
 
                 </form>
             </div>
@@ -80,8 +69,8 @@ if (isset($data['add_friend']))
             <div class="open-settings-bg">
                 <form action="#" method="POST">
 
-             <!--       <input type="button" name="change_bg_photo" value="Change background" class="change-bg"><br>
-                    <input type="submit" name="delete_bg_photo" value="Delete background"><br>-->
+                    <!--       <input type="button" name="change_bg_photo" value="Change background" class="change-bg"><br>
+                           <input type="submit" name="delete_bg_photo" value="Delete background"><br>-->
 
 
                 </form>
@@ -90,7 +79,7 @@ if (isset($data['add_friend']))
 
             <div class="short-info">
                 <span><? echo $visitUser->name . " " . $visitUser->lastName ?></span><br>
-                <span class="under-span"><?echo $visitUser->status ?></span>
+                <span class="under-span"><? echo $visitUser->status ?></span>
             </div>
             <div class="right-navigation holder">
                 <nav>
@@ -136,7 +125,7 @@ if (isset($data['add_friend']))
                     </div>
                     <div class="favorite-music">
                         <h4>Favorite Music:</h4>
-                        <p><?echo $hobbies->music;?> </p>
+                        <p><? echo $hobbies->music; ?> </p>
                     </div>
 
                 </div>
@@ -291,7 +280,7 @@ if (isset($data['add_friend']))
                 <div class="about-inside-content">
                     <div>
                         <h4>About me</h4>
-                        <p><? echo $visitUser->info?></p>
+                        <p><? echo $visitUser->info ?></p>
                     </div>
                     <div>
                         <h4>Birthday</h4>
@@ -311,7 +300,7 @@ if (isset($data['add_friend']))
                     </div>
                     <div>
                         <h4>Status</h4>
-                        <p><? echo $visitUser->isMerried;?></p>
+                        <p><? echo $visitUser->isMerried; ?></p>
                     </div>
                     <div>
                         <h4>Email</h4>
@@ -333,38 +322,38 @@ if (isset($data['add_friend']))
                         <div>
                             <h4>Hobbies</h4>
                             <p>
-                                <?echo $hobbies->hobbies;?>
+                                <? echo $hobbies->hobbies; ?>
                             </p>
                         </div>
                         <div>
                             <h4>Favourite TV shows</h4>
-                            <p><?echo $hobbies->shows;?></p>
+                            <p><? echo $hobbies->shows; ?></p>
                         </div>
                         <div>
                             <h4>Favourite Movies</h4>
-                            <p><?echo $hobbies->movies;?></p>
+                            <p><? echo $hobbies->movies; ?></p>
                         </div>
                         <div>
                             <h4>Favourite Games</h4>
-                            <p><?echo $hobbies->games;?></p>
+                            <p><? echo $hobbies->games; ?></p>
                         </div>
                     </div>
                     <div class="right-subbox">
                         <div>
                             <h4>Favourite Music Bands/ Artists</h4>
-                            <p><?echo $hobbies->music;?></p>
+                            <p><? echo $hobbies->music; ?></p>
                         </div>
                         <div>
                             <h4>Favourite Books</h4>
-                            <p><?echo $hobbies->books;?>.</p>
+                            <p><? echo $hobbies->books; ?>.</p>
                         </div>
                         <div>
                             <h4>Favourite Writers</h4>
-                            <p><?echo $hobbies->writers;?></p>
+                            <p><? echo $hobbies->writers; ?></p>
                         </div>
                         <div>
                             <h4>Favourite Cars</h4>
-                            <p><?echo $hobbies->cars;?></p>
+                            <p><? echo $hobbies->cars; ?></p>
                         </div>
                     </div>
                 </div>
@@ -375,21 +364,21 @@ if (isset($data['add_friend']))
                     <div class="left-subbox">
                         <div>
                             <h4>School</h4>
-                            <p><? echo $education->school;  ?></p>
+                            <p><? echo $education->school; ?></p>
                         </div>
                         <div>
                             <h4>University</h4>
-                            <p><? echo $education->education;  ?></p>
+                            <p><? echo $education->education; ?></p>
                         </div>
                     </div>
                     <div class="right-subbox">
                         <div>
                             <h4>Courses</h4>
-                            <p><? echo $education->courses;  ?></p>
+                            <p><? echo $education->courses; ?></p>
                         </div>
                         <div>
                             <h4>Collage</h4>
-                            <p><? echo $education->college;  ?></p>
+                            <p><? echo $education->college; ?></p>
                         </div>
                     </div>
                 </div>
@@ -412,23 +401,20 @@ if (isset($data['add_friend']))
                     <?php
                     $ids = [];
                     $s = 0;
-                    while ($s < 100)
-                    {
+                    while ($s < 100) {
                         $ids[$s] = $s;
                         $s++;
                     }
                     $friends = R::loadAll('friends', $ids);
-                    foreach ($friends as $friend)
-                    {
-                        if ($visitUser->id == $friend->id_user)
-                        {
+                    foreach ($friends as $friend) {
+                        if ($visitUser->id == $friend->id_user) {
                             $buddy = R::load('users2', $friend->id_friend)
                             ?>
                             <div class="friend-box">
                                 <div class="avatar-box">
                                     <? echo '<img src = "data:image;base64,' . $buddy->avatar . '"> '; ?>
                                 </div>
-                                <h4><?echo $buddy->name . $buddy->lastName;  ?><br>
+                                <h4><? echo $buddy->name . $buddy->lastName; ?><br>
                                     <span>Kharkiv, Ukraine</span>
                                 </h4>
                                 <div class="buttons">
@@ -436,13 +422,15 @@ if (isset($data['add_friend']))
 
                                         <input type="submit" name="delete_friend_from_friends" value="Delete"
                                                class="delete-button">
-                                        <input type="submit" name="add_friend_to_friends" value="Add" class="add-button">
+                                        <input type="submit" name="add_friend_to_friends" value="Add"
+                                               class="add-button">
                                         <input type="submit" name="block_friend" value="Block" class="block-button">
 
                                     </form>
                                 </div>
                             </div>
-                        <? } }?>
+                        <? }
+                    } ?>
 
                 </div>
             </div>

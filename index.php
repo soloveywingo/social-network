@@ -89,8 +89,8 @@ if (!isset($_SESSION['logged_user']))
                     </ul>
                 </nav>
 
-                <div class="ti-more more-right events-call" title="Events with friend"></div>
-
+            <!--    <div class="ti-more more-right events-call" title="Events with friend"></div>-->
+<!--
                 <div class="users-buttons">
                     <form action="#" method="POST">
 
@@ -100,7 +100,7 @@ if (!isset($_SESSION['logged_user']))
                         <input type="submit" name="report" value="Report" class="call-report"><br>
 
                     </form>
-                </div>
+                </div>-->
             </div>
 
         </div>
