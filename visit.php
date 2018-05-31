@@ -80,8 +80,8 @@ if (isset($data['add_friend']))
             <div class="open-settings-bg">
                 <form action="#" method="POST">
 
-                    <input type="button" name="change_bg_photo" value="Change background" class="change-bg"><br>
-                    <input type="submit" name="delete_bg_photo" value="Delete background"><br>
+             <!--       <input type="button" name="change_bg_photo" value="Change background" class="change-bg"><br>
+                    <input type="submit" name="delete_bg_photo" value="Delete background"><br>-->
 
 
                 </form>
