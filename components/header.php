@@ -9,6 +9,11 @@ if (isset($data['log_out'])) {
     unset($_SESSION['logged_user']);
 }
 
+if (isset($data[$person->id]))
+{
+
+}
+
 ?>
 <header>
     <div class="wrapper holder">
@@ -21,6 +26,7 @@ if (isset($data['log_out'])) {
 
                     <!-- SEARCH PANEL-->
                     <div class="search-panel">
+
                         <?
                         $ids = [];
                         $s = 0;
@@ -29,18 +35,26 @@ if (isset($data['log_out'])) {
                             $s++;
                         }
                         $users = R::loadAll('users2', $ids);
+
                         foreach ($users as $person) {
-                            if (isset($person->name)) { ?>
+                            if (isset($person->name)) {
+                                $id = $person->id;
+                                ?>
 
                                 <div class="user">
                                     <div class="around-img holder">
+
                                         <? echo '<img src = "data:image;base64,' . $person->avatar . '"> '; ?>
                                     </div>
                                     <form>
-                                    <a href="#"> <? echo $person->name . " " . $person->lastName ?></a><br>
+                                    <a href="visit.php?id=<?echo $person->id?>" > <? echo $person->name . " " . $person->lastName  ?> </a>
+
+                                        <br>
+
                                     <span class="user-status"><?
                                         echo $person->status ?></span></form>
                                 </div>
+
                                 <?
                             }
                         }
