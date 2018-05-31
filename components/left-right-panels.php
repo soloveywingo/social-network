@@ -64,9 +64,24 @@
 
 <div class="right-panel">
     <div class="icons-groups">
-        <div class="around-user-photo">
-            <img src="../img/users/1MA9kvUVdFY.jpg" alt="User photo">
-        </div>
+        <?
+        $ids = [];
+        $s = 0;
+        while ($s < 100) {
+            $ids[$s] = $s;
+            $s++;
+        }
+        $friends = R::loadAll('friends', $ids);
+        foreach ($friends as $friend) {
+            if ($_SESSION['logged_user']->id == $friend->id_user && $friend->status == 1) {
+                $buddy = R::load('users2', $friend->id_friend);
+                ?>
+                <div class="around-user-photo">
+                    <a href="visit.php?id=<? echo $buddy->id ?>"> <? echo '<img src = "data:image;base64,' . $buddy->avatar . '"> '; ?> </a>
+                </div>
+            <? }
+        } ?>
+
     </div>
     <div class="right-panel-footer">
         <span class="fas fa-bars open-bottom-menu"></span>
@@ -74,18 +89,34 @@
 </div>
 
 <div class="full-right-panel holder">
+
     <div class="icons-groups holder">
-        <div class="setting-group">
-            <a href="#">
-                <div class="around-user-photo">
-                    <img src="../img/users/1MA9kvUVdFY.jpg" alt="User photo">
+        <?
+        $ids = [];
+        $s = 0;
+        while ($s < 100) {
+            $ids[$s] = $s;
+            $s++;
+            $friends = R::loadAll('friends', $ids);
+        }
+        foreach ($friends as $friend) {
+            if ($_SESSION['logged_user']->id == $friend->id_user && $friend->status == 1) {
+                $buddy = R::load('users2', $friend->id_friend);
+                ?>
+
+                <div class="setting-group">
+                    <div class="around-user-photo">
+                        <a href="visit.php?id=<? echo $buddy->id ?>"> <? echo '<img src = "data:image;base64,' . $buddy->avatar . '"> '; ?> </a>
+                    </div>
+                    <div class="info-user">
+                        <span><? echo $buddy->name . " " . $buddy->lastName; ?> </span><br>
+                        <i>Online</i>
+                    </div>
                 </div>
-                <div class="info-user">
-                    <span>Sergey Vasilenko</span><br>
-                    <i>Online</i>
-                </div>
-            </a>
-        </div>
+            <? }
+        } ?>
+
+
     </div>
     <div class="setting">
         <div class="flex-container">

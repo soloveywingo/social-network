@@ -26,7 +26,9 @@ if (!isset($_SESSION['logged_user'])) {
 
     <?
 }
-require "controllers/addingFriendController.php";
+require "controllers/friendController.php";
+
+
 
 ?>
 
@@ -393,7 +395,7 @@ require "controllers/addingFriendController.php";
     <div class="people-content tab-content">
         <div class="wrapper holder">
             <div class="title-list">
-                <h2><? echo $visitUser->name . "'s " ?>Friends (6)</h2>
+                <h2><? echo $visitUser->name . "'s " ?>Friends </h2>
             </div>
             <div class="friends-content">
                 <div class="grid-content">
@@ -407,14 +409,14 @@ require "controllers/addingFriendController.php";
                     }
                     $friends = R::loadAll('friends', $ids);
                     foreach ($friends as $friend) {
-                        if ($visitUser->id == $friend->id_user) {
+                        if ($visitUser->id == $friend->id_user && $friend->status == 1) {
                             $buddy = R::load('users2', $friend->id_friend)
                             ?>
                             <div class="friend-box">
                                 <div class="avatar-box">
-                                    <? echo '<img src = "data:image;base64,' . $buddy->avatar . '"> '; ?>
+                                    <a href="visit.php?id=<?echo $buddy->id?>"> <? echo '<img src = "data:image;base64,' . $buddy->avatar . '"> '; ?> </a>
                                 </div>
-                                <h4><? echo $buddy->name . $buddy->lastName; ?><br>
+                                <h4><? echo $buddy->name . " " . $buddy->lastName; ?><br>
                                     <span>Kharkiv, Ukraine</span>
                                 </h4>
                                 <div class="buttons">

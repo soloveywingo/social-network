@@ -37,25 +37,28 @@ if (isset($data[$person->id]))
                         $users = R::loadAll('users2', $ids);
 
                         foreach ($users as $person) {
-                            if (isset($person->name)) {
-                                $id = $person->id;
-                                ?>
+                            if ($person->id != $_SESSION['logged_user']->id) {
+                                if (isset($person->name)) {
+                                    $id = $person->id;
+                                    ?>
 
-                                <div class="user">
-                                    <div class="around-img holder">
+                                    <div class="user">
+                                        <div class="around-img holder">
+                                            <a href="visit.php?id=<?
+                                            echo $person->id ?>"> <? echo '<img src = "data:image;base64,' . $person->avatar . '"> '; ?></a>
+                                        </div>
+                                        <form>
+                                            <a href="visit.php?id=<?
+                                            echo $person->id ?>"> <? echo $person->name . " " . $person->lastName ?> </a>
 
-                                        <? echo '<img src = "data:image;base64,' . $person->avatar . '"> '; ?>
+                                            <br>
+
+                                            <span class="user-status"><?
+                                                echo $person->status ?></span></form>
                                     </div>
-                                    <form>
-                                    <a href="visit.php?id=<?echo $person->id?>" > <? echo $person->name . " " . $person->lastName  ?> </a>
 
-                                        <br>
-
-                                    <span class="user-status"><?
-                                        echo $person->status ?></span></form>
-                                </div>
-
-                                <?
+                                    <?
+                                }
                             }
                         }
                         ?>
