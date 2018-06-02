@@ -156,11 +156,12 @@ require "controllers/postController.php";
 
 
 
+
                 <?php
                 $numIds = R::count('posts') + 1;
                 $ids = [];
                 $s = 0;
-                while ($s < $numIds) {
+                while ($s < 1000) {
                     $ids[$s] = $s;
                     $s++;
                 }
@@ -193,8 +194,14 @@ require "controllers/postController.php";
                             </div>
                             <div class="post-body lightbox-gallery">
                                 <p><? echo $post->text;?></p>
-                                <!--                        <img src="img/cars/drift/ford-fiesta-ken-block-drift-2273.jpg" alt="Post image"> this one will be working in the next patch-->
-                                <!-- <div id="myCode"></div>-->
+                                <? if ($post->image != NULL)
+                                {
+                                    echo '<img src = "data:image;base64,' . $post->image . '"> ';
+                                }
+
+
+                                ?>
+                                <div id="myCode"></div>
                             </div>
                             <div class="post-footer">
                                 <div class="likes">
@@ -209,8 +216,6 @@ require "controllers/postController.php";
 
 
             </div>
-
-
 
 
             <div class="right-block">
