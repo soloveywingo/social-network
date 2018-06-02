@@ -77,38 +77,39 @@ require "controllers/postController.php";
                            <input type="submit" name="delete_bg_photo" value="Delete background"><br>-->
 
 
-                </form>
-
-            </div>-->
-
-            <div class="short-info">
-                <span><? echo $visitUser->name . " " . $visitUser->lastName ?></span><br>
-                <span class="under-span"><? echo $visitUser->status ?></span>
-            </div>
-            <div class="right-navigation holder">
-                <nav>
-                    <ul>
-                        <li class="tab">Photos</li>
-                        <li class="tab">Videos</li>
-                        <li class="tab">Cars</li>
-                    </ul>
-                </nav>
-
-                <div class="ti-more more-right events-call" title="Events with friend"></div>
-
-                <div class="users-buttons">
-                    <form action="" method="POST">
-
-                        <input type="submit" name="add_friend" value="Add friend"><br>
-                        <input type="submit" name="delete_friend" value="Delete friend"><br>
-                        <input type="submit" name="block_friend" value="Block"><br>
-                        <input type="submit" name="report" value="Report" class="call-report"><br>
-
-                    </form>
-                </div>
-            </div>
+            </form>
 
         </div>
+        -->
+
+        <div class="short-info">
+            <span><? echo $visitUser->name . " " . $visitUser->lastName ?></span><br>
+            <span class="under-span"><? echo $visitUser->status ?></span>
+        </div>
+        <div class="right-navigation holder">
+            <nav>
+                <ul>
+                    <li class="tab">Photos</li>
+                    <li class="tab">Videos</li>
+                    <li class="tab">Cars</li>
+                </ul>
+            </nav>
+
+            <div class="ti-more more-right events-call" title="Events with friend"></div>
+
+            <div class="users-buttons">
+                <form action="" method="POST">
+
+                    <input type="submit" name="add_friend" value="Add friend"><br>
+                    <input type="submit" name="delete_friend" value="Delete friend"><br>
+                    <input type="submit" name="block_friend" value="Block"><br>
+                    <input type="submit" name="report" value="Report" class="call-report"><br>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
     </div>
 
 
@@ -134,88 +135,7 @@ require "controllers/postController.php";
 
                 </div>
             </div>
-            <div class="wall">
-                <form action="" method="POST">
-                    <input type="text" placeholder="What's new?" class="input-clicker" name = "post_text">
-                    <div class="input-footer">
-                        <div class="icons">
-
-                            <label id="addImgToPost" for="addImgTo"><i class="ti-camera"></i></label>
-                            <input id="addImgTo" type="file">
-
-                            <label id="addVideoToPost" for="addVideoTo"><i class="ti-video-clapper"></i></label>
-                            <input id="addVideoTo" type="file">
-
-                            <label id="addMusicToPost" for="addMusicTo"><i class="ti-music-alt"></i></label>
-                            <input id="addMusicTo" type="file">
-
-                        </div>
-                        <input type="submit" value="Send" name = "post_button">
-                    </div>
-                </form>
-
-
-
-
-                <?php
-                $numIds = R::count('posts') + 1;
-                $ids = [];
-                $s = 0;
-                while ($s < 1000) {
-                    $ids[$s] = $s;
-                    $s++;
-                }
-                $posts = R::loadAll('posts', $ids);
-                foreach ($posts as $post) {
-                    if ($_GET['id'] == $post->id_user_page) {
-                        $sharedUser = R::load('users2', $post->id_writer)
-
-                        ?>
-                        <div class="post">
-                            <div class="post-header">
-                                <div class="user-info">
-                                    <div class="round-user holder">
-                                        <? echo '<img src = "data:image;base64,' . $sharedUser->avatar . '"> '; ?>
-                                    </div>
-                                    <div>
-                                        <a href="#"><span><? echo $sharedUser->name . " " . $sharedUser->lastName ?></span></a>
-                                        <span class="under-span">shared</span><br>
-                                        <span class="time"><?echo  $post->date; ?></span>
-                                        <a href="javascript:void(0);" class="ti-more more-right call-post"></a>
-                                        <div class="post-event">
-                                            <form action="#" method="POST">
-
-                                                <input type="submit" name="delete_post" value="Delete post">
-
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-body lightbox-gallery">
-                                <p><? echo $post->text;?></p>
-                                <? if ($post->image != NULL)
-                                {
-                                    echo '<img src = "data:image;base64,' . $post->image . '"> ';
-                                }
-
-
-                                ?>
-                                <div id="myCode"></div>
-                            </div>
-                            <div class="post-footer">
-                                <div class="likes">
-                                    <i class="ti-heart"></i>
-                                    <span>15 person</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    <? }} ?>
-
-
-
-            </div>
+            <? require "views/postsVisitView.php"; ?>
 
 
             <div class="right-block">
@@ -418,16 +338,9 @@ require "controllers/postController.php";
                 <div class="grid-content">
 
                     <?php
-                    $ids = [];
-                    $s = 0;
-                    while ($s < 100) {
-                        $ids[$s] = $s;
-                        $s++;
-                    }
-                    $friends = R::loadAll('friends', $ids);
-                    foreach ($friends
 
-                    as $friend) {
+                    $friends = R::findAll('friends');
+                    foreach ($friends  as $friend) {
                     if ($visitUser->id == $friend->id_user && $friend->status == 1) {
                     $buddy = R::load('users2', $friend->id_friend)
                     ?>

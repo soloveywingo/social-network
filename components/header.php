@@ -28,13 +28,7 @@ if (isset($data[$person->id]))
                     <div class="search-panel">
 
                         <?
-                        $ids = [];
-                        $s = 0;
-                        while ($s < 100) {
-                            $ids[$s] = $s;
-                            $s++;
-                        }
-                        $users = R::loadAll('users2', $ids);
+                        $users = R::findAll('users2');
 
                         foreach ($users as $person) {
                             if ($person->id != $_SESSION['logged_user']->id) {
@@ -87,11 +81,24 @@ if (isset($data[$person->id]))
         <div class="first-box holder">
             <h3>Friends requests</h3>
             <div class="box-main">
+
+                <?php
+
+                $friends = R::findAll('friends');
+
+                foreach ($friends as $friend)
+                {
+                    if ($_SESSION['logged_user']->id == $friend->id_friend)
+                    {
+                     $friendNotice = R::load('users2',$friend->id_user)
+
+                ?>
                 <div class="person">
                     <div class="flex-container">
-                        <img src="../img/user-photo.jpg">
+                     <!--   --><?/* echo '<img src = "data:image;base64,' . $friendNotice->avatar . '" '; */?>
                         <div class="person-name">
-                            <span>Sergey Vasilenko</span><br>
+                            <a href="visit.php?id=<?echo $friendNotice->id ?>"> <span><? echo $friendNotice->name . " " . $friendNotice->lastName ?> </span></a>
+                            added you as friend<br>  <!-- --------------- do something here, does`nt look great!-->
                             <span class="person-status"></span>
                         </div>
                         <div class="friends-buttons">
@@ -100,72 +107,8 @@ if (isset($data[$person->id]))
                         </div>
                     </div>
                 </div>
-                <div class="person">
-                    <div class="flex-container">
-                        <img src="../img/user-photo.jpg">
-                        <div class="person-name">
-                            <span>Leonid Stetsenko</span><br>
-                            <span class="person-status">Space Cowboy</span>
-                        </div>
-                        <div class="friends-buttons">
-                            <button class="accept"><i class="ti-face-smile"></i></button>
-                            <button class="reject"><i class="ti-face-sad"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="person">
-                    <div class="flex-container">
-                        <img src="../img/user-photo.jpg">
-                        <div class="person-name">
-                            <span>Vlodimir Radchenko</span><br>
-                            <span class="person-status">Space Cowboy</span>
-                        </div>
-                        <div class="friends-buttons">
-                            <button class="accept"><i class="ti-face-smile"></i></button>
-                            <button class="reject"><i class="ti-face-sad"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="person">
-                    <div class="flex-container">
-                        <img src="../img/user-photo.jpg">
-                        <div class="person-name">
-                            <span>Vadim NEpochatov</span><br>
-                            <span class="person-status">Space Cowboy</span>
-                        </div>
-                        <div class="friends-buttons">
-                            <button class="accept"><i class="ti-face-smile"></i></button>
-                            <button class="reject"><i class="ti-face-sad"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="person">
-                    <div class="flex-container">
-                        <img src="../img/user-photo.jpg">
-                        <div class="person-name">
-                            <span>Alex Stetsenko</span><br>
-                            <span class="person-status">Space Cowboy</span>
-                        </div>
-                        <div class="friends-buttons">
-                            <button class="accept"><i class="ti-face-smile"></i></button>
-                            <button class="reject"><i class="ti-face-sad"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="person">
-                    <div class="flex-container">
-                        <img src="../img/user-photo.jpg">
-                        <div class="person-name">
-                            <span>Alexey Svlasenko</span><br>
-                            <span class="person-status">Space Cowboy</span>
-                        </div>
-                        <div class="friends-buttons">
-                            <button class="accept"><i class="ti-face-smile"></i></button>
-                            <button class="reject"><i class="ti-face-sad"></i></button>
-                        </div>
-                    </div>
-                </div>
             </div>
+            <? }}?>
             <div class="box-footer ">
                 <span>Check your all Events</span>
             </div>

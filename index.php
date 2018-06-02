@@ -133,13 +133,13 @@ if (!isset($_SESSION['logged_user'])) {
                 </div>
             </div>
             <div class="wall">
-                <form action="index.php" method="POST">
+                <form action="index.php" method="POST" enctype="multipart/form-data">
                     <input type="text" placeholder="What's new?" class="input-clicker" name="post_text">
                     <div class="input-footer">
                         <div class="icons">
 
                             <label id="addImgToPost" for="addImgTo"><i class="ti-camera"></i></label>
-                            <input id="addImgTo" type="file">
+                            <input id="addImgTo" type="file" name="post_image">
 
                             <label id="addVideoToPost" for="addVideoTo"><i class="ti-video-clapper"></i></label>
                             <input id="addVideoTo" type="file">
@@ -153,13 +153,7 @@ if (!isset($_SESSION['logged_user'])) {
                 </form>
 
                 <?php
-                $ids = [];
-                $s = 0;
-                while ($s < 1000) {
-                    $ids[$s] = $s;
-                    $s++;
-                }
-                $posts = R::loadAll('posts', $ids);
+                $posts = R::findAll('posts');
                 foreach ($posts as $post) {
                     if ($_SESSION['logged_user']->id == $post->id_user_page) {
                         $sharedUser = R::load('users2', $post->id_writer)
@@ -415,19 +409,12 @@ if (!isset($_SESSION['logged_user'])) {
                 <div class="grid-content">
 
                     <?php
-                    $ids = [];
-                    $s = 0;
-                    while ($s < 100) {
-                        $ids[$s] = $s;
-                        $s++;
-                    }
-                    $friends = R::loadAll('friends', $ids);
+                    $friends = R::findAll('friends');
                     foreach ($friends
 
                     as $friend) {
                     if ($_SESSION['logged_user']->id == $friend->id_user && $friend->status == 1) {
                     $buddy = R::load('users2', $friend->id_friend);
-                    $countFriends++;
                     ?>
                     <div class="friend-box">
                         <a href="visit.php?id=<? echo $buddy->id ?>">
