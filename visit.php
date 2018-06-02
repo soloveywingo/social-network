@@ -445,8 +445,8 @@ require "controllers/postController.php";
                     <div class="buttons">
                         <form action="#" method="POST">
 
-                            <input type="submit" name="delete_friend_from_friends" value="Delete"
-                                   class="delete-button">
+                            <!--<input type="submit" name="delete_friend_from_friends" value="Delete"
+                                   class="delete-button">-->
                             <input type="submit" name="add_friend_to_friends" value="Add"
                                    class="add-button">
                             <input type="submit" name="block_friend" value="Block" class="block-button">

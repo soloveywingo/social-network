@@ -1418,6 +1418,7 @@ main .about-content .right-below-box .right-subbox p {
 
 main .people-content {
     margin-top: 100px;
+    margin-bottom: 30px;
 }
 
 main .people-content .title-list {
@@ -1443,6 +1444,7 @@ main .people-content .friends-content .friend-box {
     background-color: #ffffff;
     border-radius: 5px;
     position: relative;
+    margin-top: 10px;
 }
 
 
@@ -1498,17 +1500,18 @@ main .people-content .friends-content .friend-box h4 span {
     font-family: PT-Regular, sans-serif;
     font-weight: lighter;
     font-size: 14px;
+    text-transform: uppercase;
 }
 
 main .people-content .friends-content .friend-box h4:hover {
     color: #ff5e3a;
 }
 
+
 main .people-content .friends-content .friend-box .buttons {
-    position: absolute;
-    bottom: 10px;
-    right: 14px;
+   padding: 0 35px 0 35px;
 }
+
 
 main .people-content .friends-content .friend-box .buttons form input[type="submit"] {
     width: 60px;
@@ -1516,13 +1519,14 @@ main .people-content .friends-content .friend-box .buttons form input[type="subm
     border: none;
     border-radius: 5px;
     font-size: 15px;
-    font-family: Oswald-Medium, sans-serif;
+    font-family: RobotoReg, sans-serif;
     color: #ffffff;
     cursor: pointer;
     margin-right: 5px;
     margin-left: 5px;
     outline: none;
-    text-transform: uppercase;
+    text-transform: capitalize;
+    font-weight: bold;
 }
 
 main .people-content .friends-content .friend-box .buttons form input[type="submit"]:hover {
@@ -1882,4 +1886,10 @@ main.visit-page .open-settings form input[type="button"] {
 
 main.visit-page .short-info {
     bottom: 7px;
+}
+
+main .people-content .friends-content .friend-box .buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
 }
