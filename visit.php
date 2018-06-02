@@ -29,11 +29,10 @@ if (!isset($_SESSION['logged_user'])) {
 require "controllers/friendController.php";
 
 
-
 ?>
 
 
-<main>
+<main class="visit-page">
 
     <?php include "components/left-right-panels.php" ?>
 
@@ -60,15 +59,17 @@ require "controllers/friendController.php";
 
             <div class="open-settings">
                 <form action="#" method="POST">
+
+                    <input type="button" name="open_avatar" value="Open photo"><br>
                     <!--
-                                        <input type="button" name="open_avatar" value="Open photo"><br>
-                                        <input type="button" name="change_avatar" value="Change photo" class="change-avatar"><br>
-                                        <input type="submit" name="delete_avatar" value="Delete photo"><br>-->
+                    <input type="button" name="change_avatar" value="Change photo" class="change-avatar"><br>
+                    <input type="submit" name="delete_avatar" value="Delete photo"><br>
+                    -->
 
                 </form>
             </div>
 
-            <div class="open-settings-bg">
+            <!--<div class="open-settings-bg">
                 <form action="#" method="POST">
 
                     <!--       <input type="button" name="change_bg_photo" value="Change background" class="change-bg"><br>
@@ -77,7 +78,7 @@ require "controllers/friendController.php";
 
                 </form>
 
-            </div>
+            </div>-->
 
             <div class="short-info">
                 <span><? echo $visitUser->name . " " . $visitUser->lastName ?></span><br>
@@ -414,7 +415,8 @@ require "controllers/friendController.php";
                             ?>
                             <div class="friend-box">
                                 <div class="avatar-box">
-                                    <a href="visit.php?id=<?echo $buddy->id?>"> <? echo '<img src = "data:image;base64,' . $buddy->avatar . '"> '; ?> </a>
+                                    <a href="visit.php?id=<?
+                                    echo $buddy->id ?>"> <? echo '<img src = "data:image;base64,' . $buddy->avatar . '"> '; ?> </a>
                                 </div>
                                 <h4><? echo $buddy->name . " " . $buddy->lastName; ?><br>
                                     <span>Kharkiv, Ukraine</span>
