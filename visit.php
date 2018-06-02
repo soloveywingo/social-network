@@ -77,38 +77,39 @@ require "controllers/postController.php";
                            <input type="submit" name="delete_bg_photo" value="Delete background"><br>-->
 
 
-                </form>
-
-            </div>-->
-
-            <div class="short-info">
-                <span><? echo $visitUser->name . " " . $visitUser->lastName ?></span><br>
-                <span class="under-span"><? echo $visitUser->status ?></span>
-            </div>
-            <div class="right-navigation holder">
-                <nav>
-                    <ul>
-                        <li class="tab">Photos</li>
-                        <li class="tab">Videos</li>
-                        <li class="tab">Cars</li>
-                    </ul>
-                </nav>
-
-                <div class="ti-more more-right events-call" title="Events with friend"></div>
-
-                <div class="users-buttons">
-                    <form action="" method="POST">
-
-                        <input type="submit" name="add_friend" value="Add friend"><br>
-                        <input type="submit" name="delete_friend" value="Delete friend"><br>
-                        <input type="submit" name="block_friend" value="Block"><br>
-                        <input type="submit" name="report" value="Report" class="call-report"><br>
-
-                    </form>
-                </div>
-            </div>
+            </form>
 
         </div>
+        -->
+
+        <div class="short-info">
+            <span><? echo $visitUser->name . " " . $visitUser->lastName ?></span><br>
+            <span class="under-span"><? echo $visitUser->status ?></span>
+        </div>
+        <div class="right-navigation holder">
+            <nav>
+                <ul>
+                    <li class="tab">Photos</li>
+                    <li class="tab">Videos</li>
+                    <li class="tab">Cars</li>
+                </ul>
+            </nav>
+
+            <div class="ti-more more-right events-call" title="Events with friend"></div>
+
+            <div class="users-buttons">
+                <form action="" method="POST">
+
+                    <input type="submit" name="add_friend" value="Add friend"><br>
+                    <input type="submit" name="delete_friend" value="Delete friend"><br>
+                    <input type="submit" name="block_friend" value="Block"><br>
+                    <input type="submit" name="report" value="Report" class="call-report"><br>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
     </div>
 
 
@@ -134,7 +135,7 @@ require "controllers/postController.php";
 
                 </div>
             </div>
-            <? require "views/postsView.php";  ?>
+            <? require "views/postsView.php"; ?>
 
 
             <div class="right-block">
@@ -337,16 +338,9 @@ require "controllers/postController.php";
                 <div class="grid-content">
 
                     <?php
-                    $ids = [];
-                    $s = 0;
-                    while ($s < 100) {
-                        $ids[$s] = $s;
-                        $s++;
-                    }
-                    $friends = R::loadAll('friends', $ids);
-                    foreach ($friends
 
-                    as $friend) {
+                    $friends = R::findAll('friends');
+                    foreach ($friends  as $friend) {
                     if ($visitUser->id == $friend->id_user && $friend->status == 1) {
                     $buddy = R::load('users2', $friend->id_friend)
                     ?>

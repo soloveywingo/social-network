@@ -22,14 +22,7 @@
 
 
     <?php
-    $numIds = R::count('posts') + 1;
-    $ids = [];
-    $s = 0;
-    while ($s < 1000) {
-        $ids[$s] = $s;
-        $s++;
-    }
-    $posts = R::loadAll('posts', $ids);
+    $posts = R::findAll('posts');
     foreach ($posts as $post) {
         if ($_GET['id'] == $post->id_user_page) {
             $sharedUser = R::load('users2', $post->id_writer)
