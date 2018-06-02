@@ -166,7 +166,7 @@ if (!isset($_SESSION['logged_user'])) {
                     if ($_SESSION['logged_user']->id == $post->id_user_page) {
                         $sharedUser = R::load('users2', $post->id_writer)
                         ?>
-                        <div class="post">
+                        <div class="post" id="result_form">
                             <div class="post-header">
                                 <div class="user-info">
                                     <div class="round-user holder">
@@ -693,6 +693,7 @@ include "components/modal-windows/avatar-modal.php";
 <script src="js/modal-windows.js"></script>
 <script src="js/events-call.js"></script>
 <script src="js/accordion.js"></script>
+<script src="js/ajax.js"></script>
 
 </body>
 </html>
