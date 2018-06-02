@@ -417,35 +417,47 @@ if (!isset($_SESSION['logged_user'])) {
                         $s++;
                     }
                     $friends = R::loadAll('friends', $ids);
-                    foreach ($friends as $friend) {
-                        if ($_SESSION['logged_user']->id == $friend->id_user && $friend->status == 1) {
-                            $buddy = R::load('users2', $friend->id_friend);
-                            $countFriends++;
-                            ?>
-                            <div class="friend-box">
-                                <div class="avatar-box">
-                                    <a href="visit.php?id=<? echo $buddy->id ?>"> <? echo '<img src = "data:image;base64,' . $buddy->avatar . '"> '; ?></a>
+                    foreach ($friends
+
+                    as $friend) {
+                    if ($_SESSION['logged_user']->id == $friend->id_user && $friend->status == 1) {
+                    $buddy = R::load('users2', $friend->id_friend);
+                    $countFriends++;
+                    ?>
+                    <div class="friend-box">
+                        <a href="visit.php?id=<? echo $buddy->id ?>">
+                            <div class="user">
+                                <div class="bg-profile">
+                                    <? echo '<img src = "data:image;base64,' . $buddy->background . '" '; ?>
                                 </div>
-                                <h4><? echo $buddy->name . " " . $buddy->lastName; ?><br>
-                                    <span>Kharkiv, Ukraine</span>
-                                </h4>
-                                <div class="buttons">
-                                    <form action="#" method="POST">
-
-                                        <!--<input type="submit" name="delete_friend_from_friends" value="Delete"
-                                               class="delete-button">
-                                        <input type="submit" name="add_friend_to_friends" value="Add" class="add-button">
-                                        <input type="submit" name="block_friend" value="Block" class="block-button">-->
-
-                                    </form>
+                                <div class="avatar-box">
+                                    <? echo '<img src = "data:image;base64,' . $buddy->avatar . '"> '; ?>
                                 </div>
                             </div>
-                        <? }
-                    } ?>
+                        </a>
+                        <a href="visit.php?id=<? echo $buddy->id ?>">
+                            <h4><? echo $buddy->name . " " . $buddy->lastName; ?><br>
+                                <span><? echo $buddy->status ?></span>
+                            </h4></a>
+                        <div class="buttons">
+                            <form action="#" method="POST">
 
+                                <input type="submit" name="delete_friend_from_friends" value="Delete"
+                                       class="delete-button">
+                                <input type="submit" name="add_friend_to_friends" value="Add"
+                                       class="add-button">
+                                <input type="submit" name="block_friend" value="Block" class="block-button">
+
+                            </form>
+                        </div>
+                    </div>
                 </div>
+                <? }
+                } ?>
+
             </div>
         </div>
+    </div>
     </div>
     <!--End People Content-->
 
