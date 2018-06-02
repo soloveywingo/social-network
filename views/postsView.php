@@ -1,11 +1,11 @@
 <div class="wall">
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         <input type="text" placeholder="What's new?" class="input-clicker" name = "post_text">
         <div class="input-footer">
             <div class="icons">
 
                 <label id="addImgToPost" for="addImgTo"><i class="ti-camera"></i></label>
-                <input id="addImgTo" type="file">
+                <input id="addImgTo" type="file" name="post_image">
 
                 <label id="addVideoToPost" for="addVideoTo"><i class="ti-video-clapper"></i></label>
                 <input id="addVideoTo" type="file">
