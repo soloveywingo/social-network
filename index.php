@@ -15,6 +15,7 @@ include "components/header.php";
 
 require "controllers/avatarController.php";
 require "controllers/backgroundController.php";
+require "controllers/postController.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
 $hobbies = R::load('hobbies', $_SESSION['logged_user']->id_hobbies);
 $education = R::load('education', $_SESSION['logged_user']->id_education);
@@ -27,6 +28,7 @@ if (!isset($_SESSION['logged_user']))
 
     <?
 }
+
 ?>
 
 
@@ -131,7 +133,7 @@ if (!isset($_SESSION['logged_user']))
             </div>
             <div class="wall">
                 <form action="#" method="POST">
-                    <input type="text" placeholder="What's new?" class="input-clicker" id="myUrl">
+                    <input type="text" placeholder="What's new?" class="input-clicker" id="myUrl" name = "post_text">
                     <div class="input-footer">
                         <div class="icons">
 
@@ -145,10 +147,24 @@ if (!isset($_SESSION['logged_user']))
                             <input id="addMusicTo" type="file">
 
                         </div>
-                        <input type="submit" value="Send" id="myBtn">
+                        <input type="submit" value="Send" name = "post_button">
                     </div>
                 </form>
 
+
+
+                <?php
+                $ids = [];
+                $s = 0;
+                while ($s < 100) {
+                    $ids[$s] = $s;
+                    $s++;
+                }
+                $posts = R::loadAll('posts', $ids);
+                foreach ($posts as $post) {
+                if ($_SESSION['logged_user']->id == $post->id_user) {
+                $getPost = R::load('posts', $post->id)
+                ?>
                 <div class="post">
                     <div class="post-header">
                         <div class="user-info">
@@ -158,7 +174,7 @@ if (!isset($_SESSION['logged_user']))
                             <div>
                                 <a href="#"><span><? echo $user->name . " " . $user->lastName ?></span></a>
                                 <span class="under-span">shared</span><br>
-                                <span class="time">7 hours ago</span>
+                                <span class="time"<?echo  $getPost->data; ?></span>
                                 <a href="javascript:void(0);" class="ti-more more-right call-post"></a>
                                 <div class="post-event">
                                     <form action="#" method="POST">
@@ -169,32 +185,24 @@ if (!isset($_SESSION['logged_user']))
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                     <div class="post-body lightbox-gallery">
-                        <p>Some post. </p>
-                        <img src="img/cars/drift/ford-fiesta-ken-block-drift-2273.jpg" alt="Post image">
-                        <div id="myCode"></div>
-                        <audio controls>
-                            <source src="audio/Mark%20Battles%20-%20The%20Truth.mp3" type="audio/mpeg">
-                        </audio>
+                        <p><? echo $getPost->text;?></p>
+<!--                        <img src="img/cars/drift/ford-fiesta-ken-block-drift-2273.jpg" alt="Post image"> this one will be working in the next patch-->
+                       <!-- <div id="myCode"></div>-->
                     </div>
                     <div class="post-footer">
                         <div class="likes">
                             <i class="ti-heart"></i>
                             <span>15 person</span>
                         </div>
-                        <div class="comments">
-                            <i class="ti-comment-alt comment-clicker"></i>
-                            <span>17</span>
-                        </div>
-                        <div class="share">
-                            <i class="ti-location-arrow"></i>
-                            <span>Share</span>
-                        </div>
                     </div>
+
                 </div>
+                <? }} ?>
+
+
+
             </div>
 
 
