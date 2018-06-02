@@ -133,8 +133,8 @@ if (!isset($_SESSION['logged_user'])) {
                 </div>
             </div>
             <div class="wall">
-                <form action="#" method="POST">
-                    <input type="text" placeholder="What's new?" class="input-clicker" id="myUrl" name = "post_text">
+                <form action="index.php" method="POST">
+                    <input type="text" placeholder="What's new?" class="input-clicker" name = "post_text">
                     <div class="input-footer">
                         <div class="icons">
 
@@ -157,25 +157,26 @@ if (!isset($_SESSION['logged_user'])) {
                 <?php
                 $ids = [];
                 $s = 0;
-                while ($s < 100) {
+                $numIds = R::count('posts') + 1;
+                while ($s < $numIds) {
                     $ids[$s] = $s;
                     $s++;
                 }
                 $posts = R::loadAll('posts', $ids);
                 foreach ($posts as $post) {
-                if ($_SESSION['logged_user']->id == $post->id_user) {
-                $getPost = R::load('posts', $post->id)
+                if ($_SESSION['logged_user']->id == $post->id_user_page) {
+                    $sharedUser = R::load('users2', $post->id_writer)
                 ?>
                 <div class="post">
                     <div class="post-header">
                         <div class="user-info">
                             <div class="round-user holder">
-                                <? echo '<img src = "data:image;base64,' . $user->avatar . '"> '; ?>
+                                <? echo '<img src = "data:image;base64,' . $sharedUser->avatar . '"> '; ?>
                             </div>
                             <div>
-                                <a href="#"><span><? echo $user->name . " " . $user->lastName ?></span></a>
+                                <a href="#"><span><? echo $sharedUser->name . " " . $sharedUser->lastName ?></span></a>
                                 <span class="under-span">shared</span><br>
-                                <span class="time"<?echo  $getPost->data; ?></span>
+                                <span class="time"><?echo  $post->date; ?></span>
                                 <a href="javascript:void(0);" class="ti-more more-right call-post"></a>
                                 <div class="post-event">
                                     <form action="#" method="POST">
@@ -188,7 +189,7 @@ if (!isset($_SESSION['logged_user'])) {
                         </div>
                     </div>
                     <div class="post-body lightbox-gallery">
-                        <p><? echo $getPost->text;?></p>
+                        <p><? echo $post->text;?></p>
 <!--                        <img src="img/cars/drift/ford-fiesta-ken-block-drift-2273.jpg" alt="Post image"> this one will be working in the next patch-->
                        <!-- <div id="myCode"></div>-->
                     </div>

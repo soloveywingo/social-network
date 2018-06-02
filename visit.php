@@ -27,6 +27,7 @@ if (!isset($_SESSION['logged_user'])) {
     <?
 }
 require "controllers/friendController.php";
+require "controllers/postController.php";
 
 
 ?>
@@ -134,8 +135,8 @@ require "controllers/friendController.php";
                 </div>
             </div>
             <div class="wall">
-                <form action="#" method="POST">
-                    <input type="text" placeholder="What's new?" class="input-clicker" id="myUrl">
+                <form action="" method="POST">
+                    <input type="text" placeholder="What's new?" class="input-clicker" name = "post_text">
                     <div class="input-footer">
                         <div class="icons">
 
@@ -149,57 +150,67 @@ require "controllers/friendController.php";
                             <input id="addMusicTo" type="file">
 
                         </div>
-                        <input type="submit" value="Send" id="myBtn">
+                        <input type="submit" value="Send" name = "post_button">
                     </div>
                 </form>
 
-                <div class="post">
-                    <div class="post-header">
-                        <div class="user-info">
-                            <div class="round-user holder">
-                                <? echo '<img src = "data:image;base64,' . $visitUser->avatar . '"> '; ?>
-                            </div>
-                            <div>
-                                <a href="#"><span><? echo $visitUser->name . " " . $visitUser->lastName ?></span></a>
-                                <span class="under-span">shared</span><br>
-                                <span class="time">7 hours ago</span>
-                                <a href="javascript:void(0);" class="ti-more more-right call-post"></a>
-                                <div class="post-event">
-                                    <form action="#" method="POST">
 
-                                        <input type="submit" name="delete_post" value="Delete post">
 
-                                    </form>
+                <?php
+                $numIds = R::count('posts') + 1;
+                $ids = [];
+                $s = 0;
+                while ($s < $numIds) {
+                    $ids[$s] = $s;
+                    $s++;
+                }
+                $posts = R::loadAll('posts', $ids);
+                foreach ($posts as $post) {
+                    if ($_GET['id'] == $post->id_user_page) {
+                        $sharedUser = R::load('users2', $post->id_writer)
+
+                        ?>
+                        <div class="post">
+                            <div class="post-header">
+                                <div class="user-info">
+                                    <div class="round-user holder">
+                                        <? echo '<img src = "data:image;base64,' . $sharedUser->avatar . '"> '; ?>
+                                    </div>
+                                    <div>
+                                        <a href="#"><span><? echo $sharedUser->name . " " . $sharedUser->lastName ?></span></a>
+                                        <span class="under-span">shared</span><br>
+                                        <span class="time"><?echo  $post->date; ?></span>
+                                        <a href="javascript:void(0);" class="ti-more more-right call-post"></a>
+                                        <div class="post-event">
+                                            <form action="#" method="POST">
+
+                                                <input type="submit" name="delete_post" value="Delete post">
+
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="post-body lightbox-gallery">
+                                <p><? echo $post->text;?></p>
+                                <!--                        <img src="img/cars/drift/ford-fiesta-ken-block-drift-2273.jpg" alt="Post image"> this one will be working in the next patch-->
+                                <!-- <div id="myCode"></div>-->
+                            </div>
+                            <div class="post-footer">
+                                <div class="likes">
+                                    <i class="ti-heart"></i>
+                                    <span>15 person</span>
+                                </div>
+                            </div>
+
                         </div>
+                    <? }} ?>
 
 
-                    </div>
-                    <div class="post-body lightbox-gallery">
-                        <p>Some post. </p>
-                        <img src="img/cars/drift/ford-fiesta-ken-block-drift-2273.jpg" alt="Post image">
-                        <div id="myCode"></div>
-                        <audio controls>
-                            <source src="audio/Mark%20Battles%20-%20The%20Truth.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                    <div class="post-footer">
-                        <div class="likes">
-                            <i class="ti-heart"></i>
-                            <span>15 person</span>
-                        </div>
-                        <div class="comments">
-                            <i class="ti-comment-alt comment-clicker"></i>
-                            <span>17</span>
-                        </div>
-                        <div class="share">
-                            <i class="ti-location-arrow"></i>
-                            <span>Share</span>
-                        </div>
-                    </div>
-                </div>
+
             </div>
+
+
 
 
             <div class="right-block">
