@@ -60,7 +60,7 @@ require "controllers/friendController.php";
             <div class="open-settings">
                 <form action="#" method="POST">
 
-                    <input type="button" name="open_avatar" value="Open photo"><br>
+                    <input type="button" name="open_avatar" value="Open photo" class="open-avatar"><br>
                     <!--
                     <input type="button" name="change_avatar" value="Change photo" class="change-avatar"><br>
                     <input type="submit" name="delete_avatar" value="Delete photo"><br>
@@ -662,6 +662,7 @@ include "components/modal-windows/read-more-modal.php";
 include "components/modal-windows/report-modal.php";
 include "components/modal-windows/user-avatar-modal.php";
 include "components/modal-windows/background-modal.php";
+include "components/modal-windows/visit-avatar.php";
 
 ?>
 

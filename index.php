@@ -6,7 +6,6 @@ include "components/header.php";
 <html lang="en">
 
 
-
 <title>Profile page</title>
 
 <body>
@@ -18,8 +17,7 @@ require "controllers/backgroundController.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
 $hobbies = R::load('hobbies', $_SESSION['logged_user']->id_hobbies);
 $education = R::load('education', $_SESSION['logged_user']->id_education);
-if (!isset($_SESSION['logged_user']))
-{
+if (!isset($_SESSION['logged_user'])) {
     ?>
     <script>
         document.location.href = "sign-in.php";
@@ -58,7 +56,7 @@ if (!isset($_SESSION['logged_user']))
             <div class="open-settings">
                 <form action="#" method="POST">
 
-                    <input type="button" name="open_avatar" value="Open photo"><br>
+                    <input type="button" name="open_avatar" value="Open photo" class="open-avatar"><br>
                     <input type="button" name="change_avatar" value="Change photo" class="change-avatar"><br>
                     <input type="submit" name="delete_avatar" value="Delete photo"><br>
 
@@ -78,7 +76,10 @@ if (!isset($_SESSION['logged_user']))
 
             <div class="short-info">
                 <span><? echo $user->name . " " . $user->lastName ?></span><br>
-                <span class="under-span"><?echo $user->status ?></span>
+
+            </div>
+            <div class="short-status">
+                <span class="under-span"><? echo $user->status ?></span>
             </div>
             <div class="right-navigation holder">
                 <nav>
@@ -89,18 +90,18 @@ if (!isset($_SESSION['logged_user']))
                     </ul>
                 </nav>
 
-            <!--    <div class="ti-more more-right events-call" title="Events with friend"></div>-->
-<!--
-                <div class="users-buttons">
-                    <form action="#" method="POST">
+                <!--    <div class="ti-more more-right events-call" title="Events with friend"></div>-->
+                <!--
+                                <div class="users-buttons">
+                                    <form action="#" method="POST">
 
-                        <input type="submit" name="add_friend" value="Add friend"><br>
-                        <input type="submit" name="delete_friend" value="Delete friend"><br>
-                        <input type="submit" name="block_friend" value="Block"><br>
-                        <input type="submit" name="report" value="Report" class="call-report"><br>
+                                        <input type="submit" name="add_friend" value="Add friend"><br>
+                                        <input type="submit" name="delete_friend" value="Delete friend"><br>
+                                        <input type="submit" name="block_friend" value="Block"><br>
+                                        <input type="submit" name="report" value="Report" class="call-report"><br>
 
-                    </form>
-                </div>-->
+                                    </form>
+                                </div>-->
             </div>
 
         </div>
@@ -124,7 +125,7 @@ if (!isset($_SESSION['logged_user']))
                     </div>
                     <div class="favorite-music">
                         <h4>Favorite Music:</h4>
-                        <p><?echo $hobbies->music;?> </p>
+                        <p><? echo $hobbies->music; ?> </p>
                     </div>
 
                 </div>
@@ -279,7 +280,7 @@ if (!isset($_SESSION['logged_user']))
                 <div class="about-inside-content">
                     <div>
                         <h4>About me</h4>
-                        <p><? echo $user->info?></p>
+                        <p><? echo $user->info ?></p>
                     </div>
                     <div>
                         <h4>Birthday</h4>
@@ -299,7 +300,7 @@ if (!isset($_SESSION['logged_user']))
                     </div>
                     <div>
                         <h4>Status</h4>
-                        <p><? echo $user->isMerried;?></p>
+                        <p><? echo $user->isMerried; ?></p>
                     </div>
                     <div>
                         <h4>Email</h4>
@@ -321,38 +322,38 @@ if (!isset($_SESSION['logged_user']))
                         <div>
                             <h4>Hobbies</h4>
                             <p>
-                                <?echo $hobbies->hobbies;?>
+                                <? echo $hobbies->hobbies; ?>
                             </p>
                         </div>
                         <div>
                             <h4>Favourite TV shows</h4>
-                            <p><?echo $hobbies->shows;?></p>
+                            <p><? echo $hobbies->shows; ?></p>
                         </div>
                         <div>
                             <h4>Favourite Movies</h4>
-                            <p><?echo $hobbies->movies;?></p>
+                            <p><? echo $hobbies->movies; ?></p>
                         </div>
                         <div>
                             <h4>Favourite Games</h4>
-                            <p><?echo $hobbies->games;?></p>
+                            <p><? echo $hobbies->games; ?></p>
                         </div>
                     </div>
                     <div class="right-subbox">
                         <div>
                             <h4>Favourite Music Bands/ Artists</h4>
-                            <p><?echo $hobbies->music;?></p>
+                            <p><? echo $hobbies->music; ?></p>
                         </div>
                         <div>
                             <h4>Favourite Books</h4>
-                            <p><?echo $hobbies->books;?>.</p>
+                            <p><? echo $hobbies->books; ?>.</p>
                         </div>
                         <div>
                             <h4>Favourite Writers</h4>
-                            <p><?echo $hobbies->writers;?></p>
+                            <p><? echo $hobbies->writers; ?></p>
                         </div>
                         <div>
                             <h4>Favourite Cars</h4>
-                            <p><?echo $hobbies->cars;?></p>
+                            <p><? echo $hobbies->cars; ?></p>
                         </div>
                     </div>
                 </div>
@@ -363,21 +364,21 @@ if (!isset($_SESSION['logged_user']))
                     <div class="left-subbox">
                         <div>
                             <h4>School</h4>
-                            <p><? echo $education->school;  ?></p>
+                            <p><? echo $education->school; ?></p>
                         </div>
                         <div>
                             <h4>University</h4>
-                            <p><? echo $education->education;  ?></p>
+                            <p><? echo $education->education; ?></p>
                         </div>
                     </div>
                     <div class="right-subbox">
                         <div>
                             <h4>Courses</h4>
-                            <p><? echo $education->courses;  ?></p>
+                            <p><? echo $education->courses; ?></p>
                         </div>
                         <div>
                             <h4>Collage</h4>
-                            <p><? echo $education->college;  ?></p>
+                            <p><? echo $education->college; ?></p>
                         </div>
                     </div>
                 </div>
@@ -393,7 +394,7 @@ if (!isset($_SESSION['logged_user']))
         <div class="wrapper holder">
             <div class="title-list">
                 <?php
-                    $countFriends = 0; ?>
+                $countFriends = 0; ?>
                 <h2><? echo $user->name . "'s " ?>Friends </h2>
             </div>
             <div class="friends-content">
@@ -402,38 +403,36 @@ if (!isset($_SESSION['logged_user']))
                     <?php
                     $ids = [];
                     $s = 0;
-                    while ($s < 100)
-                    {
+                    while ($s < 100) {
                         $ids[$s] = $s;
                         $s++;
                     }
                     $friends = R::loadAll('friends', $ids);
-                    foreach ($friends as $friend)
-                    {
-                        if ($_SESSION['logged_user']->id == $friend->id_user && $friend->status == 1)
-                        {
+                    foreach ($friends as $friend) {
+                        if ($_SESSION['logged_user']->id == $friend->id_user && $friend->status == 1) {
                             $buddy = R::load('users2', $friend->id_friend);
                             $countFriends++;
-                    ?>
-                    <div class="friend-box">
-                        <div class="avatar-box">
-                            <a href="visit.php?id=<?echo $buddy->id ?>"> <? echo '<img src = "data:image;base64,' . $buddy->avatar . '"> '; ?></a>
-                        </div>
-                        <h4><?echo $buddy->name . " " . $buddy->lastName;  ?><br>
-                            <span>Kharkiv, Ukraine</span>
-                        </h4>
-                        <div class="buttons">
-                            <form action="#" method="POST">
+                            ?>
+                            <div class="friend-box">
+                                <div class="avatar-box">
+                                    <a href="visit.php?id=<? echo $buddy->id ?>"> <? echo '<img src = "data:image;base64,' . $buddy->avatar . '"> '; ?></a>
+                                </div>
+                                <h4><? echo $buddy->name . " " . $buddy->lastName; ?><br>
+                                    <span>Kharkiv, Ukraine</span>
+                                </h4>
+                                <div class="buttons">
+                                    <form action="#" method="POST">
 
-                                <!--<input type="submit" name="delete_friend_from_friends" value="Delete"
-                                       class="delete-button">
-                                <input type="submit" name="add_friend_to_friends" value="Add" class="add-button">
-                                <input type="submit" name="block_friend" value="Block" class="block-button">-->
+                                        <!--<input type="submit" name="delete_friend_from_friends" value="Delete"
+                                               class="delete-button">
+                                        <input type="submit" name="add_friend_to_friends" value="Add" class="add-button">
+                                        <input type="submit" name="block_friend" value="Block" class="block-button">-->
 
-                            </form>
-                        </div>
-                    </div>
-                <? } }?>
+                                    </form>
+                                </div>
+                            </div>
+                        <? }
+                    } ?>
 
                 </div>
             </div>
@@ -660,8 +659,11 @@ include "components/modal-windows/read-more-modal.php";
 include "components/modal-windows/report-modal.php";
 include "components/modal-windows/user-avatar-modal.php";
 include "components/modal-windows/background-modal.php";
+include "components/modal-windows/avatar-modal.php";
 
 ?>
+
+
 
 <script src="js/modal-image.js"></script>
 <script src="js/tabs.js"></script>

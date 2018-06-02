@@ -626,8 +626,25 @@ main .header-profile .short-info {
     margin-right: auto;
     right: 0;
     left: 0;
+    bottom: 20px;
+    width: 250px;
+}
+
+main .header-profile .short-status {
+    padding-top: 3px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
     bottom: 0;
     width: 250px;
+}
+
+main .header-profile .short-status span {
+    font-family: PT-Regular, sans-serif;
+    color: #515365;
+    text-transform: uppercase;
 }
 
 main .header-profile .short-info span {
@@ -1828,4 +1845,8 @@ main.visit-page .content,
 main.visit-page .about-content,
 main.visit-page .people-content {
     margin-top: 10px;
+}
+
+main.visit-page .open-settings form input[type="button"] {
+    margin-top: 25px;
 }

@@ -84,3 +84,14 @@ changeBg.click(function () {
 closeBackground.click(function () {
     modalBg.hide();
 })
+
+var openAvatar = $(".open-avatar");
+var modalAvatar = $(".bg-modal-open-photo");
+
+openAvatar.click(function () {
+    modalAvatar.fadeIn("fast");
+
+    modalAvatar.click(function () {
+        modalAvatar.fadeOut("fast");
+    })
+})

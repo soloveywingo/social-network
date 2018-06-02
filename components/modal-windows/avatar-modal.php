@@ -8,8 +8,8 @@
 
 ?>
 
-<div class="bg-photo-modal">
+<div class="bg-modal-open-photo">
     <div class="modal">
-        <img src="img/new_photo.jpg" align="User photo">
+        <? echo '<img src = "data:image;base64,' . $user->avatar . '" '; ?>
     </div>
 </div>
