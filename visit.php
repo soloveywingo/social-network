@@ -135,7 +135,7 @@ require "controllers/postController.php";
 
                 </div>
             </div>
-            <? require "views/postsView.php"; ?>
+            <? require "views/postsVisitView.php"; ?>
 
 
             <div class="right-block">
