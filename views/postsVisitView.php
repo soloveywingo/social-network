@@ -34,7 +34,7 @@
                             <? echo '<img src = "data:image;base64,' . $sharedUser->avatar . '"> '; ?>
                         </div>
                         <div>
-                            <a href="#"><span><? echo $sharedUser->name . " " . $sharedUser->lastName ?></span></a>
+                            <a href="visit.php?id=<?echo $post->id_writer;?>" ><span><? echo $sharedUser->name . " " . $sharedUser->lastName ?></span></a>
                             <span class="under-span">shared</span><br>
                             <span class="time"><? echo $post->date; ?></span>
 
