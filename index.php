@@ -163,7 +163,7 @@ if (!isset($_SESSION['logged_user'])) {
                             <div class="post-header">
                                 <div class="user-info">
                                     <div class="round-user holder">
-                                        <? echo '<img src = "data:image;base64,' . $sharedUser->avatar . '"> '; ?>
+                                        <a href="visit.php?id=<?echo $post->id_writer;?>" ><? echo '<img src = "data:image;base64,' . $sharedUser->avatar . '"> '; ?></a>
                                     </div>
                                     <div>
                                         <a href="visit.php?id=<?echo $post->id_writer;?>" ><span><? echo $sharedUser->name . " " . $sharedUser->lastName ?></span></a>

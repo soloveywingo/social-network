@@ -1,5 +1,10 @@
-<?php require "components/head.php";
+<?php
+
+
+require "components/head.php";
 include "components/header.php";
+
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +33,13 @@ if (!isset($_SESSION['logged_user'])) {
 }
 require "controllers/friendController.php";
 require "controllers/postController.php";
-
+if ($_SESSION['logged_user']->id == $_GET['id']) {
+    ?>
+    <script>
+        document.location.href = "index.php";
+    </script>
+    <?
+}
 
 ?>
 
@@ -340,7 +351,9 @@ require "controllers/postController.php";
                     <?php
 
                     $friends = R::findAll('friends');
-                    foreach ($friends  as $friend) {
+                    foreach ($friends
+
+                    as $friend) {
                     if ($visitUser->id == $friend->id_user && $friend->status == 1) {
                     $buddy = R::load('users2', $friend->id_friend)
                     ?>
