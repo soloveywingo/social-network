@@ -156,7 +156,8 @@ if (!isset($_SESSION['logged_user'])) {
                 $posts = R::findAll('posts');
                 foreach ($posts as $post) {
                     if ($_SESSION['logged_user']->id == $post->id_user_page) {
-                        $sharedUser = R::load('users2', $post->id_writer)
+                        $sharedUser = R::load('users2', $post->id_writer);
+                        $postid = $post->id;
                         ?>
                         <div class="post">
                             <div class="post-header">
@@ -170,9 +171,18 @@ if (!isset($_SESSION['logged_user'])) {
                                         <span class="time"><? echo $post->date; ?></span>
                                         <a href="javascript:void(0);" class="ti-more more-right call-post"></a>
                                         <div class="post-event">
-                                            <form action="#" method="POST">
+                                            <form action="index.php" method="POST">
 
-                                                <input type="submit" name="delete_post" value="Delete post">
+                                                <input type="submit" name=<?echo $postid;?> value="Delete post">
+
+                                                <?
+                                                    if (isset($_POST[$postid]))
+                                                    {
+                                                        $delPost = R::load('posts', $postid);
+                                                        R::trash($delPost);
+                                                    }
+
+                                                 ?>
 
                                             </form>
                                         </div>
