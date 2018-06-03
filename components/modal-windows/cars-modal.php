@@ -31,7 +31,7 @@ function addCar(){
         <h2>Add Car</h2>
         <div class="modal-body">
 
-            <form action="" method="POST" class="holder" enctype="multipart/form-data">
+            <form action="#" method="POST" class="holder" enctype="multipart/form-data">
 
                 <input type="text" placeholder="Enter name" name="car_name">
                 <input type="text" placeholder="Enter model" name="car_model"><br>
