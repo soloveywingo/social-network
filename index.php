@@ -560,9 +560,19 @@ if (!isset($_SESSION['logged_user'])) {
                 </div>
             </div>
             <div class="grid-content">
+
+
+                <?
+                $cars = R::findAll('cars');
+                foreach ($cars as $car)
+                {
+                    if ($_SESSION['logged_user']->id == $car->id_user)
+                    {
+
+                ?>
                 <div class="cars-info">
                     <div class="img-box">
-                        <img src="img/cars/drift/bmw-m3-tandem-drift-drift-bmw-m3-dva-zanos-drift-asfalt-mash.jpg">
+                        <? echo '<img src = "data:image;base64,' . $car->image . '" '; ?>
                     </div>
                     <div class="info">
                         <button class="read-more">Read More</button>
@@ -570,55 +580,8 @@ if (!isset($_SESSION['logged_user'])) {
                     </div>
                 </div>
 
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/avtomobil-vyderzhka-drift.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
+                <? }} ?>
 
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/drift-drifter-driftking-5513.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
-
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/ford-fiesta-ken-block-drift-2273.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
-
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/game-nfs-need-for-speed.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
-
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/skyline-cars-avtomobili-drift.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
