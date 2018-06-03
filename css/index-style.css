@@ -341,6 +341,11 @@ main .full-right-panel .icons-groups {
     height: 415px;
 }
 
+main .full-right-panel .icons-groups::-webkit-scrollbar {
+    width: 2px;
+    background-color: #cccccc;
+}
+
 main .full-right-panel .bottom-logo {
     padding-top: 20px;
     padding-right: 20px;
@@ -919,7 +924,7 @@ main .content .wall .post .post-event {
     right: 0;
     background-color: #ffffff;
     width: 100px;
-    height: auto;
+    height: 35px;
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #000000;
@@ -1437,7 +1442,6 @@ main .people-content .title-list h2 {
     font-size: 17px;
 }
 
-
 main .people-content .friends-content .friend-box {
     width: 245px;
     height: 360px;
@@ -1446,7 +1450,6 @@ main .people-content .friends-content .friend-box {
     position: relative;
     margin-top: 10px;
 }
-
 
 main .people-content .friends-content .friend-box .user {
     width: 100%;
@@ -1507,11 +1510,9 @@ main .people-content .friends-content .friend-box h4:hover {
     color: #ff5e3a;
 }
 
-
 main .people-content .friends-content .friend-box .buttons {
-   padding: 0 35px 0 35px;
+    padding: 0 35px 0 35px;
 }
-
 
 main .people-content .friends-content .friend-box .buttons form input[type="submit"] {
     width: 60px;
@@ -1589,6 +1590,29 @@ main .photos-content .add-new-photo {
     border-radius: 5px;
     margin: 0 auto;
     padding-top: 185px;
+}
+
+main .photos-content .add-new-photo #addNewPhoto {
+    display: none;
+}
+
+main .photos-content .add-new-photo .around-btn {
+    position: relative;
+    background-color: #ff5e3a;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+main .photos-content .add-new-photo .around-btn form label {
+    position: absolute;
+    top: 11px;
+    right: 13px;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
 }
 
 main .photos-content .add-new-photo .add-photo-button {
@@ -1882,7 +1906,6 @@ main.visit-page .people-content {
 main.visit-page .open-settings form input[type="button"] {
     margin-top: 25px;
 }
-
 
 main.visit-page .short-info {
     bottom: 7px;

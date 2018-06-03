@@ -476,7 +476,14 @@ if (!isset($_SESSION['logged_user'])) {
             </div>
             <div class="grid-content lightbox-gallery">
                 <div class="add-new-photo">
-                    <button class="add-photo-button">+</button>
+                    <div class="around-btn">
+                        <form action="" method="POST">
+
+                            <input type="file" name="add_new_photo" id="addNewPhoto">
+                            <label for="addNewPhoto" id="addPhoto">+</label>
+
+                        </form>
+                    </div>
                     <h4>Add Photo<br>
                         <span>It only takes a minute!</span>
                     </h4>
@@ -564,10 +571,12 @@ if (!isset($_SESSION['logged_user'])) {
 
                 <?
                 $cars = R::findAll('cars');
-                foreach ($cars as $car)
+                foreach ($cars
+
+                as $car)
                 {
-                    if ($_SESSION['logged_user']->id == $car->id_user)
-                    {
+                if ($_SESSION['logged_user']->id == $car->id_user)
+                {
 
                 ?>
                 <div class="cars-info">
@@ -580,9 +589,10 @@ if (!isset($_SESSION['logged_user'])) {
                     </div>
                 </div>
 
-                <? }} ?>
 
             </div>
+            <? }
+            } ?>
         </div>
     </div>
     </div>

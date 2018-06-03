@@ -24,4 +24,10 @@
 
     });
 
+    document.querySelector("#addPhoto").addEventListener('change', function (ev) {
+
+        document.querySelector("[for='addNewPhoto']").innerHTML = ev.target.files[0].name;
+
+    });
+
 });

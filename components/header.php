@@ -9,8 +9,7 @@ if (isset($data['log_out'])) {
     unset($_SESSION['logged_user']);
 }
 
-if (isset($data[$person->id]))
-{
+if (isset($data[$person->id])) {
 
 }
 
@@ -60,7 +59,7 @@ if (isset($data[$person->id]))
                 </form>
             </div>
             <div class="tools">
-                <img class="hand-panel" src="../img/icons/icons8-hand-peace-32.png">
+                <img class="open-friends-box" src="../img/icons/icons8-hand-peace-32.png">
                 <img class="comments-panel" src="../img/icons/icons8-comments-32.png">
                 <img class="idea-panel" src="../img/icons/icons8-idea-32.png">
             </div>
@@ -70,98 +69,16 @@ if (isset($data[$person->id]))
                 </div>
             </div>
             <span class="user-name"><? echo $user->name . " " . $user->lastName ?></span>
-            <i class="fa fa-caret-down" aria-hidden="true"></i><br>
+            <i class="fa fa-caret-down open-user-box" aria-hidden="true"></i><br>
             <span class="user-status"><? echo $user->status ?></span>
         </div>
     </div>
 
 
     <!-- BOX SHOWER !-->
-    <div class="boxes">
-        <div class="first-box holder">
-            <h3>Friends requests</h3>
-            <div class="box-main">
 
-                <?php
 
-                $friends = R::findAll('friends');
 
-                foreach ($friends as $friend)
-                {
-                    if ($_SESSION['logged_user']->id == $friend->id_friend)
-                    {
-                     $friendNotice = R::load('users2',$friend->id_user)
-
-                ?>
-                <div class="person">
-                    <div class="flex-container">
-                     <!--   --><?/* echo '<img src = "data:image;base64,' . $friendNotice->avatar . '" '; */?>
-                        <div class="person-name">
-                            <a href="visit.php?id=<?echo $friendNotice->id ?>"> <span><? echo $friendNotice->name . " " . $friendNotice->lastName ?> </span></a>
-                            added you as friend<br>  <!-- --------------- do something here, does`nt look great!-->
-                            <span class="person-status"></span>
-                        </div>
-                        <div class="friends-buttons">
-                            <button class="accept"><i class="ti-face-smile"></i></button>
-                            <button class="reject"><i class="ti-face-sad"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <? }}?>
-            <div class="box-footer ">
-                <span>Check your all Events</span>
-            </div>
-        </div>
-
-        <div class="second-box holder">
-            <h3>Chat/Messages</h3>
-            <div class="box-main">
-                <div class="message">
-                    <img src="../img/user-photo.jpg">
-                    <span>Sergey Vasilenko</span>
-                    <div class="this-message">
-                        <p>Hi. I need your help with pc. Could you help me, please?</p>
-                    </div>
-                    <i>4 hours ago</i>
-                </div>
-                <div class="message">
-                    <img src="../img/user-photo.jpg">
-                    <span>Sergey Vasilenko</span>
-                    <div class="this-message">
-                        <p>Hi. I need your help with pc. Could you help me, please?</p>
-                    </div>
-                    <i>4 hours ago</i>
-                </div>
-                <div class="message">
-                    <img src="../img/user-photo.jpg">
-                    <span>Sergey Vasilenko</span>
-                    <div class="this-message">
-                        <p>Hi. I need your help with pc. Could you help me, please?</p>
-                    </div>
-                    <i>4 hours ago</i>
-                </div>
-                <div class="message">
-                    <img src="../img/user-photo.jpg">
-                    <span>Sergey Vasilenko</span>
-                    <div class="this-message">
-                        <p>Hi. I need your help with pc. Could you help me, please?</p>
-                    </div>
-                    <i>4 hours ago</i>
-                </div>
-            </div>
-            <div class="box-footer holder">
-                <span>View all Messages</span>
-            </div>
-        </div>
-
-        <div class="third-box holder">
-            <h3>Notifications</h3>
-            <div class="box-footer holder">
-                <span>View all Notifications</span>
-            </div>
-        </div>
-    </div>
 
     <div class="user-box">
         <h3>Your account</h3>
@@ -202,6 +119,59 @@ if (isset($data[$person->id]))
         </div>
     </div>
 
+    <div class="friends-box">
+
+        <div class="friends-box-header">
+            <h4>Friends requests</h4>
+        </div>
+
+        <div class="friends-box-body">
+
+            <?php
+            $friends = R::findAll('friends');
+            foreach ($friends
+
+            as $friend) {
+            if ($_SESSION['logged_user']->id == $friend->id_friend) {
+            $friendNotice = R::load('users2', $friend->id_user)
+            ?>
+
+            <a href="visit.php?id=<?
+            echo $friendNotice->id ?>">
+
+                <div class="person holder">
+
+                    <div class="person-avatar">
+                        <div class="around-img">
+                            <? echo '<img src = "data:image;base64,' . $friendNotice->avatar . '" '; ?>
+                        </div>
+                    </div>
+
+                    <div class="person-name">
+                        <a href="visit.php?id=<? echo $friendNotice->id ?>">
+                            <span><? echo $friendNotice->name . " " . $friendNotice->lastName ?> </span><br>
+                            <span class="person-time">Time</span>
+                    </div>
+
+                    <div class="person-message">
+                        <span>has followed you</span>
+                    </div>
+
+                </div>
+            </a>
+
+        </div>
+
+        <? }
+        } ?>
+
+        <div class="friends-box-footer">
+            <span>All your friends notifications</span>
+        </div>
+
+    </div>
+
     <!-- BOX SHOWER END !-->
+
 
 </header>
