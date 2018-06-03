@@ -1,5 +1,10 @@
-<?php require "components/head.php";
+<?php
+
+
+require "components/head.php";
 include "components/header.php";
+
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +33,13 @@ if (!isset($_SESSION['logged_user'])) {
 }
 require "controllers/friendController.php";
 require "controllers/postController.php";
-
+if ($_SESSION['logged_user']->id == $_GET['id']) {
+    ?>
+    <script>
+        document.location.href = "index.php";
+    </script>
+    <?
+}
 
 ?>
 
@@ -340,7 +351,9 @@ require "controllers/postController.php";
                     <?php
 
                     $friends = R::findAll('friends');
-                    foreach ($friends  as $friend) {
+                    foreach ($friends
+
+                    as $friend) {
                     if ($visitUser->id == $friend->id_user && $friend->status == 1) {
                     $buddy = R::load('users2', $friend->id_friend)
                     ?>
@@ -429,88 +442,34 @@ require "controllers/postController.php";
         <div class="wrapper holder">
             <div class="title-list">
                 <div class="flex-container">
-                    <h2><? echo $user > name . "'s " ?> Videos</h2>
-                    <button class="upload-video">Upload Video +</button>
+                    <h2><? echo $user->name . "'s " ?> Videos</h2>
                 </div>
             </div>
             <div class="grid-content">
-                <div class="video-box">
-                    <div class="video-cart">
-                        <img src="img/cars/drift/avtomobil-vyderzhka-drift.jpg">
-                        <div class="hidden-button">
-                            <a href="https://www.youtube.com/watch?v=CObPyy6UsL0" data-lity><i
-                                        class="fas fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <span>Some information about video from YouTube</span>
-                    </div>
-                </div>
 
-                <div class="video-box">
-                    <div class="video-cart">
-                        <img src="img/cars/drift/bmw-m3-tandem-drift-drift-bmw-m3-dva-zanos-drift-asfalt-mash.jpg">
-                        <div class="hidden-button">
-                            <a href="https://www.youtube.com/watch?v=CObPyy6UsL0" data-lity><i
-                                        class="fas fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <span>Some information about video from YouTube</span>
-                    </div>
-                </div>
+                <?
+                $videos = R::findAll('videos');
+                foreach ($videos as $video) {
+                    if ($_GET['id'] == $video->id_user) {
 
-                <div class="video-box">
-                    <div class="video-cart">
-                        <img src="img/cars/drift/drift-drifter-driftking-5513.jpg">
-                        <div class="hidden-button">
-                            <a href="https://www.youtube.com/watch?v=CObPyy6UsL0" data-lity><i
-                                        class="fas fa-play"></i></a>
+                        ?>
+                        <div class="video-box">
+                            <div class="video-cart">
+                                <img src="img/cars/drift/skyline-cars-avtomobili-drift.jpg">
+                                <div class="hidden-button">
+                                    <a href=<?echo $video->link ?>" data-lity><i
+                                                class="fas fa-play"></i></a>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <span><? echo $video->description;?></span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="video-info">
-                        <span>Some information about video from YouTube</span>
-                    </div>
-                </div>
+                        <?
+                    }
+                } ?>
 
-                <div class="video-box">
-                    <div class="video-cart">
-                        <img src="img/cars/drift/ford-fiesta-ken-block-drift-2273.jpg">
-                        <div class="hidden-button">
-                            <a href="https://www.youtube.com/watch?v=CObPyy6UsL0" data-lity><i
-                                        class="fas fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <span>Some information about video from YouTube</span>
-                    </div>
-                </div>
 
-                <div class="video-box">
-                    <div class="video-cart">
-                        <img src="img/cars/drift/game-nfs-need-for-speed.jpg">
-                        <div class="hidden-button">
-                            <a href="https://www.youtube.com/watch?v=CObPyy6UsL0" data-lity><i
-                                        class="fas fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <span>Some information about video from YouTube</span>
-                    </div>
-                </div>
-
-                <div class="video-box">
-                    <div class="video-cart">
-                        <img src="img/cars/drift/skyline-cars-avtomobili-drift.jpg">
-                        <div class="hidden-button">
-                            <a href="https://www.youtube.com/watch?v=CObPyy6UsL0" data-lity><i
-                                        class="fas fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <span>Some information about video from YouTube</span>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

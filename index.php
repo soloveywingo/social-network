@@ -15,6 +15,7 @@ include "components/header.php";
 require "controllers/avatarController.php";
 require "controllers/backgroundController.php";
 require "controllers/postController.php";
+require "controllers/videoController.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
 $hobbies = R::load('hobbies', $_SESSION['logged_user']->id_hobbies);
 $education = R::load('education', $_SESSION['logged_user']->id_education);
@@ -156,23 +157,35 @@ if (!isset($_SESSION['logged_user'])) {
                 $posts = R::findAll('posts');
                 foreach ($posts as $post) {
                     if ($_SESSION['logged_user']->id == $post->id_user_page) {
-                        $sharedUser = R::load('users2', $post->id_writer)
+                        $sharedUser = R::load('users2', $post->id_writer);
+                        $postid = $post->id;
                         ?>
                         <div class="post" id="result_form">
                             <div class="post-header">
                                 <div class="user-info">
                                     <div class="round-user holder">
-                                        <? echo '<img src = "data:image;base64,' . $sharedUser->avatar . '"> '; ?>
+                                        <a href="visit.php?id=<?
+                                        echo $post->id_writer; ?>"><? echo '<img src = "data:image;base64,' . $sharedUser->avatar . '"> '; ?></a>
                                     </div>
                                     <div>
-                                        <a href="#"><span><? echo $sharedUser->name . " " . $sharedUser->lastName ?></span></a>
+                                        <a href="visit.php?id=<?
+                                        echo $post->id_writer; ?>"><span><? echo $sharedUser->name . " " . $sharedUser->lastName ?></span></a>
                                         <span class="under-span">shared</span><br>
                                         <span class="time"><? echo $post->date; ?></span>
                                         <a href="javascript:void(0);" class="ti-more more-right call-post"></a>
                                         <div class="post-event">
-                                            <form action="#" method="POST">
+                                            <form action="index.php" method="POST">
 
-                                                <input type="submit" name="delete_post" value="Delete post">
+                                                <input type="submit" name=<?
+                                                echo $postid; ?> value="Delete post">
+
+                                                <?
+                                                if (isset($_POST[$postid])) {
+                                                    $delPost = R::load('posts', $postid);
+                                                    R::trash($delPost);
+                                                }
+
+                                                ?>
 
                                             </form>
                                         </div>
@@ -502,88 +515,35 @@ if (!isset($_SESSION['logged_user'])) {
         <div class="wrapper holder">
             <div class="title-list">
                 <div class="flex-container">
-                    <h2><? echo $user > name . "'s " ?> Videos</h2>
+                    <h2><? echo $user->name . "'s " ?> Videos</h2>
                     <button class="upload-video">Upload Video +</button>
                 </div>
             </div>
             <div class="grid-content">
-                <div class="video-box">
-                    <div class="video-cart">
-                        <img src="img/cars/drift/avtomobil-vyderzhka-drift.jpg">
-                        <div class="hidden-button">
-                            <a href="https://www.youtube.com/watch?v=CObPyy6UsL0" data-lity><i
-                                        class="fas fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <span>Some information about video from YouTube</span>
-                    </div>
-                </div>
 
-                <div class="video-box">
-                    <div class="video-cart">
-                        <img src="img/cars/drift/bmw-m3-tandem-drift-drift-bmw-m3-dva-zanos-drift-asfalt-mash.jpg">
-                        <div class="hidden-button">
-                            <a href="https://www.youtube.com/watch?v=CObPyy6UsL0" data-lity><i
-                                        class="fas fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <span>Some information about video from YouTube</span>
-                    </div>
-                </div>
+                <?
+                $videos = R::findAll('videos');
+                foreach ($videos as $video) {
+                    if ($_SESSION['logged_user']->id == $video->id_user) {
 
-                <div class="video-box">
-                    <div class="video-cart">
-                        <img src="img/cars/drift/drift-drifter-driftking-5513.jpg">
-                        <div class="hidden-button">
-                            <a href="https://www.youtube.com/watch?v=CObPyy6UsL0" data-lity><i
-                                        class="fas fa-play"></i></a>
+                        ?>
+                        <div class="video-box">
+                            <div class="video-cart">
+                                <img src="img/video.jpg">
+                                <div class="hidden-button">
+                                    <a href="<?
+                                    echo $video->link; ?>" data-lity><i
+                                                class="fas fa-play"></i></a>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <span><? echo $video->description ?></span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="video-info">
-                        <span>Some information about video from YouTube</span>
-                    </div>
-                </div>
+                        <?
+                    }
+                } ?>
 
-                <div class="video-box">
-                    <div class="video-cart">
-                        <img src="img/cars/drift/ford-fiesta-ken-block-drift-2273.jpg">
-                        <div class="hidden-button">
-                            <a href="https://www.youtube.com/watch?v=CObPyy6UsL0" data-lity><i
-                                        class="fas fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <span>Some information about video from YouTube</span>
-                    </div>
-                </div>
-
-                <div class="video-box">
-                    <div class="video-cart">
-                        <img src="img/cars/drift/game-nfs-need-for-speed.jpg">
-                        <div class="hidden-button">
-                            <a href="https://www.youtube.com/watch?v=CObPyy6UsL0" data-lity><i
-                                        class="fas fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <span>Some information about video from YouTube</span>
-                    </div>
-                </div>
-
-                <div class="video-box">
-                    <div class="video-cart">
-                        <img src="img/cars/drift/skyline-cars-avtomobili-drift.jpg">
-                        <div class="hidden-button">
-                            <a href="https://www.youtube.com/watch?v=CObPyy6UsL0" data-lity><i
-                                        class="fas fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <span>Some information about video from YouTube</span>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -600,9 +560,19 @@ if (!isset($_SESSION['logged_user'])) {
                 </div>
             </div>
             <div class="grid-content">
+
+
+                <?
+                $cars = R::findAll('cars');
+                foreach ($cars as $car)
+                {
+                    if ($_SESSION['logged_user']->id == $car->id_user)
+                    {
+
+                ?>
                 <div class="cars-info">
                     <div class="img-box">
-                        <img src="img/cars/drift/bmw-m3-tandem-drift-drift-bmw-m3-dva-zanos-drift-asfalt-mash.jpg">
+                        <? echo '<img src = "data:image;base64,' . $car->image . '" '; ?>
                     </div>
                     <div class="info">
                         <button class="read-more">Read More</button>
@@ -610,55 +580,8 @@ if (!isset($_SESSION['logged_user'])) {
                     </div>
                 </div>
 
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/avtomobil-vyderzhka-drift.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
+                <? }} ?>
 
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/drift-drifter-driftking-5513.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
-
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/ford-fiesta-ken-block-drift-2273.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
-
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/game-nfs-need-for-speed.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
-
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/skyline-cars-avtomobili-drift.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
