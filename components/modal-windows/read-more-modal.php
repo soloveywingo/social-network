@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: LETO
- * Date: 13.05.2018
- * Time: 16:09
- */
+
 ?>
 
 <div class="bg-modal-read-more">
@@ -14,7 +9,7 @@
             <img src="img/cars/drift/ford-fiesta-ken-block-drift-2273.jpg">
             <div class="info-car">
                 <ul>
-                    <li>Name: <span>BMW</span></li>
+                    <li>Name: <span><? echo $_SESSION['car']; ?></span></li>
                     <li>Model: <span>i30</span></li>
                     <li>Year: <span>2018</span></li>
                     <li>Color:<span>Black</span></li>
@@ -28,3 +23,4 @@
         <button class="close-modal-read-more">Close</button>
     </div>
 </div>
+

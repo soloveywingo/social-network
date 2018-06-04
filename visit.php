@@ -402,35 +402,24 @@ if ($_SESSION['logged_user']->id == $_GET['id']) {
                 <h2><? echo $user->name . "'s " ?> Photos Gallery</h2>
             </div>
             <div class="grid-content lightbox-gallery">
-                <div class="add-new-photo">
-                    <button class="add-photo-button">+</button>
-                    <h4>Add Photo<br>
-                        <span>It only takes a minute!</span>
-                    </h4>
-                </div>
-                <div class="photo-cart">
-                    <img src="img/cars/amg-mercedes-benz-c-class-4094.jpg">
-                </div>
 
-                <div class="photo-cart">
-                    <img src="img/cars/bmw-m4-f82-blue-sight.jpg">
-                </div>
 
-                <div class="photo-cart">
-                    <img src="img/cars/ford-mustang-ford-mustang-3.jpg">
-                </div>
+                <?
+                $photos = R::findall('photos');
+                foreach ($photos as $photo) {
+                    if ($_GET['id'] == $photo->id_user) {
 
-                <div class="photo-cart">
-                    <img src="img/cars/gaz-21-volga-tiuning-lenin.jpg">
-                </div>
+                        ?>
+                        <div class="photo-cart">
 
-                <div class="photo-cart">
-                    <img src="img/cars/volkswagen-bug-volkswagen-kafer-volkswagen-beetle-zhuk-beetl.jpg">
-                </div>
+                            <div class="photo-cart">
+                                 <span><? echo '<img src = "data:image;base64,' . $photo->photo . '" '; ?>
+                        </span></div>
+                        </div>
+                    <? }
+                } ?>
 
-                <div class="photo-cart">
-                    <img src="img/cars/amg-mercedes-benz-c-class-4094.jpg">
-                </div>
+
             </div>
         </div>
     </div>
@@ -457,12 +446,13 @@ if ($_SESSION['logged_user']->id == $_GET['id']) {
                             <div class="video-cart">
                                 <img src="img/cars/drift/skyline-cars-avtomobili-drift.jpg">
                                 <div class="hidden-button">
-                                    <a href=<?echo $video->link ?>" data-lity><i
-                                                class="fas fa-play"></i></a>
+                                    <a href=<?
+                                    echo $video->link ?>" data-lity><i
+                                                class=" fas fa-play"></i></a>
                                 </div>
                             </div>
                             <div class="video-info">
-                                <span><? echo $video->description;?></span>
+                                <span><? echo $video->description; ?></span>
                             </div>
                         </div>
                         <?
@@ -482,70 +472,34 @@ if ($_SESSION['logged_user']->id == $_GET['id']) {
             <div class="title-list">
                 <div class="flex-container">
                     <h2><? echo $user->name . "'s " ?> Cars Gallery</h2>
-                    <button class="add-car">Add Car +</button>
                 </div>
             </div>
             <div class="grid-content">
+
+
+                <?
+                $cars = R::findAll('cars');
+                foreach ($cars
+
+                as $car)
+                {
+                if ($_GET['id'] == $car->id_user)
+                {
+
+                ?>
                 <div class="cars-info">
                     <div class="img-box">
-                        <img src="img/cars/drift/bmw-m3-tandem-drift-drift-bmw-m3-dva-zanos-drift-asfalt-mash.jpg">
+                        <? echo '<img src = "data:image;base64,' . $car->image . '" '; ?>
                     </div>
                     <div class="info">
                         <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
                     </div>
                 </div>
 
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/avtomobil-vyderzhka-drift.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
 
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/drift-drifter-driftking-5513.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
-
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/ford-fiesta-ken-block-drift-2273.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
-
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/game-nfs-need-for-speed.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
-
-                <div class="cars-info">
-                    <div class="img-box">
-                        <img src="img/cars/drift/skyline-cars-avtomobili-drift.jpg">
-                    </div>
-                    <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
-                    </div>
-                </div>
             </div>
+            <? }
+            } ?>
         </div>
     </div>
     </div>

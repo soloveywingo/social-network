@@ -1,4 +1,5 @@
 /***************** MAIN *****************/
+/***************** MAIN *****************/
 
 main .active {
     color: #000000 !important;
@@ -1656,7 +1657,7 @@ main .photos-content .photo-cart {
 }
 
 main .photos-content .photo-cart img {
-    width: 320%;
+    width: 100%;
 }
 
 main .photos-content .photo-cart img:hover {

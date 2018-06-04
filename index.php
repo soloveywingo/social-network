@@ -16,6 +16,8 @@ require "controllers/avatarController.php";
 require "controllers/backgroundController.php";
 require "controllers/postController.php";
 require "controllers/videoController.php";
+require "controllers/photosController.php";
+require "controllers/carController.php";
 $user = R::load('users2', $_SESSION['logged_user']->id);
 $hobbies = R::load('hobbies', $_SESSION['logged_user']->id_hobbies);
 $education = R::load('education', $_SESSION['logged_user']->id_education);
@@ -153,12 +155,20 @@ if (!isset($_SESSION['logged_user'])) {
                     </div>
                 </form>
 
-                <?php
+                <?php/*
                 $posts = R::findAll('posts');
+                foreach ($posts as $stackPost) {
+                    $q = new SplStack();
+                    $q->name = $stackPost->name;
+                    $q->id = $stackPost->id;
+                    $q->lastName = $stackPost->lastName;
+                    $q->text = $stackPost->text;
+}*/
                 foreach ($posts as $post) {
                     if ($_SESSION['logged_user']->id == $post->id_user_page) {
                         $sharedUser = R::load('users2', $post->id_writer);
                         $postid = $post->id;
+
                         ?>
                         <div class="post" id="result_form">
                             <div class="post-header">
@@ -169,7 +179,7 @@ if (!isset($_SESSION['logged_user'])) {
                                     </div>
                                     <div>
                                         <a href="visit.php?id=<?
-                                        echo $post->id_writer; ?>"><span><? echo $sharedUser->name . " " . $sharedUser->lastName ?></span></a>
+                                        echo $post->id_writer; ?>"><span><? echo $q->name . " " . $sharedUser->lastName ?></span></a>
                                         <span class="under-span">shared</span><br>
                                         <span class="time"><? echo $post->date; ?></span>
                                         <a href="javascript:void(0);" class="ti-more more-right call-post"></a>
@@ -477,40 +487,34 @@ if (!isset($_SESSION['logged_user'])) {
             <div class="grid-content lightbox-gallery">
                 <div class="add-new-photo">
                     <div class="around-btn">
-                        <form action="" method="POST">
+                        <form action="#" method="POST" enctype="multipart/form-data">
 
-                            <input type="file" name="add_new_photo" id="addNewPhoto">
-                            <label for="addNewPhoto" id="addPhoto">+</label>
+                            <input type="file" name="add_photo" id="addNewPhoto">
+                            <label for="addNewPhoto" id="addPhoto">+</label></br></br>
 
+                            <input type="submit" value="add" name="add_photo_button">
                         </form>
                     </div>
                     <h4>Add Photo<br>
                         <span>It only takes a minute!</span>
+
+                        <span>It only takes a minute!</span>
                     </h4>
                 </div>
-                <div class="photo-cart">
-                    <img src="img/cars/amg-mercedes-benz-c-class-4094.jpg">
-                </div>
 
-                <div class="photo-cart">
-                    <img src="img/cars/bmw-m4-f82-blue-sight.jpg">
-                </div>
+                <?
+                $photos = R::findall('photos');
+                foreach ($photos as $photo) {
+                    if ($_SESSION['logged_user']->id == $photo->id_user) {
 
-                <div class="photo-cart">
-                    <img src="img/cars/ford-mustang-ford-mustang-3.jpg">
-                </div>
+                        ?>
+                        <div class="photo-cart">
+                        <span><? echo '<img src = "data:image;base64,' . $photo->photo . '" '; ?>
+                        </span>
+                        </div>
+                    <? }
+                } ?>
 
-                <div class="photo-cart">
-                    <img src="img/cars/gaz-21-volga-tiuning-lenin.jpg">
-                </div>
-
-                <div class="photo-cart">
-                    <img src="img/cars/volkswagen-bug-volkswagen-kafer-volkswagen-beetle-zhuk-beetl.jpg">
-                </div>
-
-                <div class="photo-cart">
-                    <img src="img/cars/amg-mercedes-benz-c-class-4094.jpg">
-                </div>
             </div>
         </div>
     </div>
@@ -584,15 +588,27 @@ if (!isset($_SESSION['logged_user'])) {
                         <? echo '<img src = "data:image;base64,' . $car->image . '" '; ?>
                     </div>
                     <div class="info">
-                        <button class="read-more">Read More</button>
-                        <button class="delete-button">Delete Car</button>
+                        <form method="post">
+                            <button class="read-more" name="<?
+                            echo $car->id ?>">Read More
+                            </button>
+
+                            <?
+                            if (isset($_POST[$car->id])) {
+                                $opencar = R::load('cars', $car->id);
+                                $_SESSION['car'] = $opencar->name;
+                            }
+                            ?>
+                            <button class="delete-button">Delete Car</button>
+                        </form>
                     </div>
                 </div>
 
 
             </div>
             <? }
-            } ?>
+            }
+            ?>
         </div>
     </div>
     </div>

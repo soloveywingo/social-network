@@ -1,37 +1,10 @@
-<?php
 
-if (isset($_POST['send_car']))
-{
-        addCar();
-}
-function addCar(){
-    $data = $_POST;
-    $car = R::dispense("cars");
-    $car->id_user = $_SESSION['logged_user']->id;
-    $car->name = $data['car_name'];
-    $car->model = $data['car_model'];
-    $car->year = $data['car_year'];
-    $car->color = $data['car_color'];
-    $car->engine = $data['car_engine'];
-    $car->mileage =$data['car_mileage'];
-    $car->type = $data['car_type'];
-    $car->description = "";
-    $car->description = $data['car_description'];
-    $carImage = addslashes($_FILES['car_image']['tmp_name']);
-    $carImage = file_get_contents($carImage);
-    $carImage = base64_encode($carImage);
-    $car->image = $carImage;
-   R::store($car);
-}
-
-
-?>
 <div class="bg-modal-cars">
     <div class="modal">
         <h2>Add Car</h2>
         <div class="modal-body">
 
-            <form action="#" method="POST" class="holder" enctype="multipart/form-data">
+            <form action="" method="POST" class="holder" enctype="multipart/form-data">
 
                 <input type="text" placeholder="Enter name" name="car_name">
                 <input type="text" placeholder="Enter model" name="car_model"><br>
