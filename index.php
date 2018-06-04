@@ -155,8 +155,9 @@ if (!isset($_SESSION['logged_user'])) {
                     </div>
                 </form>
 
-                <?php/*
+                <?php
                 $posts = R::findAll('posts');
+                /*
                 foreach ($posts as $stackPost) {
                     $q = new SplStack();
                     $q->name = $stackPost->name;
@@ -164,7 +165,7 @@ if (!isset($_SESSION['logged_user'])) {
                     $q->lastName = $stackPost->lastName;
                     $q->text = $stackPost->text;
 }*/
-                foreach ($posts as $post) {
+                    foreach ($posts as $post) {
                     if ($_SESSION['logged_user']->id == $post->id_user_page) {
                         $sharedUser = R::load('users2', $post->id_writer);
                         $postid = $post->id;
