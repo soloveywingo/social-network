@@ -56,7 +56,9 @@ require "controllers/chatController.php";
                                     ?>
                                     <ul>
                                         <li>
+                                            <form method="get">
                                             <a href="?sendTo=<? echo $massegeFriend->id_friend; ?>">
+                                                </form>
                                                 <div class="flex-container">
                                                     <div class="around-user-img">
                                                         <? echo '<img src = "data:image;base64,' . $friendTo->avatar . '"> '; ?>

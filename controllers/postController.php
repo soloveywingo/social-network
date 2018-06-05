@@ -3,6 +3,12 @@
 if (isset($data['post_button'])) {
     if (!empty($data['post_text']) || getimagesize($_FILES['post_image']["tmp_name"]) != false) {
         createPost();
+        ?>
+        <script>
+            document.location.href = "";
+        </script>
+
+        <?
     }
 
 }
