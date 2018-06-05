@@ -32,7 +32,7 @@ if (!isset($_SESSION['logged_user'])) {
 
 ?>
 
-
+ <!--Main content-->
 <main>
 
     <?php include "components/left-right-panels.php" ?>
