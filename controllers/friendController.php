@@ -1,12 +1,6 @@
 <?
 $data = $_POST;
-$ids = [];
-$s = 0;
-while ($s < 100) {
-    $ids[$s] = $s;
-    $s++;
-}
-$friends = R::loadAll('friends', $ids);
+$friends = R::findAll('friends');
 if (isset($data['add_friend'])) {
 
     foreach ($friends as $friend) {
@@ -20,11 +14,13 @@ if (isset($data['add_friend'])) {
         }
     }
     if (empty($errors)) {
-        $friends = R::dispense('friends');
-        $friends->id_user = $_SESSION['logged_user']->id;
-        $friends->id_friend = $visitUser->id;
-        $friends->status = 1;
-        R::store($friends);
+        addFriend();
+        ?>
+        <script>
+            document.location.href = "";
+        </script>
+
+        <?
     } else {
         echo array_shift($errors);
     }
@@ -38,3 +34,15 @@ if (isset($data['delete_friend']))
         }
     }
 }
+
+
+function addFriend()
+{
+    $friends = R::dispense('friends');
+    $friends->id_user = $_SESSION['logged_user']->id;
+    $friends->id_friend = $_GET['id'];
+    $friends->status = 1;
+    R::store($friends);
+}
+
+

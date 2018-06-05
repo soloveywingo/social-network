@@ -14,6 +14,7 @@ if (isset($data['post_button'])) {
 }
 
 
+
 function createPost()
 {
     $post = R::dispense('posts');

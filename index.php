@@ -32,7 +32,7 @@ if (!isset($_SESSION['logged_user'])) {
 
 ?>
 
- <!--Main content-->
+<!--Main content-->
 <main>
 
     <?php include "components/left-right-panels.php" ?>
@@ -94,19 +94,6 @@ if (!isset($_SESSION['logged_user'])) {
                         <li class="tab">Cars</li>
                     </ul>
                 </nav>
-
-                <!--    <div class="ti-more more-right events-call" title="Events with friend"></div>-->
-                <!--
-                                <div class="users-buttons">
-                                    <form action="#" method="POST">
-
-                                        <input type="submit" name="add_friend" value="Add friend"><br>
-                                        <input type="submit" name="delete_friend" value="Delete friend"><br>
-                                        <input type="submit" name="block_friend" value="Block"><br>
-                                        <input type="submit" name="report" value="Report" class="call-report"><br>
-
-                                    </form>
-                                </div>-->
             </div>
 
         </div>
@@ -165,7 +152,7 @@ if (!isset($_SESSION['logged_user'])) {
                     $q->lastName = $stackPost->lastName;
                     $q->text = $stackPost->text;
 }*/
-                    foreach ($posts as $post) {
+                foreach ($posts as $post) {
                     if ($_SESSION['logged_user']->id == $post->id_user_page) {
                         $sharedUser = R::load('users2', $post->id_writer);
                         $postid = $post->id;
@@ -460,10 +447,8 @@ if (!isset($_SESSION['logged_user'])) {
 
                                 <div class="flex-container">
 
-                                    <input type="submit" name="delete_friend_from_friends" value="Delete"
-                                           class="delete-button">
-                                    <!-- <input type="submit" name="add_friend_to_friends" value="Add"
-                                            class="add-button">-->
+                                    <input type="submit" name="delete_friend_from<?
+                                    echo $buddy->id; ?>" value="Delete" class="delete-button">
                                     <input type="submit" name="block_friend" value="Block" class="block-button">
                                 </div>
                             </form>

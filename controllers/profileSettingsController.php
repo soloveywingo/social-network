@@ -97,6 +97,5 @@ if (isset($data["submit_changes"])) {
 
 }
 
-// HOBBIES AND INTERESTS
 
 
