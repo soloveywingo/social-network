@@ -180,7 +180,7 @@ if (!isset($_SESSION['logged_user'])) {
                                     </div>
                                     <div>
                                         <a href="visit.php?id=<?
-                                        echo $post->id_writer; ?>"><span><? echo $q->name . " " . $sharedUser->lastName ?></span></a>
+                                        echo $post->id_writer; ?>"><span><? echo $sharedUser->name . " " . $sharedUser->lastName ?></span></a>
                                         <span class="under-span">shared</span><br>
                                         <span class="time"><? echo $post->date; ?></span>
                                         <a href="javascript:void(0);" class="ti-more more-right call-post"></a>

@@ -10,13 +10,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include "components/head.php" ?>
+<?php include "components/head.php";
+
+
+?>
 
 <title>Notes</title>
 
 <body>
 
-<?php include "components/header.php" ?>
+<?php include "components/header.php";
+
+require "controllers/chatController.php";
+?>
+
 
 <main>
 
@@ -38,36 +45,47 @@
 
                     <div class="left-box-body">
 
+
                         <div class="user">
 
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <div class="flex-container">
-                                            <div class="around-user-img">
-                                                <img src="img/users/1MA9kvUVdFY.jpg" alt="User photo">
-                                            </div>
-                                            <div class="user-info">
-                                                <span>Sergey Vasilenko</span>
-                                                <span class="status-span">Space cowboy</span>
-                                            </div>
-                                            <div class="time-visit">
-                                                <span>14:20</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-
+                            <?
+                            $massegeFriends = R::findAll('friends');
+                            foreach ($massegeFriends as $massegeFriend) {
+                                if ($_SESSION['logged_user']->id == $massegeFriend->id_user && $massegeFriend->status == 1) {
+                                    $friendTo = R::load("users2", $massegeFriend->id_friend);
+                                    ?>
+                                    <ul>
+                                        <li>
+                                            <a href="?sendTo=<? echo $massegeFriend->id_friend; ?>">
+                                                <div class="flex-container">
+                                                    <div class="around-user-img">
+                                                        <? echo '<img src = "data:image;base64,' . $friendTo->avatar . '"> '; ?>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <span><? echo $friendTo->name . " " . $friendTo->lastName; ?></span>
+                                                        <span class="status-span"><? echo $friendTo->status; ?></span>
+                                                    </div>
+                                                    <div class="time-visit">
+                                                        <span>14:20</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                <? }
+                            } ?>
                         </div>
                     </div>
                 </div>
 
+                <?
+                $rightBuddy = R::load("users2", $_GET['sendTo']);
+                ?>
                 <div class="right-box">
 
                     <div class="right-box-header">
                         <div class="user-name">
-                            <span>Sergey Vasilenko</span><br>
+                            <span><? echo $rightBuddy->name . " " . $rightBuddy->lastName; ?></span><br>
                         </div>
 
                         <div class="events-panel holder">
@@ -75,139 +93,71 @@
 
                                 <button type="submit" title="Delete message" name="delete_message"><i
                                             class="fas fa-trash"></i></button>
-                                <button class="copy-text" title="Copy text" name="copy_text" type="button"><i class="fas fa-copy"></i>
+                                <button class="copy-text" title="Copy text" name="copy_text" type="button"><i
+                                            class="fas fa-copy"></i>
                                 </button>
 
-                                <button class="cancel" title="Cancel events" name="cancel" type="button"><i class="fas fa-window-close"></i></button>
+                                <button class="cancel" title="Cancel events" name="cancel" type="button"><i
+                                            class="fas fa-window-close"></i></button>
 
                             </form>
                         </div>
 
                     </div>
-
                     <div class="right-box-body">
-                        <div class="inbox-message">
 
-                            <div class="around-user-img holder">
-                                <img src="img/users/1MA9kvUVdFY.jpg" alt="User photo">
+
+                        <?
+
+                        $allMassages = R::findAll("massages");
+
+                        foreach ($allMassages as $mas) {
+                            if ($_SESSION['logged_user']->id == $mas->user_to && $_GET['sendTo'] == $mas->user_from) {
+
+
+                                ?>
+                                <div class="inbox-message">
+
+                                    <div class="message">
+                                        <p>
+                                            <? echo $mas->text; ?>
+                                        </p>
+                                    </div>
+                                    <div class="around-user-img holder">
+                                        <? echo '<img src = "data:image;base64,' . $rightBuddy->avatar . '"> '; ?>>
+                                    </div>
+                                </div>
+                            <? } //ss
+
+                            if ($_SESSION['logged_user']->id == $mas->user_from && $_GET['sendTo'] == $mas->user_to)
+                            {
+                            ?>
+
+                            <div class="outbox-message">
+                                <div class="around-user-img holder">
+
+                                    <? echo '<img src = "data:image;base64,' . $_SESSION['logged_user']->avatar . '"> '; ?>
+
+                                </div>
+                                <div class="message">
+                                    <p>
+                                        <?echo $mas->text;?>
+                                    </p>
+                                </div>
+
                             </div>
+                                <?}?>
 
-                            <div class="message">
-                                <p>
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd</p>
-                            </div>
-
-                            <div class="message">
-                                <p>
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd</p>
-                            </div>
-
-                            <div class="message">
-                                <p>
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd</p>
-                            </div>
-
-                            <div class="message">
-                                <p>
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd</p>
-                            </div>
-                        </div>
-
-                        <div class="outbox-message">
-                            <div class="around-user-img holder">
-                                <img src="img/new_photo.jpg" alt="User photo">
-                            </div>
-
-                            <div class="message">
-                                <p>
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd</p>
-                            </div>
-
-                            <div class="message">
-                                <p>
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd</p>
-                            </div>
-
-                            <div class="message">
-                                <p>
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd</p>
-                            </div>
-                            <div class="message">
-                                <p>
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd</p>
-                            </div>
-
-                        </div>
-
-                        <div class="inbox-message">
-
-                            <div class="around-user-img holder">
-                                <img src="img/users/1MA9kvUVdFY.jpg" alt="User photo">
-                            </div>
-
-                            <div class="message">
-                                <p>
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd</p>
-                            </div>
-
-                            <div class="message">
-                                <p>
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd</p>
-                            </div>
-
-                            <div class="message">
-                                <p>
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd</p>
-                            </div>
-
-                            <div class="message">
-                                <p>
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd asdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasdasdasdasdasdasdasasdasdasdasd
-                                    asdasdasdasdasdasasdasdasdasd</p>
-                            </div>
-                        </div>
+                            <?
+                        } // END OF FOREACH
+                        ?>
                     </div>
 
                     <div class="right-box-footer">
-                        <form action="#" method="POST">
+                        <form action="" method="POST">
 
-                            <input type="text" placeholder="type here..." name="typing">
-                            <button type="submit"><i class="fab fa-telegram-plane"></i></button>
+                            <input type="text" placeholder="type here..." name="massage_text">
+                            <button type="submit" name="massage_send"><i class="fab fa-telegram-plane"></i></button>
                         </form>
                     </div>
                 </div>
