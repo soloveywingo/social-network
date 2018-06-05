@@ -117,36 +117,37 @@ require "controllers/chatController.php";
 
                                 ?>
                                 <div class="inbox-message">
+                                    
+                                    <div class="around-user-img holder">
+                                        <? echo '<img src = "data:image;base64,' . $rightBuddy->avatar . '"> '; ?>>
+                                    </div>
 
                                     <div class="message">
                                         <p>
                                             <? echo $mas->text; ?>
                                         </p>
                                     </div>
-                                    <div class="around-user-img holder">
-                                        <? echo '<img src = "data:image;base64,' . $rightBuddy->avatar . '"> '; ?>>
-                                    </div>
+
                                 </div>
                             <? } //ss
 
-                            if ($_SESSION['logged_user']->id == $mas->user_from && $_GET['sendTo'] == $mas->user_to)
-                            {
-                            ?>
+                            if ($_SESSION['logged_user']->id == $mas->user_from && $_GET['sendTo'] == $mas->user_to) {
+                                ?>
 
-                            <div class="outbox-message">
-                                <div class="around-user-img holder">
+                                <div class="outbox-message">
+                                    <div class="around-user-img holder">
 
-                                    <? echo '<img src = "data:image;base64,' . $_SESSION['logged_user']->avatar . '"> '; ?>
+                                        <? echo '<img src = "data:image;base64,' . $_SESSION['logged_user']->avatar . '"> '; ?>
+
+                                    </div>
+                                    <div class="message">
+                                        <p>
+                                            <? echo $mas->text; ?>
+                                        </p>
+                                    </div>
 
                                 </div>
-                                <div class="message">
-                                    <p>
-                                        <?echo $mas->text;?>
-                                    </p>
-                                </div>
-
-                            </div>
-                                <?}?>
+                            <? } ?>
 
                             <?
                         } // END OF FOREACH
