@@ -51,7 +51,7 @@ require "controllers/chatController.php";
                             <?
                             $massegeFriends = R::findAll('friends');
                             foreach ($massegeFriends as $massegeFriend) {
-                                if ($_SESSION['logged_user']->id == $massegeFriend->id_user && $massegeFriend->status == 1) {
+                                if ($_SESSION['logged_user']->id == $massegeFriend->id_user) {
                                     $friendTo = R::load("users2", $massegeFriend->id_friend);
                                     ?>
                                     <ul>
