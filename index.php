@@ -222,58 +222,27 @@ if (!isset($_SESSION['logged_user'])) {
                 <div class="last-photo-block  lightbox-gallery">
                     <h2>Last Photo</h2>
                     <div class="portfolio">
+
+                        <?
+
+
+                        $photos = R::findall('photos');
+                        foreach ($photos as $photo)
+                        {
+                            if ($_SESSION['logged_user']->id == $photo->id_user)
+                            {
+                        ?>
+
+
                         <div class="image-border">
                             <a href="#">
-                                <img src="img/cars/drift/ford-fiesta-ken-block-drift-2273.jpg" align="Some photo">
+                                <? echo '<img src = "data:image;base64,' . $photo->photo . '" '; ?>
                             </a>
                         </div>
-                        <div class="image-border">
-                            <a href="#">
-                                <img src="img/cars/drift/avtomobil-vyderzhka-drift.jpg"
-                                     align="Some photo">
-                            </a>
-                        </div>
-                        <div class="image-border">
-                            <a href="">
-                                <img src="img/cars/drift/game-nfs-need-for-speed.jpg"
-                                     align="Some photo">
-                            </a>
-                        </div>
-                        <div class="image-border">
-                            <a href="#">
-                                <img src="img/cars/drift/skyline-cars-avtomobili-drift.jpg">
-                            </a>
-                        </div>
-                        <div class="image-border">
-                            <a href="#">
-                                <img src="img/cars/drift/drift-drifter-driftking-5513.jpg"
-                                     align="Some photo">
-                            </a>
-                        </div>
-                        <div class="image-border">
-                            <a href="#">
-                                <img src="img/cars/drift/bmw-m3-tandem-drift-drift-bmw-m3-dva-zanos-drift-asfalt-mash.jpg">
-                            </a>
-                        </div>
-                        <div class="image-border">
-                            <a href="#">
-                                <img src="img/cars/amg-mercedes-benz-c-class-4094.jpg"
-                                     align="Some photo">
-                            </a>
-                        </div>
-                        <div class="image-border">
-                            <a href="#">
-                                <img src="img/cars/volkswagen-bug-volkswagen-kafer-volkswagen-beetle-zhuk-beetl.jpg"
-                                     align="Some photo">
-                            </a>
-                        </div>
-                        <div class="image-border">
-                            <a href="#">
-                                <img src="img/last%20photo/volvo-v60-polestar-performance-world-champion-edit-2017.jpg"
-                                     align="Some photo">
-                            </a>
-                        </div>
+
+                        <? }} ?>
                     </div>
+
                 </div>
 
             </div>
@@ -489,7 +458,6 @@ if (!isset($_SESSION['logged_user'])) {
                 </div>
 
                 <?
-                $photos = R::findall('photos');
                 foreach ($photos as $photo) {
                     if ($_SESSION['logged_user']->id == $photo->id_user) {
 

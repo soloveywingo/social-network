@@ -50,6 +50,8 @@ require "controllers/chatController.php";
 
                             <?
                             $massegeFriends = R::findAll('friends');
+                            $allMassages = R::findAll("massages");
+
                             foreach ($massegeFriends as $massegeFriend) {
                                 if ($_SESSION['logged_user']->id == $massegeFriend->id_user) {
                                     $friendTo = R::load("users2", $massegeFriend->id_friend);
@@ -64,11 +66,11 @@ require "controllers/chatController.php";
                                                         <? echo '<img src = "data:image;base64,' . $friendTo->avatar . '"> '; ?>
                                                     </div>
                                                     <div class="user-info">
-                                                        <span><? echo $friendTo->name . " " . $friendTo->lastName; ?></span>
+                                                        <span><? echo $friendTo->name . " " . $friendTo->lastName ?></span>
                                                         <span class="status-span"><? echo $friendTo->status; ?></span>
                                                     </div>
                                                     <div class="time-visit">
-                                                        <span>14:20</span>
+                                                        <span><? echo $lastTime; ?></span>
                                                     </div>
                                                 </div>
                                             </a>
@@ -110,9 +112,6 @@ require "controllers/chatController.php";
 
 
                         <?
-
-                        $allMassages = R::findAll("massages");
-
                         foreach ($allMassages as $mas) {
                             if ($_SESSION['logged_user']->id == $mas->user_to && $_GET['sendTo'] == $mas->user_from) {
 
