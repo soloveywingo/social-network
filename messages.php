@@ -66,7 +66,7 @@ require "controllers/chatController.php";
                                                         <? echo '<img src = "data:image;base64,' . $friendTo->avatar . '"> '; ?>
                                                     </div>
                                                     <div class="user-info">
-                                                        <span><? echo $friendTo->name . " " . $friendTo->lastName ?></span>
+                                                        <span><? echo $friendTo->name . " " . $friendTo->lastName ?></span><br>
                                                         <span class="status-span"><? echo $friendTo->status; ?></span>
                                                     </div>
                                                     <div class="time-visit">
@@ -108,7 +108,7 @@ require "controllers/chatController.php";
                         </div>
 
                     </div>
-                    <div class="right-box-body">
+                    <div class="right-box-body" id="message">
 
 
                         <?
@@ -171,6 +171,7 @@ require "controllers/chatController.php";
 
 <script src="js/filter-friends.js"></script>
 <script src="js/message-events.js"></script>
+<script src="../js/scroll-down.js"></script>
 
 </body>
 </html>

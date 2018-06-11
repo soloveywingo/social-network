@@ -141,78 +141,80 @@ if (!isset($_SESSION['logged_user'])) {
                         <input type="submit" value="Send" name="post_button">
                     </div>
                 </form>
+                <div class="last-news">
+                    <?php
+                    $posts = R::findAll('posts');
+                    /*
+                    foreach ($posts as $stackPost) {
+                        $q = new SplStack();
+                        $q->name = $stackPost->name;
+                        $q->id = $stackPost->id;
+                        $q->lastName = $stackPost->lastName;
+                        $q->text = $stackPost->text;
+    }*/
+                    foreach ($posts as $post) {
+                        if ($_SESSION['logged_user']->id == $post->id_user_page) {
+                            $sharedUser = R::load('users2', $post->id_writer);
+                            $postid = $post->id;
 
-                <?php
-                $posts = R::findAll('posts');
-                /*
-                foreach ($posts as $stackPost) {
-                    $q = new SplStack();
-                    $q->name = $stackPost->name;
-                    $q->id = $stackPost->id;
-                    $q->lastName = $stackPost->lastName;
-                    $q->text = $stackPost->text;
-}*/
-                foreach ($posts as $post) {
-                    if ($_SESSION['logged_user']->id == $post->id_user_page) {
-                        $sharedUser = R::load('users2', $post->id_writer);
-                        $postid = $post->id;
+                            ?>
+                            <div class="post" id="result_form">
+                                <div class="post-header">
+                                    <div class="user-info">
+                                        <div class="round-user holder">
+                                            <a href="visit.php?id=<?
+                                            echo $post->id_writer; ?>"><? echo '<img src = "data:image;base64,' . $sharedUser->avatar . '"> '; ?></a>
+                                        </div>
+                                        <div>
+                                            <a href="visit.php?id=<?
+                                            echo $post->id_writer; ?>"><span><? echo $sharedUser->name . " " . $sharedUser->lastName ?></span></a>
+                                            <span class="under-span">shared</span><br>
+                                            <span class="time"><? echo $post->date; ?></span>
+                                            <a href="javascript:void(0);" class="ti-more more-right call-post"></a>
+                                            <div class="post-event">
+                                                <form action="index.php" method="POST">
 
-                        ?>
-                        <div class="post" id="result_form">
-                            <div class="post-header">
-                                <div class="user-info">
-                                    <div class="round-user holder">
-                                        <a href="visit.php?id=<?
-                                        echo $post->id_writer; ?>"><? echo '<img src = "data:image;base64,' . $sharedUser->avatar . '"> '; ?></a>
-                                    </div>
-                                    <div>
-                                        <a href="visit.php?id=<?
-                                        echo $post->id_writer; ?>"><span><? echo $sharedUser->name . " " . $sharedUser->lastName ?></span></a>
-                                        <span class="under-span">shared</span><br>
-                                        <span class="time"><? echo $post->date; ?></span>
-                                        <a href="javascript:void(0);" class="ti-more more-right call-post"></a>
-                                        <div class="post-event">
-                                            <form action="index.php" method="POST">
+                                                    <input type="submit" name=<?
+                                                    echo $postid; ?> value="Delete post">
 
-                                                <input type="submit" name=<?
-                                                echo $postid; ?> value="Delete post">
+                                                    <?
+                                                    if (isset($_POST[$postid])) {
+                                                        $delPost = R::load('posts', $postid);
+                                                        R::trash($delPost);
+                                                    }
 
-                                                <?
-                                                if (isset($_POST[$postid])) {
-                                                    $delPost = R::load('posts', $postid);
-                                                    R::trash($delPost);
-                                                }
+                                                    ?>
 
-                                                ?>
-
-                                            </form>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="post-body lightbox-gallery">
-                                <p><? echo $post->text; ?></p>
+                                <div class="post-body lightbox-gallery">
+                                    <p><? echo $post->text; ?></p>
 
 
-                                <?
-                                if ($post->image != NULL) {
-                                    echo '<img src = "data:image;base64,' . $post->image . '"> ';
-                                }
-                                ?>
-                                <div id="myCode"></div>
+                                    <?
+                                    if ($post->image != NULL) {
+                                        echo '<img src = "data:image;base64,' . $post->image . '"> ';
+                                    }
+                                    ?>
+                                    <div id="myCode"></div>
 
 
-                            </div>
-                            <div class="post-footer">
-                                <div class="likes">
-                                    <i class="ti-heart"></i>
-                                    <span>15 person</span>
                                 </div>
-                            </div>
+                                <div class="post-footer">
+                                    <div class="likes">
+                                        <i class="ti-heart"></i>
+                                        <span>15 person</span>
+                                    </div>
+                                </div>
 
-                        </div>
-                    <? }
-                } ?>
+                            </div>
+                        <? }
+                    } ?>
+
+                </div>
 
 
             </div>
@@ -227,20 +229,19 @@ if (!isset($_SESSION['logged_user'])) {
 
 
                         $photos = R::findall('photos');
-                        foreach ($photos as $photo)
-                        {
-                            if ($_SESSION['logged_user']->id == $photo->id_user)
-                            {
-                        ?>
+                        foreach ($photos as $photo) {
+                            if ($_SESSION['logged_user']->id == $photo->id_user) {
+                                ?>
 
 
-                        <div class="image-border">
-                            <a href="#">
-                                <? echo '<img src = "data:image;base64,' . $photo->photo . '" '; ?>
-                            </a>
-                        </div>
+                                <div class="image-border">
+                                    <a href="#">
+                                        <? echo '<img src = "data:image;base64,' . $photo->photo . '" '; ?>
+                                    </a>
+                                </div>
 
-                        <? }} ?>
+                            <? }
+                        } ?>
                     </div>
 
                 </div>
