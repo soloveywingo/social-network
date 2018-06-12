@@ -41,6 +41,25 @@ if (isset($data['do_signup']))
     {
 
         //submit registration
+        $us = new User();
+        $us->createUser();
+
+
+        echo 'YES , INDEED';
+
+    }else
+        {
+            echo  array_shift($errors);
+
+
+    }
+}
+
+class User
+{
+    function createUser()
+    {
+        $data = $_POST;
         $user = R::dispense('users2');
         $hobbies = R::dispense('hobbies');
         $education = R::dispense('education');
@@ -85,15 +104,6 @@ if (isset($data['do_signup']))
         $user->location = $locationData['country'] ." " . $locationData['city'];
 
         R::store($user);
-
-
-        echo 'YES , INDEED';
-
-    }else
-        {
-            echo  array_shift($errors);
-
-
     }
 }
 

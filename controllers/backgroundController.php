@@ -3,6 +3,7 @@
 $user = R::load('users2', $_SESSION['logged_user']->id);
 $data = $_POST;
 
+
 if (isset($data['submit_bg'])) {
 
     if (getimagesize($_FILES['change_back']["tmp_name"]) == false) {
@@ -11,19 +12,23 @@ if (isset($data['submit_bg'])) {
         $background = addslashes($_FILES['change_back']['tmp_name']);
         $background = file_get_contents($background);
         $background = base64_encode($background);
-        saveBack($background);
+        $back = new Background();
+        $back->saveBack($background);
 
     }
 }
-function saveBack($background)
+
+class Background
 {
+    function saveBack($background)
+    {
 
-    $user = R::load('users2', $_SESSION['logged_user']->id);
-    $user->background = $background;
-    R::store($user);
+        $user = R::load('users2', $_SESSION['logged_user']->id);
+        $user->background = $background;
+        R::store($user);
 
+    }
 }
-
 if (isset($data['delete_bg_photo']))
 {
     $user->background = "";

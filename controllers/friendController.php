@@ -14,7 +14,8 @@ if (isset($data['add_friend'])) {
         }
     }
     if (empty($errors)) {
-        addFriend();
+        $friend = new Friend();
+        $friend->addFriend();
         ?>
         <script>
             document.location.href = "";
@@ -35,14 +36,15 @@ if (isset($data['delete_friend']))
     }
 }
 
-
-function addFriend()
+class Friend
 {
-    $friends = R::dispense('friends');
-    $friends->id_user = $_SESSION['logged_user']->id;
-    $friends->id_friend = $_GET['id'];
-    $friends->status = 1;
-    R::store($friends);
+    function addFriend()
+    {
+        $friends = R::dispense('friends');
+        $friends->id_user = $_SESSION['logged_user']->id;
+        $friends->id_friend = $_GET['id'];
+        $friends->status = 1;
+        R::store($friends);
+    }
 }
-
 

@@ -32,7 +32,7 @@ require "controllers/signInController.php";
         <div class="left-block">
             <h2>Welcome to the social network<br>"AvtoNet"</h2>
             <p>We're the best social network for car's owners and not only for them. Chat. Enjoy. Friends. Family. Good
-                luck and Have fun, Dedulya!</p>
+                luck and Have fun!</p>
             <button>View more information</button>
         </div>
         <div class="right-block">
