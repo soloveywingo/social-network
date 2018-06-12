@@ -5,7 +5,7 @@ if (isset($data['add_friend'])) {
 
     foreach ($friends as $friend) {
         if ($_SESSION['logged_user']->id == $friend->id_user && $visitUser->id == $friend->id_friend && $friend->status == 1) {
-            $errors[] = 'erleady added';
+            $errors[] = 'already added';
         }
         if ($_SESSION['logged_user']->id == $friend->id_user && $visitUser->id == $friend->id_friend && $friend->status == 0) {
             $friend->status = 1;

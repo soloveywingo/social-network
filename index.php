@@ -392,13 +392,12 @@ if (!isset($_SESSION['logged_user'])) {
                     <?php
                     $friends = R::findAll('friends');
                     foreach ($friends
-
                     as $friend) {
                     if ($_SESSION['logged_user']->id == $friend->id_user && $friend->status == 1) {
                     $buddy = R::load('users2', $friend->id_friend);
                     ?>
                     <div class="friend-box">
-                        <a href="visit.php?id=<? echo $buddy->id ?>">
+                        <a href="visit.php?id=<? echo $buddy->id ?>" class="display-block">
                             <div class="user">
                                 <div class="bg-profile">
                                     <? echo '<img src = "data:image;base64,' . $buddy->background . '" '; ?>
@@ -417,8 +416,10 @@ if (!isset($_SESSION['logged_user'])) {
 
                                 <div class="flex-container">
 
-                                    <input type="submit" name="delete_friend_from<?
-                                    echo $buddy->id; ?>" value="Delete" class="delete-button">
+                                    <input type="submit" name="delete_friend_from_friends" value="Delete"
+                                           class="delete-button">
+                                    <!-- <input type="submit" name="add_friend_to_friends" value="Add"
+                                            class="add-button">-->
                                     <input type="submit" name="block_friend" value="Block" class="block-button">
                                 </div>
                             </form>
@@ -432,6 +433,7 @@ if (!isset($_SESSION['logged_user'])) {
         </div>
     </div>
     </div>
+
     <!--End People Content-->
 
     <!--Photos Content-->

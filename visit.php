@@ -320,7 +320,7 @@ if ($_SESSION['logged_user']->id == $_GET['id']) {
                     $buddy = R::load('users2', $friend->id_friend)
                     ?>
                     <div class="friend-box">
-                        <a href="visit.php?id=<? echo $buddy->id ?>">
+                        <a href="visit.php?id=<? echo $buddy->id ?>" class="display-block">
                             <div class="user">
                                 <div class="bg-profile">
                                     <? echo '<img src = "data:image;base64,' . $buddy->background . '" '; ?>

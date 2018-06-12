@@ -1452,6 +1452,14 @@ main .people-content .friends-content .friend-box {
     margin-top: 10px;
 }
 
+main .people-content .friends-content a:first-child {
+    display: none;
+}
+
+main .people-content .friends-content a.display-block {
+    display: block;
+}
+
 main .people-content .friends-content .friend-box .user {
     width: 100%;
     height: 360px;
