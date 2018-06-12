@@ -71,10 +71,6 @@
                         <div id="myCode"></div>
                     </div>
                     <div class="post-footer">
-                        <div class="likes">
-                            <i class="ti-heart"></i>
-                            <span>15 person</span>
-                        </div>
                     </div>
 
                 </div>

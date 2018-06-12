@@ -411,12 +411,12 @@ if (!isset($_SESSION['logged_user'])) {
                             <form action="#" method="POST">
 
                                 <div class="flex-container">
-
+<!--
                                     <input type="submit" name="delete_friend_from_friends" value="Delete"
-                                           class="delete-button">
+                                           class="delete-button">-->
                                     <!-- <input type="submit" name="add_friend_to_friends" value="Add"
-                                            class="add-button">-->
-                                    <input type="submit" name="block_friend" value="Block" class="block-button">
+                                            class="add-button">--><!--
+                                    <input type="submit" name="block_friend" value="Block" class="block-button">-->
 
                                 </div>
                             </form>
@@ -543,9 +543,6 @@ if (!isset($_SESSION['logged_user'])) {
                     </div>
                     <div class="info">
                         <form method="post">
-                            <button class="read-more" name="<?
-                            echo $car->id ?>">Read More
-                            </button>
 
                             <?
                             if (isset($_POST[$car->id])) {
@@ -553,7 +550,6 @@ if (!isset($_SESSION['logged_user'])) {
                                 $_SESSION['car'] = $opencar->name;
                             }
                             ?>
-                            <button class="delete-button">Delete Car</button>
                         </form>
                     </div>
                 </div>

@@ -340,10 +340,10 @@ if ($_SESSION['logged_user']->id == $_GET['id']) {
 
                             <!--<input type="submit" name="delete_friend_from_friends" value="Delete"
                                    class="delete-button">-->
-                            <input type="submit" name="add_friend_to_friends" value="Add"
+                   <!--         <input type="submit" name="add_friend_to_friends" value="Add"
                                    class="add-button">
                             <input type="submit" name="block_friend" value="Block" class="block-button">
-
+-->
                         </form>
                     </div>
                 </div>
@@ -454,7 +454,6 @@ if ($_SESSION['logged_user']->id == $_GET['id']) {
                         <? echo '<img src = "data:image;base64,' . $car->image . '" '; ?>
                     </div>
                     <div class="info">
-                        <button class="read-more">Read More</button>
                     </div>
                 </div>
 
