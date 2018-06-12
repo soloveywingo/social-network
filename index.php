@@ -204,10 +204,6 @@ if (!isset($_SESSION['logged_user'])) {
 
                                 </div>
                                 <div class="post-footer">
-                                    <div class="likes">
-                                        <i class="ti-heart"></i>
-                                        <span>15 person</span>
-                                    </div>
                                 </div>
 
                             </div>
@@ -416,11 +412,14 @@ if (!isset($_SESSION['logged_user'])) {
 
                                 <div class="flex-container">
 
+<<<<<<< HEAD
                                     <input type="submit" name="delete_friend_from_friends" value="Delete"
                                            class="delete-button">
                                     <!-- <input type="submit" name="add_friend_to_friends" value="Add"
                                             class="add-button">-->
                                     <input type="submit" name="block_friend" value="Block" class="block-button">
+=======
+>>>>>>> 41f36af8eddb2fef126782c1799a39a3434cd307
                                 </div>
                             </form>
                         </div>
