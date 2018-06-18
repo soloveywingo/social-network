@@ -14,12 +14,19 @@ if (isset($data['do_login'])) {
 
             $_SESSION['logged_user'] = $user;
         } else {
-            $errors[] = "Uncorrect password";
+            $errors[] = "<div class='wrapper holder'>
+                        <div class='wrong-name' > 
+                            <span>Uncorrect password</span>
+                        </div>
+                    </div>";
         }
 
-    }
-    else {
-        $errors[] = 'We don`t have any users with email like this.';
+    } else {
+        $errors[] = " <div class='wrapper holder'>
+                        <div class='wrong-name' > 
+                            <span>We don't have any users like this.</span>
+                        </div>
+                      </div>";
     }
     if (!empty($errors)) {
         echo array_shift($errors);

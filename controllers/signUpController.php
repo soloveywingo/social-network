@@ -6,24 +6,44 @@ if (isset($data['do_signup']))
 
     if(trim($data['name']) == '')
     {
-        $errors[] = 'Please enter your name';
+        $errors[] = " <div class='wrapper holder'>
+                        <div class='wrong-name' > 
+                            <span>Please, enter your name.</span>
+                        </div>
+                      </div>";
     }
     if(trim($data['lastName']) == '')
     {
-        $errors[] = 'Please enter your last name';
+        $errors[] = " <div class='wrapper holder'>
+                        <div class='wrong-name' > 
+                            <span>Please, enter your last name.</span>
+                        </div>
+                      </div>";
 
     }
     if($data['password'] == '')
     {
-        $errors[] = 'Please enter your password';
+        $errors[] = " <div class='wrapper holder'>
+                        <div class='wrong-name' > 
+                            <span>Please, enter your password.</span>
+                        </div>
+                      </div>";
     }
     if($data['rePassword'] != $data['password'])
     {
-        $errors[] = 'Your passwords do not match, try again';
+        $errors[] = " <div class='wrapper holder'>
+                        <div class='wrong-name' > 
+                            <span>Your passwords do not match, try again.</span>
+                        </div>
+                      </div>";
     }
     if($data['birthday'] == '')
     {
-        $errors[] = 'Tell me when were you born?';
+        $errors[] = " <div class='wrapper holder'>
+                        <div class='wrong-name' > 
+                            <span>Tell me when were you born?</span>
+                        </div>
+                      </div>";
     }
     if(trim($data['gender']) == '')
     {
@@ -31,11 +51,19 @@ if (isset($data['do_signup']))
     }
     if (empty($_REQUEST['termsCheckBox']))
     {
-        $errors[] = "Please read our Terms and Conditions and accept it";
+        $errors[] = " <div class='wrapper holder'>
+                        <div class='wrong-name' > 
+                            <span>Please read our Terms and Conditions and accept it</span>
+                        </div>
+                      </div>";
     }
     if (R::count('users2', "email = ?" , array($data['email'])) > 0)
     {
-        $errors[] = "This email arleady been registred";
+        $errors[] = " <div class='wrapper holder'>
+                        <div class='wrong-name' > 
+                            <span>This email arleady been registred</span>
+                        </div>
+                      </div>";
     }
     if (empty($errors))
     {
@@ -45,7 +73,11 @@ if (isset($data['do_signup']))
         $us->createUser();
 
 
-        echo 'YES , INDEED';
+            echo " <div class='wrapper holder'>
+                        <div class='wrong-name' > 
+                            <span>YES, INDEED</span>
+                        </div>
+                      </div>";
 
     }else
         {

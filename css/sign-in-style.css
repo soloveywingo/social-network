@@ -8,7 +8,6 @@ body {
     -o-animation: AnimationName 15s ease infinite;
     animation: AnimationName 15s ease infinite;
 
-
     font-size: 14px;
     padding: 0;
     margin: 0 auto;
@@ -21,24 +20,51 @@ body * {
 }
 
 @-webkit-keyframes AnimationName {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
 }
+
 @-moz-keyframes AnimationName {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
 }
+
 @-o-keyframes AnimationName {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
 }
+
 @keyframes AnimationName {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
 }
 
 a {
@@ -336,3 +362,18 @@ form :-moz-placeholder {
 /***************** DATEPICKER STYLE END *****************/
 
 /***************** MAIN STYLES END *****************/
+
+.wrong-name {
+    background-color: #ffffff;
+    float: left;
+    width: 400px;
+    height: 50px;
+    padding-top: 15px;
+    font-size: 20px;
+    color: #ff5e3a;
+    font-family: Oswald-Medium, sans-serif;
+
+    -webkit-box-shadow: 18px 23px 54px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 18px 23px 54px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 18px 23px 54px -10px rgba(0, 0, 0, 0.75);
+}
