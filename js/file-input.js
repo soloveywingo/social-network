@@ -30,4 +30,10 @@
 
     });
 
+    document.querySelector("#addNewPhotoProfile").addEventListener('change', function (ev) {
+
+        document.querySelector("[for='addPhotoProfile']").innerHTML = ev.target.files[0].name;
+
+    });
+
 });

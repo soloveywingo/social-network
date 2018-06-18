@@ -388,6 +388,7 @@ if (!isset($_SESSION['logged_user'])) {
                     <?php
                     $friends = R::findAll('friends');
                     foreach ($friends
+
                     as $friend) {
                     if ($_SESSION['logged_user']->id == $friend->id_user && $friend->status == 1) {
                     $buddy = R::load('users2', $friend->id_friend);
@@ -411,9 +412,9 @@ if (!isset($_SESSION['logged_user'])) {
                             <form action="#" method="POST">
 
                                 <div class="flex-container">
-<!--
-                                    <input type="submit" name="delete_friend_from_friends" value="Delete"
-                                           class="delete-button">-->
+                                    <!--
+                                                                        <input type="submit" name="delete_friend_from_friends" value="Delete"
+                                                                               class="delete-button">-->
                                     <!-- <input type="submit" name="add_friend_to_friends" value="Add"
                                             class="add-button">--><!--
                                     <input type="submit" name="block_friend" value="Block" class="block-button">-->
@@ -441,14 +442,8 @@ if (!isset($_SESSION['logged_user'])) {
             </div>
             <div class="grid-content lightbox-gallery">
                 <div class="add-new-photo">
-                    <div class="around-btn">
-                        <form action="#" method="POST" enctype="multipart/form-data">
-
-                            <input type="file" name="add_photo" id="addNewPhoto">
-                            <label for="addNewPhoto" id="addPhoto">+</label></br></br>
-
-                            <input type="submit" value="add" name="add_photo_button">
-                        </form>
+                    <div class="around-btn open-add-new-photo">
+                       <span>+</span>
                     </div>
                     <h4>Add Photo<br>
                         <span>It only takes a minute!</span>
@@ -565,8 +560,11 @@ if (!isset($_SESSION['logged_user'])) {
 
 </main>
 
+
+
 <?php
 
+include "components/modal-windows/add-new-photo.php";
 include "components/modal-windows/video-modal.php";
 include "components/modal-windows/cars-modal.php";
 include "components/modal-windows/read-more-modal.php";
@@ -576,6 +574,7 @@ include "components/modal-windows/background-modal.php";
 include "components/modal-windows/avatar-modal.php";
 
 ?>
+
 
 
 <script src="js/modal-image.js"></script>

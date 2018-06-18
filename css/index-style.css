@@ -1601,10 +1601,6 @@ main .photos-content .add-new-photo {
     padding-top: 185px;
 }
 
-main .photos-content .add-new-photo #addNewPhoto {
-    display: none;
-}
-
 main .photos-content .add-new-photo .around-btn {
     position: relative;
     background-color: #ff5e3a;
@@ -1615,13 +1611,12 @@ main .photos-content .add-new-photo .around-btn {
     cursor: pointer;
 }
 
-main .photos-content .add-new-photo .around-btn form label {
+main .photos-content .add-new-photo .around-btn span {
     position: absolute;
     top: 11px;
     right: 13px;
     font-size: 30px;
     color: #ffffff;
-    cursor: pointer;
 }
 
 main .photos-content .add-new-photo .add-photo-button {
